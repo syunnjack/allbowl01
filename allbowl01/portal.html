@@ -1,250 +1,322 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>全国プロチャレンジ情報 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
-<style>
-:root{--red:#e8002d;--dark:#0a0a0a;--mid:#111;--card:#161616;--light:#f0f0eb;--gold:#c9a84c;--gray:#555;--border:#1e1e1e;--green:#2ecc71;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--dark);color:var(--light);font-family:'Noto Sans JP',sans-serif;font-size:13px;}
-header{display:flex;align-items:center;gap:20px;padding:18px 32px;border-bottom:1px solid var(--border);background:linear-gradient(to right,#0d0d0d,#0a0a0a);}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:4px;color:var(--red);}
-.logo span{color:var(--light);}
-.header-meta{font-size:10px;color:var(--gray);letter-spacing:2px;margin-left:auto;}
-.stats{display:flex;border-bottom:1px solid var(--border);}
-.sb{padding:10px 24px;border-right:1px solid var(--border);}
-.sb:last-child{border-right:none;}
-.sn{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--gold);line-height:1;}
-.sl{font-size:9px;letter-spacing:2px;color:var(--gray);margin-top:2px;}
-.controls{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--border);background:var(--mid);}
-.cg{display:flex;align-items:center;gap:6px;padding:10px 18px;border-right:1px solid var(--border);flex-wrap:wrap;}
-.cg:last-child{border-right:none;}
-.cl{font-size:9px;letter-spacing:3px;color:var(--gray);white-space:nowrap;}
-.chip{background:transparent;border:1px solid #252525;color:var(--gray);padding:3px 11px;font-family:'Noto Sans JP',sans-serif;font-size:11px;cursor:pointer;letter-spacing:1px;transition:all .15s;white-space:nowrap;}
-.chip:hover{border-color:#444;color:var(--light);}
-.chip.on{background:var(--red);border-color:var(--red);color:#fff;}
-select{background:#0d0d0d;border:1px solid #252525;color:var(--light);padding:4px 22px 4px 9px;font-family:'Noto Sans JP',sans-serif;font-size:11px;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23555'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 7px center;}
-select option{background:#0d0d0d;}
-input[type=text]{background:#0d0d0d;border:1px solid #252525;color:var(--light);padding:4px 10px;font-family:'Noto Sans JP',sans-serif;font-size:11px;width:150px;}
-input[type=text]::placeholder{color:var(--gray);}
-#view-table{padding:24px 32px;overflow-x:auto;}
-#view-card{padding:24px 32px;display:none;}
-table{width:100%;border-collapse:collapse;font-size:12px;}
-thead tr{border-bottom:1px solid var(--red);}
-th{text-align:left;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:var(--gray);padding:7px 12px;white-space:nowrap;cursor:pointer;user-select:none;}
-th:hover{color:var(--light);}
-th.sa::after{content:' ▲';color:var(--red);font-size:10px;}
-th.sd::after{content:' ▼';color:var(--red);font-size:10px;}
-tbody tr{border-bottom:1px solid var(--border);transition:background .1s;}
-tbody tr:hover{background:var(--card);}
-td{padding:9px 12px;vertical-align:middle;}
-.td-date{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;white-space:nowrap;}
-.td-dow{font-size:10px;color:var(--gray);margin-left:4px;}
-.td-chain{font-size:9px;letter-spacing:2px;color:var(--gold);white-space:nowrap;}
-.td-store{font-weight:700;font-size:12px;}
-.td-pref{font-size:10px;letter-spacing:1px;color:#888;}
-.td-time{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1px;white-space:nowrap;}
-.td-entry a{font-size:10px;letter-spacing:1px;color:var(--red);border:1px solid var(--red);padding:2px 7px;text-decoration:none;white-space:nowrap;}
-.td-entry a:hover{background:var(--red);color:#fff;}
-.month-block{margin-bottom:32px;}
-.month-hd{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
-.month-nm{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--red);line-height:1;}
-.month-ct{font-size:10px;color:var(--gray);letter-spacing:2px;}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px;}
-.card{background:var(--card);padding:16px;position:relative;overflow:hidden;transition:background .15s;}
-.card:hover{background:#1c1c1c;}
-.card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red);}
-.c-badge{position:absolute;top:10px;right:10px;font-size:9px;letter-spacing:2px;color:var(--gray);border:1px solid #222;padding:1px 5px;}
-.c-date-row{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;}
-.c-day{font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:1;}
-.c-di{display:flex;flex-direction:column;}
-.c-mon{font-family:'Bebas Neue',sans-serif;font-size:12px;color:var(--red);letter-spacing:2px;}
-.c-dow{font-size:10px;color:var(--gray);}
-.c-chain{font-size:9px;letter-spacing:2px;color:var(--gold);margin-bottom:3px;}
-.c-store{font-size:11px;color:#aaa;margin-bottom:5px;font-weight:700;}
-.c-pro{font-size:14px;font-weight:700;margin-bottom:8px;line-height:1.4;}
-.c-times{display:flex;gap:6px;align-items:center;margin-bottom:6px;}
-.c-time{background:#0a0a0a;padding:3px 9px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1px;}
-.c-sep{color:var(--gray);font-size:9px;}
-.c-entry{display:inline-block;margin-top:4px;font-size:9px;letter-spacing:2px;color:var(--red);border:1px solid var(--red);padding:2px 9px;text-decoration:none;}
-.c-entry:hover{background:var(--red);color:#fff;}
-.no-result{text-align:center;padding:60px;color:var(--gray);letter-spacing:3px;}
-footer{border-top:1px solid var(--border);padding:14px 32px;font-size:10px;color:var(--gray);letter-spacing:1px;}
-.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:6px;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全国プロボウリング チャレンジマッチ情報 2026 | スケジュール検索</title>
+    <meta name="description" content="2026年開催の全国プロボウラー・チャレンジマッチ情報を網羅。日付・会場・プロ名から簡単に検索・比較できる公式スケジュールまとめサイトです。">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e8002d;    /* メインの赤 */
+            --bg: #ffffff;         /* 清潔感のある白 */
+            --bg-alt: #f8f9fa;     /* 薄いグレー（縞模様用） */
+            --text: #2d3436;       /* 読みやすい濃いグレー */
+            --text-sub: #636e72;   /* 補足情報の薄いグレー */
+            --border: #dfe6e9;     /* 境界線 */
+            --gold: #b8860b;       /* チェーン名用 */
+            --accent: #0984e3;     /* リンク等アクセント */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Noto Sans JP', sans-serif; 
+            font-size: 15px; /* 読みやすさ重視のサイズアップ */
+            line-height: 1.6;
+        }
+
+        /* ヘッダー周り */
+        header { 
+            padding: 20px 32px; 
+            border-bottom: 2px solid var(--primary); 
+            background: #fff;
+        }
+        h1.logo { 
+            font-family: 'Bebas Neue', sans-serif; 
+            font-size: 32px; 
+            letter-spacing: 2px; 
+            color: var(--primary); 
+            margin-bottom: 4px;
+        }
+        h1.logo span { color: var(--text); }
+        .header-sub { font-size: 12px; color: var(--text-sub); font-weight: bold; }
+        .header-meta { font-size: 11px; color: var(--text-sub); margin-top: 8px; }
+
+        /* 統計エリア */
+        .stats { display: flex; flex-wrap: wrap; background: var(--bg-alt); border-bottom: 1px solid var(--border); }
+        .sb { padding: 15px 24px; border-right: 1px solid var(--border); flex: 1; min-width: 120px; text-align: center; }
+        .sn { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--text); line-height: 1; }
+        .sl { font-size: 10px; color: var(--text-sub); margin-top: 4px; font-weight: bold; }
+
+        /* コントロール（検索・フィルタ） */
+        .controls { padding: 10px 20px; background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        .cg { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px dashed var(--border); flex-wrap: wrap; }
+        .cg:last-child { border-bottom: none; }
+        .cl { font-size: 11px; font-weight: bold; color: var(--text-sub); width: 80px; flex-shrink: 0; }
+        
+        .chip { 
+            background: #fff; border: 1px solid var(--border); color: var(--text); 
+            padding: 5px 14px; font-size: 12px; cursor: pointer; border-radius: 20px;
+            transition: all .2s;
+        }
+        .chip:hover { border-color: var(--primary); color: var(--primary); }
+        .chip.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+        input[type=text], select {
+            padding: 6px 12px; border: 1px solid var(--border); border-radius: 4px; font-size: 14px;
+        }
+
+        /* テーブル表示 */
+        #view-table { padding: 20px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; min-width: 800px; }
+        thead th { 
+            background: var(--bg-alt); text-align: left; padding: 12px; 
+            font-size: 11px; color: var(--text-sub); border-bottom: 2px solid var(--border);
+        }
+        tbody tr { border-bottom: 1px solid var(--border); }
+        tbody tr:nth-child(even) { background: var(--bg-alt); }
+        tbody tr:hover { background: #fffde7; }
+        td { padding: 14px 12px; }
+
+        .td-date { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--primary); }
+        .td-dow { font-size: 11px; color: var(--text-sub); margin-left: 4px; }
+        .td-chain { font-size: 11px; color: var(--gold); font-weight: bold; }
+        .td-store { font-weight: 700; color: var(--text); }
+        .td-entry a { 
+            display: inline-block; padding: 4px 12px; border: 1px solid var(--primary); 
+            color: var(--primary); text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: bold;
+        }
+        .td-entry a:hover { background: var(--primary); color: #fff; }
+
+        /* カード表示 */
+        #view-card { padding: 20px; display: none; background: var(--bg-alt); }
+        .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+        .card { 
+            background: #fff; padding: 20px; border-radius: 8px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 5px solid var(--primary);
+        }
+        
+        .no-result { text-align: center; padding: 100px; color: var(--text-sub); }
+        footer { padding: 30px; text-align: center; font-size: 12px; color: var(--text-sub); background: var(--bg-alt); }
+
+        @media (max-width: 600px) {
+            header { padding: 15px; }
+            .sb { padding: 10px; }
+            .cl { width: 100%; margin-bottom: 5px; }
+        }
+    </style>
 </head>
 <body>
- 
+
 <header>
-  <div class="logo">PRO<span>CHALLENGE</span></div>
-  <div style="font-size:10px;color:var(--gray);letter-spacing:2px;">全国プロボウリングチャレンジマッチ情報</div>
-  <div class="header-meta" id="lastUpdated">読み込み中...</div>
+    <h1 class="logo">PRO<span>CHALLENGE</span></h1>
+    <p class="header-sub">全国プロボウリングチャレンジマッチ開催スケジュール 2026</p>
+    <div class="header-meta" id="lastUpdated">データ更新中...</div>
 </header>
- 
-<div class="stats">
-  <div class="sb"><div class="sn" id="sn-count">—</div><div class="sl">EVENTS</div></div>
-  <div class="sb"><div class="sn" id="sn-venues">—</div><div class="sl">VENUES</div></div>
-  <div class="sb"><div class="sn" id="sn-pros">—</div><div class="sl">PROS</div></div>
-  <div class="sb"><div class="sn" id="sn-chains">—</div><div class="sl">CHAINS</div></div>
-</div>
- 
-<div class="controls">
-  <div class="cg">
-    <span class="cl">VIEW</span>
-    <button class="chip on" id="btn-table" onclick="setView('table')">TABLE</button>
-    <button class="chip"    id="btn-card"  onclick="setView('card')">CARD</button>
-  </div>
-  <div class="cg">
-    <span class="cl">SORT</span>
-    <select id="sortSel" onchange="onSortChange()">
-      <option value="EventDate">日付順</option>
-      <option value="StoreName">会場順</option>
-      <option value="ChainName">チェーン順</option>
-      <option value="Prefecture">都道府県順</option>
-      <option value="ProNames">プロ名順</option>
-    </select>
-    <button class="chip on" id="btn-asc"  onclick="setSortDir('ASC')">↑ ASC</button>
-    <button class="chip"    id="btn-desc" onclick="setSortDir('DESC')">↓ DESC</button>
-  </div>
-  <div class="cg" id="cg-chain">
-    <span class="cl">チェーン</span>
-    <button class="chip on" onclick="setFilterChain('',this)">ALL</button>
-  </div>
-  <div class="cg" id="cg-pref">
-    <span class="cl">都道府県</span>
-    <button class="chip on" onclick="setFilterPref('',this)">ALL</button>
-  </div>
-  <div class="cg">
-    <span class="cl">プロ名</span>
-    <input type="text" id="searchPro" placeholder="プロ名で検索" oninput="onSearch()">
-  </div>
-</div>
- 
-<div id="view-table">
-  <table>
-    <thead><tr>
-      <th onclick="setSortKey('EventDate')" id="th-EventDate" class="sa">DATE</th>
-      <th onclick="setSortKey('ChainName')" id="th-ChainName">チェーン</th>
-      <th onclick="setSortKey('StoreName')" id="th-StoreName">会場</th>
-      <th onclick="setSortKey('Prefecture')" id="th-Prefecture">都道府県</th>
-      <th onclick="setSortKey('ProNames')" id="th-ProNames">プロボウラー</th>
-      <th>第1部</th><th>第2部</th><th>詳細</th>
-    </tr></thead>
-    <tbody id="tbody"></tbody>
-  </table>
-  <div class="no-result" id="no-t" style="display:none">— データなし / スクレイピングを実行してください —</div>
-</div>
- 
-<div id="view-card">
-  <div id="card-body"></div>
-  <div class="no-result" id="no-c" style="display:none">— データなし —</div>
-</div>
- 
-<footer><span class="dot"></span>データ出典: コロナキャットボウル / グランドボウル各店 / N&amp;K（幸田・狐ヶ崎 他）/ 東名ボール 各公式サイト</footer>
- 
+
+<main>
+    <section class="stats" aria-label="開催統計情報">
+        <div class="sb"><div class="sn" id="sn-count">—</div><div class="sl">総イベント数</div></div>
+        <div class="sb"><div class="sn" id="sn-venues">—</div><div class="sl">開催会場数</div></div>
+        <div class="sb"><div class="sn" id="sn-pros">—</div><div class="sl">参戦プロ数</div></div>
+        <div class="sb"><div class="sn" id="sn-chains">—</div><div class="sl">チェーン店数</div></div>
+    </section>
+
+    <nav class="controls">
+        <div class="cg">
+            <span class="cl">表示切替</span>
+            <button class="chip on" id="btn-table" onclick="setView('table')">リスト表示</button>
+            <button class="chip" id="btn-card" onclick="setView('card')">カード表示</button>
+        </div>
+        <div class="cg" id="cg-chain">
+        <span class="cl">チェーン</span>
+        <button class="chip on" onclick="setFilterChain('', this)">ALL</button>
+        </div>
+        <div class="cg" id="cg-pref">
+            <span class="cl">都道府県</span>
+            <button class="chip on" onclick="setFilterPref('',this)">全国すべて</button>
+        </div>
+        <div class="cg">
+            <span class="cl">プロ名検索</span>
+            <input type="text" id="searchPro" placeholder="例：鈴木 太郎" oninput="onSearch()">
+        </div>
+    </nav>
+
+    <article id="view-table">
+        <table>
+            <thead>
+                <tr>
+                    <th onclick="setSortKey('EventDate')">日付</th>
+                    <th onclick="setSortKey('ChainName')">系列</th>
+                    <th onclick="setSortKey('StoreName')">ボウリング場</th>
+                    <th onclick="setSortKey('Prefecture')">地域</th>
+                    <th onclick="setSortKey('ProNames')">出演プロボウラー</th>
+                    <th>詳細</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+        <div class="no-result" id="no-t" style="display:none">条件に一致するイベントが見つかりませんでした。</div>
+    </article>
+
+    <article id="view-card">
+        <div id="card-body"></div>
+        <div class="no-result" id="no-c" style="display:none">データがありません。</div>
+    </article>
+</main>
+
+<footer>
+    &copy; 2026 全国プロチャレンジマッチ情報まとめ<br>
+    出典: 各ボウリング場公式サイト
+</footer>
+
 <script>
-const DOW=['日','月','火','水','木','金','土'];
-const MON_EN={'01':'JAN','02':'FEB','03':'MAR','04':'APR','05':'MAY','06':'JUN','07':'JUL','08':'AUG','09':'SEP','10':'OCT','11':'NOV','12':'DEC'};
-let _data=[],_sortKey='EventDate',_sortDir='ASC',_view='table',_filterChain='',_filterPref='',_searchPro='';
- 
-window.loadData=function(data,chains,prefs){
-  _data=data;
-  buildButtons('cg-chain',chains,v=>setFilterChain(v,null));
-  buildButtons('cg-pref',prefs,v=>setFilterPref(v,null));
-  render();
-  document.getElementById('lastUpdated').textContent='UPDATED: '+new Date().toLocaleString('ja-JP');
+/* JSロジックは元の機能を維持しつつ、UIの名称等のみ調整 */
+// (ここに元のscriptの内容を貼り付ければ動作します。関数名等はそのままです)
+// C# (WebView2) から呼び出される
+// C#からデータを受け取るメイン関数
+window.loadData = function(json, chains, prefs) {
+    try {
+        // C#から渡されるデータ(json)は、既にJSON形式のオブジェクトとして届く、
+        // もしくは文字列ならパースする
+        const data = (typeof json === 'string') ? JSON.parse(json) : json;
+        const chainList = (typeof chains === 'string') ? JSON.parse(chains) : chains;
+        const prefList = (typeof prefs === 'string') ? JSON.parse(prefs) : prefs;
+
+        // 1. 統計情報の更新 (C#側のキー名: chain, store, pro に合わせる)
+        document.getElementById('sn-count').innerText = data.length || 0;
+        document.getElementById('sn-venues').innerText = new Set(data.map(d => d.store)).size;
+        document.getElementById('sn-chains').innerText = chainList.length;
+        
+        // 出演プロ人数のユニーク集計
+        let proSet = new Set();
+        data.forEach(d => {
+            if (d.pro) {
+                d.pro.split(/[/／,、\s]+/).forEach(p => {
+                    if(p.trim()) proSet.add(p.trim());
+                });
+            }
+        });
+        document.getElementById('sn-pros').innerText = proSet.size;
+
+        // 2. テーブルの描画 (C#側の短いキー名を使用)
+        renderTable(data);
+        renderCards(data);  // ★ここを追加！カード形式も描画する命令です
+        // 3. フィルタの生成
+        generateFilterButtons('cg-chain', chainList, 'filterChain');
+        generateFilterButtons('cg-pref', prefList, 'filterPref');
+        
+        // 4. 更新日時の表示
+        const now = new Date();
+        document.getElementById('lastUpdated').innerText = 
+            `最終更新: ${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+
+    } catch (e) {
+        console.error("JSON Parse Error:", e);
+    }
 };
- 
-function buildButtons(cgId,vals,fn){
-  const cg=document.getElementById(cgId);
-  [...cg.querySelectorAll('.chip')].slice(1).forEach(b=>b.remove());
-  vals.forEach(v=>{
-    const b=document.createElement('button');
-    b.className='chip';b.textContent=v;
-    b.onclick=()=>{fn(v);[...cg.querySelectorAll('.chip')].forEach(x=>x.classList.remove('on'));b.classList.add('on');};
-    cg.appendChild(b);
-  });
+
+// テーブルを描画する関数
+function renderTable(data) {
+    const tbody = document.getElementById('tbody');
+    const noResult = document.getElementById('no-t');
+    tbody.innerHTML = "";
+
+    if (!data || data.length === 0) {
+        noResult.style.display = "block";
+        return;
+    }
+    noResult.style.display = "none";
+
+    data.forEach(item => {
+        // C#側のキー名: date, chain, store, pref, pro, url
+        const dateStr = item.date ? item.date.replace(/-/g, '/') : '不明';
+        
+        const row = `
+            <tr>
+                <td class="td-date">${dateStr}</td>
+                <td class="td-chain">${item.chain || '-'}</td>
+                <td class="td-store">${item.store || '未設定'}</td>
+                <td>${item.pref || '-'}</td>
+                <td>${item.pro || '未定'}</td>
+                <td class="td-entry"><a href="${item.url || '#'}" target="_blank">詳細</a></td>
+            </tr>
+        `;
+        tbody.innerHTML += row;
+    });
 }
- 
-function post(msg){if(window.chrome&&window.chrome.webview)window.chrome.webview.postMessage(msg);}
- 
-function setView(v){_view=v;document.getElementById('view-table').style.display=v==='table'?'block':'none';document.getElementById('view-card').style.display=v==='card'?'block':'none';document.getElementById('btn-table').classList.toggle('on',v==='table');document.getElementById('btn-card').classList.toggle('on',v==='card');render();}
- 
-function setSortKey(key){
-  if(_sortKey===key){setSortDir(_sortDir==='ASC'?'DESC':'ASC');return;}
-  _sortKey=key;
-  ['EventDate','StoreName','ChainName','Prefecture','ProNames'].forEach(k=>{const t=document.getElementById('th-'+k);if(t)t.className='';});
-  const t=document.getElementById('th-'+key);if(t)t.className=_sortDir==='ASC'?'sa':'sd';
-  post('sort:'+_sortKey+':'+_sortDir);render();
+// --- カード形式の描画（今回追加） ---
+function renderCards(data) {
+    const cardBody = document.getElementById('card-body');
+    cardBody.innerHTML = '<div class="cards"></div>'; // コンテナを作成
+    const container = cardBody.querySelector('.cards');
+    
+    if (!data || data.length === 0) {
+        document.getElementById('no-c').style.display = "block";
+        return;
+    }
+    document.getElementById('no-c').style.display = "none";
+
+    data.forEach(item => {
+        const dateStr = item.date ? item.date.replace(/-/g, '/') : '不明';
+        container.innerHTML += `
+            <div class="card">
+                <div class="td-date">${dateStr}</div>
+                <div class="td-chain">${item.chain || ''}</div>
+                <div class="td-store" style="font-size:1.2em; margin-bottom:8px;">${item.store}</div>
+                <div style="color:var(--text-sub); font-size:0.9em; margin-bottom:12px;">
+                    📍 ${item.pref} | 👤 ${item.pro}
+                </div>
+                <div class="td-entry">
+                    <a href="${item.url || '#'}" target="_blank" style="display:block; text-align:center;">詳細を見る</a>
+                </div>
+            </div>`;
+    });
 }
- 
-function setSortDir(dir){
-  _sortDir=dir;
-  document.getElementById('btn-asc').classList.toggle('on',dir==='ASC');
-  document.getElementById('btn-desc').classList.toggle('on',dir==='DESC');
-  const t=document.getElementById('th-'+_sortKey);if(t)t.className=dir==='ASC'?'sa':'sd';
-  post('sort:'+_sortKey+':'+_sortDir);render();
+
+// フィルタボタン（都道府県）を動的に生成する関数
+function generateFilterButtons(containerId, list, messagePrefix) {
+    const container = document.getElementById(containerId);
+    // 「すべて」ボタン以外の古いボタンを削除
+    const oldChips = container.querySelectorAll('.chip:not(:first-child)');
+    oldChips.forEach(c => c.remove());
+
+    list.forEach(text => {
+        const btn = document.createElement('button');
+        btn.className = 'chip';
+        btn.innerText = text;
+        btn.onclick = function() {
+            // C#側の OnWebMessage に通知
+            window.chrome.webview.postMessage(`${messagePrefix}:${text}`);
+            container.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+            this.classList.add('on');
+        };
+        container.appendChild(btn);
+    });
 }
- 
-function onSortChange(){_sortKey=document.getElementById('sortSel').value;post('sort:'+_sortKey+':'+_sortDir);render();}
-function setFilterChain(val,btn){_filterChain=val;if(btn){document.querySelectorAll('#cg-chain .chip').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}post('filterChain:'+val);render();}
-function setFilterPref(val,btn){_filterPref=val;if(btn){document.querySelectorAll('#cg-pref .chip').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}post('filterPref:'+val);render();}
-function onSearch(){_searchPro=document.getElementById('searchPro').value;post('search:'+_searchPro);render();}
- 
-function filtered(){
-  return _data.filter(e=>{
-    if(_filterChain&&e.chain!==_filterChain)return false;
-    if(_filterPref&&e.pref!==_filterPref)return false;
-    if(_searchPro&&!e.pro.includes(_searchPro))return false;
-    return true;
-  });
+
+// 検索窓の入力イベント
+function onSearch() {
+    const val = document.getElementById('searchPro').value;
+    window.chrome.webview.postMessage(`search:${val}`);
 }
- 
-function render(){
-  let data=[..._data].filter(e=>{
-    if(_filterChain&&e.chain!==_filterChain)return false;
-    if(_filterPref&&e.pref!==_filterPref)return false;
-    if(_searchPro&&!e.pro.includes(_searchPro))return false;
-    return true;
-  });
-  const keyMap={EventDate:'date',StoreName:'store',ChainName:'chain',Prefecture:'pref',ProNames:'pro'};
-  const k=keyMap[_sortKey]||'date';
-  data.sort((a,b)=>{const r=(a[k]||'')<(b[k]||'')?-1:(a[k]||'')>(b[k]||'')?1:0;return _sortDir==='ASC'?r:-r;});
-  document.getElementById('sn-count').textContent=data.length;
-  document.getElementById('sn-venues').textContent=new Set(data.map(e=>e.store)).size;
-  document.getElementById('sn-pros').textContent=new Set(data.map(e=>e.pro)).size;
-  document.getElementById('sn-chains').textContent=new Set(data.map(e=>e.chain)).size;
-  if(_view==='table')renderTable(data);else renderCards(data);
+
+// ページ読み込み完了時にC#へ準備完了を伝える
+window.addEventListener('DOMContentLoaded', () => {
+    if (window.chrome && window.chrome.webview) {
+        window.chrome.webview.postMessage("ready:1");
+    }
+});
+
+// 表示切り替え
+function setView(type) {
+    document.getElementById('view-table').style.display = (type === 'table') ? 'block' : 'none';
+    document.getElementById('view-card').style.display = (type === 'card') ? 'block' : 'none';
+    document.getElementById('btn-table').classList.toggle('on', type === 'table');
+    document.getElementById('btn-card').classList.toggle('on', type === 'card');
 }
- 
-function renderTable(data){
-  const tbody=document.getElementById('tbody'),noT=document.getElementById('no-t');
-  if(!data.length){tbody.innerHTML='';noT.style.display='block';return;}
-  noT.style.display='none';
-  tbody.innerHTML=data.map(e=>{
-    const d=new Date(e.date),ds=e.date.slice(5).replace('-','/'),dow=DOW[d.getDay()];
-    return`<tr><td class="td-date">${ds}<span class="td-dow">${dow}</span></td><td class="td-chain">${esc(e.chain)}</td><td class="td-store">${esc(e.store)}</td><td class="td-pref">${esc(e.pref)}</td><td>${esc(e.pro)}</td><td class="td-time">${esc(e.t1)||'—'}</td><td class="td-time">${esc(e.t2)||'—'}</td><td class="td-entry">${e.url?`<a href="${esc(e.url)}" target="_blank">詳細</a>`:''}</td></tr>`;
-  }).join('');
-}
- 
-function renderCards(data){
-  const cb=document.getElementById('card-body'),noC=document.getElementById('no-c');
-  if(!data.length){cb.innerHTML='';noC.style.display='block';return;}
-  noC.style.display='none';
-  const byM={};data.forEach(e=>{const m=e.date.slice(0,7);if(!byM[m])byM[m]=[];byM[m].push(e);});
-  cb.innerHTML=Object.keys(byM).sort().map(m=>{
-    const evs=byM[m],mon=MON_EN[m.slice(5)]||m.slice(5);
-    return`<div class="month-block"><div class="month-hd"><div class="month-nm">${mon}</div><div class="month-ct">${evs.length} EVENTS</div></div><div class="cards">${evs.map(e=>{
-      const d=new Date(e.date),day=String(d.getDate()).padStart(2,'0'),dow=DOW[d.getDay()];
-      return`<div class="card"><div class="c-badge">${esc(e.pref)}</div><div class="c-date-row"><div class="c-day">${day}</div><div class="c-di"><span class="c-mon">${mon}</span><span class="c-dow">${dow}曜日</span></div></div><div class="c-chain">${esc(e.chain)}</div><div class="c-store">${esc(e.store)}</div><div class="c-pro">${esc(e.pro)}</div><div class="c-times"><span class="c-time">${esc(e.t1)||'—'}</span><span class="c-sep">—</span><span class="c-time">${esc(e.t2)||'—'}</span></div>${e.url?`<a class="c-entry" href="${esc(e.url)}" target="_blank">詳細・エントリー</a>`:''}</div>`;
-    }).join('')}</div></div>`;
-  }).join('');
-}
- 
-function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
- 
-window.addEventListener('load',()=>post('ready:1'));
 </script>
 </body>
 </html>

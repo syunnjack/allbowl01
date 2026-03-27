@@ -85,23 +85,33 @@ namespace allbowl01
             new("N&K","弘前ファミリーボウル",    "青森","https://nandk.net/category/challenge-match/"),
             // ゆりの木ボウル青森
             new("ゆりの木ボウル", "ゆりの木ボウル", "青森", "https://jabico.co.jp/wp-content/uploads/2026/01/af5835bb4f8f31085e405a0df8262fc7.pdf"),
-            new("品川プリンスボウル", "品川プリンスボウル", "東京", ""),
+            new("品川プリンスボウル", "品川プリンスボウル", "東京", "https://www.princehotels.co.jp/parktower/bowling/"),
             new("ニューパールレーン", "ニューパールレーン", "埼玉", "https://takesato-bowl.net/"),
             new("スプリングレーン", "川口スプリングレーン", "埼玉", "https://www.sp-bowl.com/k_game.php"),
             new("スプリングレーン", "浦和スプリングレーン", "埼玉", "https://www.sp-bowl.com/u_game.php"),
 
             new("スポルト", "スポルト八景", "神奈川", "https://www.sport-bowling.co.jp/schedule_hakkei"),
+
             new("サンコーボウル", "サンコーボウル", "北海道", "https://www.sanko-bowl.com/bowling/schedule/"),
+
             new("アイキョーボウル", "アイキョーボウル", "千葉", "https://www.aikyo-bowl.jp/schedule_a.html"),
-            new("ヤングボウル", "横浜ヤングボウル", "", ""),
-            new("ヤングボウル", "柏ヤングボウル", "千葉", ""),
-            new("ヤングボウル", "柏駅前ヤングボウル", "千葉", ""),
-            new("", "東京ポートボウルボウル", "", ""),
-            new("", "新宿コパボウル", "", ""),
-            new("", "岡山ヤングボウル", "", ""),
-            new("キスケボウル", "キスケボウル", "愛媛", ""),
-            new("アルゴボウル", "", "兵庫", "http://www.algo7.jp/news/sp/1235.html"),
-            new("", "", "", ""),
+
+            new("ヤングボウル", "横浜ヤングボウル", "神奈川", "http://www.youngbowl.com/shoplist/yokohama"),
+            new("ヤングボウル", "柏ヤングボウル", "千葉", "http://www.youngbowl.com/shoplist/kashiwa"),
+            new("ヤングボウル", "柏駅前ヤングボウル", "千葉", "http://www.youngbowl.com/shoplist/kashiwaekimae"),
+
+            new("東京ポートボウル", "東京ポートボウルボウル", "東京", "https://www.tokyoportbowl.com/wpTB/wp-content/uploads/2026/03/2026%E5%B9%B4%E4%BC%9A%E5%A0%B14%E6%9C%88%E3%80%80.pdf"),
+            new("新宿コパボウル", "新宿コパボウル", "東京", "https://copa-shinjuku.com/news/"),
+
+            new("ヤングボウル", "岡山ヤングボウル", "岡山", "http://www.youngbowl.com/shoplist/okayama"),
+
+            new("キスケボウル", "キスケボウル", "愛媛", "https://kisuke.com/kit/information/"),
+            new("アルゴボウル", "アルゴボウル", "兵庫", "http://www.algo7.jp/news/sp/1235.html"),
+            new("神戸六甲ボウル", "神戸六甲ボウル", "兵庫", "https://www.rokkobowl.co.jp/"),
+
+            new("イーグルボウル", "イーグルボウル", "愛知", "https://eaglebowl.jp/event/"),
+            new("サンボウル", "サンボウル", "愛知", "https://www.sunbowl300.sakura.ne.jp/"),
+
 
             new("パークレーン", "広島パークレーン", "広島", "https://parklane30.com/assets/document/schedule/taikai_2603.pdf"),
             new("パークレーン", "相模原パークレーン", "神奈川", "https://parklanes.jp/tournament_detail.php?id=2669"),
@@ -109,10 +119,7 @@ namespace allbowl01
 
             new("東名ボール","東名ボール","愛知","https://www.tomei-bowl.com/category/pro-cha/"),
 
-
-
-
-            new("イーボール", "イーボールトマト西宮", "兵庫", "https://www.e-bowltomato2438official.com/blank-6/"),
+            new("イーボールトマト西宮", "イーボールトマト西宮", "兵庫", "https://www.e-bowltomato2438official.com/blank-6/"),
             new("アルゴボウル", "アルゴボウル", "兵庫", "http://www.algo7.jp/news/sp/1235.html"),
 
             new("ラウンドワン", "ラウンドワン", "オンライン", "https://www.round1.co.jp/service/r1live/challenge/"),
@@ -137,10 +144,7 @@ namespace allbowl01
             // その他
             new("スポルト","スポルト八景",          "神奈川","https://www.sport-bowling.co.jp/schedule_hakkei"),
             new("ダイトー","ダイトースターレーン",   "山梨","https://www.daitho.co.jp/category/pro-challenge/"),
-            new("サンコーボウル","サンコーボウル",   "北海道","https://www.sanko-bowl.com/bowling/schedule/"),
-            new("アイキョーボウル","アイキョーボウル","千葉","https://www.aikyo-bowl.jp/schedule_a.html"),
-            new("イーボール","イーボールトマト西宮", "兵庫","https://www.e-bowltomato2438official.com/blank-6/"),
-            new("アルゴボウル","アルゴボウル",       "兵庫","http://www.algo7.jp/news/"),
+            
 
 
     };
@@ -164,6 +168,7 @@ namespace allbowl01
             foreach (var store in Stores)
             {
                 i++;
+                if (string.IsNullOrEmpty(store.Url)) continue;
                 Notify($"[{i}/{TotalCount}] {store.StoreName} を取得中...", i, TotalCount);
                 try
                 {
@@ -175,8 +180,16 @@ namespace allbowl01
                         "東名ボール" => await ScrapeTomei(store, scraped),
                         "スターレーン" => await ScrapeStarLane(store, scraped),
                         "六甲ボウル" => await ScrapeRokko(store, scraped),
-                        
+                        // 追加分：これらを書かないと、下の共通ロジックへ飛ばされます
+                        //"スポルト" => await ScrapeSport(store, scraped),
+                        //"アイキョーボウル" => await ScrapeAikyo(store, scraped),
+                        //"サンコーボウル" => await ScrapeSanko(store, scraped),
+                        //"パークレーン" => await ScrapeParkLane(store, scraped),
+                        //"ダイトー" => await ScrapeDaito(store, scraped),
+                        //"イーボール" => await ScrapeEbowl(store, scraped),
+                        //"アルゴボウル" => await ScrapeAlgo(store, scraped),
                         _ => new List<ProChallengeEvent>()
+                        
                     };
                     foreach (var ev in events)
                     {
@@ -360,6 +373,57 @@ namespace allbowl01
                 ScrapedAt = scraped
             };
         }
+        private async Task<List<ProChallengeEvent>> ScrapeRokko(
+    StoreInfo store, DateTime scraped)
+        {
+            var html = await FetchHtml(store.Url);
+            var doc = new HtmlDocument();
+            doc.LoadHtml(html);
+
+            var events = new List<ProChallengeEvent>();
+
+            var posts = doc.DocumentNode.SelectNodes("//div[contains(@class,'post')]");
+            if (posts == null) return events;
+
+            foreach (var post in posts)
+            {
+                var titleNode = post.SelectSingleNode(".//h2[@class='title']/a");
+                if (titleNode == null) continue;
+
+                var detailUrl = titleNode.GetAttributeValue("href", "");
+                var detail = await FetchHtml(detailUrl);
+
+                var text = System.Net.WebUtility.HtmlDecode(detail);
+
+                if (!Regex.IsMatch(text, @"プロ.*(チャレンジ|マッチ|投げよう)"))
+                    continue;
+
+                var dm = Regex.Match(text, @"(\d{1,2})月(\d{1,2})日");
+                if (!dm.Success) continue;
+
+                var dt = new DateTime(DateTime.Now.Year,
+                    int.Parse(dm.Groups[1].Value),
+                    int.Parse(dm.Groups[2].Value));
+
+                var pro = Regex.Match(text, @"([^\s]+プロ)").Value;
+                var time = Regex.Match(text, @"(\d{1,2}:\d{2})").Value;
+
+                events.Add(new ProChallengeEvent
+                {
+                    ChainName = store.Chain,
+                    StoreName = store.StoreName,
+                    Prefecture = store.Prefecture,
+                    EventDate = dt,
+                    ProNames = pro,
+                    TimeSlot1 = time,
+                    SourceUrl = detailUrl,
+                    ScrapedAt = scraped
+                });
+            }
+
+            return events;
+        }
+
 
         private async Task<List<ProChallengeEvent>> ScrapeTomei(
             StoreInfo store, DateTime scraped)
@@ -390,42 +454,70 @@ namespace allbowl01
                     if (!Regex.IsMatch(text,
                         @"プロ.{0,15}(チャレンジ|投げよう|マッチ)")) continue;
 
-                    var dm = Regex.Match(text,
-                        @"(\d{4})[年/](\d{1,2})[月/](\d{1,2})");
-                    if (!dm.Success) continue;
-                    if (!DateTime.TryParse(
-                        $"{dm.Groups[1].Value}-{dm.Groups[2].Value}-{dm.Groups[3].Value}",
-                        out var dt)) continue;
+                    var titleNode = d2.DocumentNode.SelectSingleNode("//h1");
+                    var titleText = System.Net.WebUtility.HtmlDecode(titleNode?.InnerText ?? "");
+                    var dmTitle = Regex.Match(titleText, @"(\d{4})[\.年](\d{1,2})月");
+                    DateTime dt;
+                    if (dmTitle.Success)
+                    {
+                        int yr = int.Parse(dmTitle.Groups[1].Value);
+                        int mo = int.Parse(dmTitle.Groups[2].Value);
+                        dt = new DateTime(yr, mo, 1);
+                    }
+                    else
+                    {
+                        var dm = Regex.Match(text, @"(\d{4})[年/](\d{1,2})[月/](\d{1,2})");
+                        if (!dm.Success) continue;
+                        if (!DateTime.TryParse(
+                            $"{dm.Groups[1].Value}-{dm.Groups[2].Value}-{dm.Groups[3].Value}",
+                            out dt)) continue;
+
+                    }
                     if (dt < DateTime.Today || dt > DateTime.Today.AddYears(2)) continue;
 
                     var pro = Regex.Match(text,
                         @"([\p{L}\p{Lo}　・＆& ]+プロ(?:[＆&\s]+[\p{L}\p{Lo}　・ ]+プロ)?)")
                         .Value.Trim();
                     if (string.IsNullOrEmpty(pro)) continue;
-
-                    var times = Regex.Matches(text,
-                        @"(\d{1,2}:\d{2})(?:スタート|開始)?")
-                        .Cast<Match>().Select(m => m.Groups[1].Value)
-                        .Distinct().Take(2).ToList();
-
-                    events.Add(new ProChallengeEvent
+                    var imgNames = d2.DocumentNode
+                        .SelectNodes("//img[@src]")?
+                        .Select(n => System.Net.WebUtility.UrlDecode(n.GetAttributeValue("src", "")))
+                        .ToList() ?? new List<string>();
+                    foreach (var img in imgNames)
                     {
-                        ChainName = store.Chain,
-                        StoreName = store.StoreName,
-                        Prefecture = store.Prefecture,
-                        EventDate = dt,
-                        ProNames = pro,
-                        TimeSlot1 = times.Count > 0 ? times[0] : "",
-                        TimeSlot2 = times.Count > 1 ? times[1] : "",
-                        SourceUrl = link,
-                        ScrapedAt = scraped
-                    });
-                    await Task.Delay(400);
+                        var m2 = Regex.Match(img, @"([\p{L}\p{Lo}]+プロ)");
+                        if (m2.Success)
+                        {
+                            pro = m2.Groups[1].Value.Trim(); break;
+                        }
+
+
+                        var times = Regex.Matches(text,
+                            @"(\d{1,2}:\d{2})(?:スタート|開始)?")
+                            .Cast<Match>().Select(m => m.Groups[1].Value)
+                            .Distinct().Take(2).ToList();
+
+                        events.Add(new ProChallengeEvent
+                        {
+                            ChainName = store.Chain,
+                            StoreName = store.StoreName,
+                            Prefecture = store.Prefecture,
+                            EventDate = dt,
+                            ProNames = pro,
+                            TimeSlot1 = times.Count > 0 ? times[0] : "",
+                            TimeSlot2 = times.Count > 1 ? times[1] : "",
+                            SourceUrl = link,
+                            ScrapedAt = scraped
+                        });
+                        await Task.Delay(400);
+                    }
                 }
+
                 catch { }
             }
             return events;
         }
+
 
         private async Task<List<ProChallengeEvent>> ScrapeStarLane(
     StoreInfo store, DateTime scraped)
@@ -440,7 +532,7 @@ namespace allbowl01
             var links = doc.DocumentNode
                 .SelectNodes("//a[@href]")?
                 .Select(n => n.GetAttributeValue("href", ""))
-                .Where(h => Regex.IsMatch(h, @"/20\d{2}/\d{2}/"))
+                .Where(h => Regex.IsMatch(h, @"20\d{2}/\d{2}/\d{2}/post"))
                 .Select(h => new Uri(baseUri, h).ToString())
                 .Distinct().Take(15).ToList() ?? new List<string>();
 
@@ -454,7 +546,7 @@ namespace allbowl01
                     d2.LoadHtml(detail);
                     //var text = System.Net.WebUtility.HtmlDecode(d2.DocumentNode.InnerText);
 
-                    var h1 = System.Net.WebUtility.HtmlEncode(
+                    var h1 = System.Net.WebUtility.HtmlDecode(
                         d2.DocumentNode.SelectSingleNode("//h1")?.InnerText ?? "");
                     h1 = h1.Replace("０", "0").Replace("１", "1").Replace("２", "2")
                    .Replace("３", "3").Replace("４", "4").Replace("５", "5")
@@ -485,7 +577,7 @@ namespace allbowl01
 
                     var proM = Regex.Match(h1, @"([\p{L}\p{Lo}]+プロ)");
                     var pro = proM.Success ? proM.Groups[1].Value.Trim()
-                        :Regex.Match(text,
+                        : Regex.Match(text,
                         @"([\p{L}\p{Lo}　・＆& ]+プロ(?:[＆&\s]+[\p{L}\p{Lo}　・ ]+プロ)?)")
                         .Value.Trim();
                     if (string.IsNullOrEmpty(pro)) continue;
@@ -506,11 +598,13 @@ namespace allbowl01
                     });
                     await Task.Delay(300);
                 }
-               
-            catch{ }
+
+                catch { }
+            }
+            return events;
         }
-        return events;
-        }
+
+
         private static List<ProChallengeEvent> ParseByRegex(
             string html, StoreInfo store, DateTime scraped)
         {
@@ -588,59 +682,19 @@ namespace allbowl01
             }
             return html;
         }
-
         private void Notify(string msg, int cur, int total, bool isError = false) =>
             OnProgress?.Invoke(new ScraperProgress
             { Message = msg, Current = cur, Total = total, IsError = isError });
 
         public void Dispose() => _http.Dispose();
-    
-    
-
-        private async Task<string> FetchDetailPage(string url)
-        {
-            using var client = new HttpClient();
-            var html = await client.GetStringAsync(url);
-
-            var doc = new HtmlDocument();
-            doc.LoadHtml(html);
-
-            var entry = doc.DocumentNode.SelectSingleNode("//div[@class='entry']");
-            return entry?.InnerText.Trim() ?? "";
-        }
-
-        private bool IsWomenProChallenge(string title, string body)
-        {
-            var text = (title + " " + body);
-            return text.Contains("プロ") && text.Contains("チャレンジ");
-        }
-
-        private DateTime? ExtractDate(string text)
-        {
-            var m = Regex.Match(text, @"(\d{1,2})月(\d{1,2})日");
-            if (!m.Success) return null;
-
-            int month = int.Parse(m.Groups[1].Value);
-            int day = int.Parse(m.Groups[2].Value);
-
-            return new DateTime(DateTime.Now.Year, month, day);
-        }
-
-        private TimeSpan? ExtractTime(string text)
-        {
-            var m = Regex.Match(text, @"(\d{1,2}):(\d{2})");
-            if (!m.Success) return null;
-
-            return new TimeSpan(int.Parse(m.Groups[1].Value), int.Parse(m.Groups[2].Value), 0);
-        }
-
-        private string ExtractProName(string text)
-        {
-            var m = Regex.Match(text, @"([^\s]+プロ)");
-            return m.Success ? m.Groups[1].Value : "";
-        }
     }
-
-
-
 }
+   
+
+
+
+        
+    
+    
+
+        

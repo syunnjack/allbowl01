@@ -30,6 +30,7 @@ namespace allbowl01
                 AppDomain.CurrentDomain.BaseDirectory, "prochallenge.db"));
             InitWebView2Async();
         }
+        private bool _isInitialLoading = true;
         private async void InitWebView2Async()
         {
             try
@@ -37,11 +38,19 @@ namespace allbowl01
                 await webView.EnsureCoreWebView2Async();
                 _webViewReady = true;
                 webView.CoreWebView2.WebMessageReceived += OnWebMessage;
-                webView.CoreWebView2.NavigationCompleted += (s, e) =>
+                // 【重要】ここで NavigationCompleted 時に PushDataToPage() を呼んでいたなら、削除します。
+                // 代わりに、portal.html 側の JavaScript の最後に 
+                // window.chrome.webview.postMessage("ready:init"); 
+                // と書くことで、C# 側の OnWebMessage 内の "ready" ケースが一度だけ発火するようにします。
+
+                // 3. ページの読み込み開始
+                _isInitialLoading = true;
+                LoadPortal();
+                /*webView.CoreWebView2.NavigationCompleted += (s, e) =>
                 {
                     PushDataToPage();
                 };
-                LoadPortal();
+                LoadPortal();*/
                 //UpdateStatus();
             }
             catch (Exception ex)
@@ -79,28 +88,42 @@ namespace allbowl01
         {
             var msg = e.TryGetWebMessageAsString();
             var parts = msg.Split(':', 3);
-            if (parts.Length < 2) return;
+            if (parts.Length < 1) return;
+            bool shouldUpdate = false;
+
 
             switch (parts[0])
             {
+                case "ready":
+                    if (_isInitialLoading) {
+                        shouldUpdate = true;
+                        _isInitialLoading = false;
+                    }
+                    break;
+
                 case "sort":
                     _sortBy = parts.Length > 1 ? parts[1] : "EventDate";
                     _sortDir = parts.Length > 2 ? parts[2] : "ASC";
+                    shouldUpdate = true;
                     break;
                 case "filterChain":
                     _filterChain = parts.Length > 1 ? parts[1] : "";
+                    shouldUpdate = true;
                     break;
                 case "filterPref":
                     _filterPref = parts.Length > 1 ? parts[1] : "";
+                    shouldUpdate = true;
                     break;
                 case "search":
                     _searchPro = parts.Length > 1 ? parts[1] : "";
-                    break;
-                case "ready":
-                    PushDataToPage();
-                    return;
+                    shouldUpdate = true;
+                    break;       
             }
-            PushDataToPage();
+            if (shouldUpdate)
+            {
+                PushDataToPage();
+            }
+            
         }
 
         private void PushDataToPage()

@@ -8,7 +8,7 @@ Help users find 2026 pro bowling challenge match events by date, bowling venue, 
 
 ## Primary page
 
-- https://syunnjack.github.io/allbowl01/
+- https://bowlingcalendar.jp/
 
 ## Data
 

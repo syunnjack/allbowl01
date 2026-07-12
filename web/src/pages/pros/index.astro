@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { pageSlug, siteFacets } from "../../lib/events";
+
+const title = "出演プロ別 プロボウリングチャレンジマッチ";
+const description = "出演プロボウラー名からチャレンジマッチ開催予定を探せる一覧ページです。";
+---
+<BaseLayout title={title} description={description} canonicalPath="/pros/">
+  <section class="hero">
+    <h1>出演プロ別に探す</h1>
+    <p class="lead">応援しているプロボウラーのチャレンジマッチ開催予定を確認できます。</p>
+  </section>
+  <ul class="taxonomy">
+    {siteFacets.pros.map((pro) => (
+      <li><a href={`/pros/${pageSlug(pro)}/`}>{pro}</a></li>
+    ))}
+  </ul>
+</BaseLayout>

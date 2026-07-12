@@ -1,0 +1,34 @@
+---
+import { formatDate, pageSlug, type EventItem } from "../lib/events";
+
+type Props = {
+  events: EventItem[];
+};
+
+const { events } = Astro.props;
+---
+<div class="event-list">
+  {events.length === 0 ? (
+    <p class="meta">現在掲載できるイベントデータがありません。WinFormsアプリで取得後、JSONを書き出してください。</p>
+  ) : (
+    events.map((event) => (
+      <article class="event">
+        <time datetime={event.date}>{formatDate(event.date)}</time>
+        <a class="event-title" href={event.sourceUrl} target="_blank" rel="noopener noreferrer">
+          {event.venue} プロチャレンジ
+        </a>
+        <div class="meta">
+          {event.chain || "系列未設定"} / <a href={`/prefectures/${pageSlug(event.prefecture)}/`}>{event.prefecture || "地域未設定"}</a>
+        </div>
+        <div class="meta">
+          出演: {event.pros.length > 0 ? event.pros.map((pro, index) => (
+            <>
+              {index > 0 ? "、" : ""}
+              <a href={`/pros/${pageSlug(pro)}/`}>{pro}</a>
+            </>
+          )) : event.proText || "未定"}
+        </div>
+      </article>
+    ))
+  )}
+</div>

@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { pageSlug, siteFacets } from "../../lib/events";
+
+const title = "会場別 プロボウリングチャレンジマッチ";
+const description = "プロボウリングチャレンジマッチ開催予定をボウリング場別に探せる一覧ページです。";
+---
+<BaseLayout title={title} description={description} canonicalPath="/venues/">
+  <section class="hero">
+    <h1>会場別に探す</h1>
+    <p class="lead">よく行くボウリング場のプロチャレンジ開催予定を確認できます。</p>
+  </section>
+  <ul class="taxonomy">
+    {siteFacets.venues.map((venue) => (
+      <li><a href={`/venues/${pageSlug(venue)}/`}>{venue}</a></li>
+    ))}
+  </ul>
+</BaseLayout>

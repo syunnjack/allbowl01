@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { pageSlug, siteFacets } from "../../lib/events";
+
+const title = "都道府県別 プロボウリングチャレンジマッチ";
+const description = "プロボウリングチャレンジマッチ開催予定を都道府県別に探せる一覧ページです。";
+---
+<BaseLayout title={title} description={description} canonicalPath="/prefectures/">
+  <section class="hero">
+    <h1>都道府県別に探す</h1>
+    <p class="lead">参加しやすい地域のプロチャレンジ開催予定を確認できます。</p>
+  </section>
+  <ul class="taxonomy">
+    {siteFacets.prefectures.map((prefecture) => (
+      <li><a href={`/prefectures/${pageSlug(prefecture)}/`}>{prefecture}</a></li>
+    ))}
+  </ul>
+</BaseLayout>

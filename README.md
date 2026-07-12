@@ -40,13 +40,42 @@ SEO / AIO / LLMO を本格的に強化する場合は、データ収集と公開
 3. Next.js、Astro、または SvelteKit で静的ページを生成する
 4. GitHub Pages、Cloudflare Pages、Vercel などで公開する
 
-生成したいページ例:
+このリポジトリでは `web/` に Astro の静的サイトを追加しています。生成対象ページは次の通りです。
 
 - `/events/`
 - `/prefectures/aichi/`
 - `/venues/inazawa-grandbowl/`
 - `/pros/example-pro/`
-- `/chains/grandbowl/`
+
+現在の実装では、都道府県、会場、出演プロ別のクロール可能なHTMLページを生成します。
+
+## Web公開データの書き出し
+
+WinFormsアプリでデータを取得した後、SQLiteからAstro用JSONを書き出します。
+
+```powershell
+dotnet run --project allbowl01 -- --export-web web/src/data
+```
+
+出力ファイル:
+
+- `web/src/data/events.json`
+- `web/src/data/facets.json`
+
+## Astroサイトの開発
+
+```powershell
+cd web
+npm install
+npm run dev
+npm run build
+```
+
+`master` ブランチへ push すると、`.github/workflows/deploy-web.yml` により GitHub Pages 用の静的サイトをビルドできます。
+
+## 独自ドメインについて
+
+公開ドメインは `bowlingcalendar.jp` を想定しています。GitHub Pages で公開する場合は、Pages の Custom domain に `bowlingcalendar.jp` を設定し、お名前.com 側のDNSをGitHub Pagesへ向けてください。
 
 ## 注意
 

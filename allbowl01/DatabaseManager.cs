@@ -195,6 +195,47 @@ namespace allbowl01
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
 
+        public List<ProChallengeEvent> GetEvents(
+            string sortBy = "EventDate",
+            string sortDir = "ASC")
+        {
+            using var conn = OpenConnection();
+            using var cmd = conn.CreateCommand();
+
+            var allowed = new System.Collections.Generic.HashSet<string>
+                { "EventDate","StoreName","ChainName","Prefecture","ProNames" };
+            if (!allowed.Contains(sortBy)) sortBy = "EventDate";
+            if (sortDir != "DESC") sortDir = "ASC";
+
+            cmd.CommandText = $@"
+                SELECT Id, ChainName, StoreName, Prefecture, EventDate,
+                       ProNames, TimeSlot1, TimeSlot2, SourceUrl, ScrapedAt
+                FROM ProChallengeEvents
+                ORDER BY {sortBy} {sortDir}
+            ";
+
+            var events = new List<ProChallengeEvent>();
+            using var r = cmd.ExecuteReader();
+            while (r.Read())
+            {
+                events.Add(new ProChallengeEvent
+                {
+                    Id = r.GetInt32(0),
+                    ChainName = r.GetString(1),
+                    StoreName = r.GetString(2),
+                    Prefecture = r.GetString(3),
+                    EventDate = DateTime.Parse(r.GetString(4)),
+                    ProNames = r.GetString(5),
+                    TimeSlot1 = r.GetString(6),
+                    TimeSlot2 = r.GetString(7),
+                    SourceUrl = r.GetString(8),
+                    ScrapedAt = DateTime.Parse(r.GetString(9))
+                });
+            }
+
+            return events;
+        }
+
         private static string J(string s) =>
             "\"" + s.Replace("\\", "\\\\")
                     .Replace("\"", "\\\"")

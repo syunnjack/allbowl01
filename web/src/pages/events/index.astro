@@ -1,0 +1,15 @@
+---
+import EventList from "../../components/EventList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { allEvents } from "../../lib/events";
+
+const title = "プロボウリングチャレンジマッチ開催予定一覧";
+const description = "全国のプロボウリングチャレンジマッチ開催予定を日付順に一覧できるページです。";
+---
+<BaseLayout title={title} description={description} canonicalPath="/events/">
+  <section class="hero">
+    <h1>イベント一覧</h1>
+    <p class="lead">プロボウラー参加チャレンジマッチを日付順に掲載しています。</p>
+  </section>
+  <EventList events={allEvents} />
+</BaseLayout>

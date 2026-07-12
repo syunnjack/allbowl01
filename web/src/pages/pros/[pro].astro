@@ -1,0 +1,23 @@
+---
+import EventList from "../../components/EventList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { byPro, fromPageSlug, pageSlug, siteFacets } from "../../lib/events";
+
+export function getStaticPaths() {
+  return siteFacets.pros.map((pro) => ({
+    params: { pro: pageSlug(pro) }
+  }));
+}
+
+const pro = fromPageSlug(Astro.params.pro ?? "");
+const events = byPro(pro);
+const title = `${pro} 出演予定のプロボウリングチャレンジマッチ`;
+const description = `${pro}が出演予定のプロボウリングチャレンジマッチを、日付・会場・地域別に確認できます。`;
+---
+<BaseLayout title={title} description={description} canonicalPath={`/pros/${pageSlug(pro)}/`}>
+  <section class="hero">
+    <h1>{pro} 出演予定</h1>
+    <p class="lead">{pro}が参加予定のプロチャレンジイベントを掲載しています。</p>
+  </section>
+  <EventList events={events} />
+</BaseLayout>

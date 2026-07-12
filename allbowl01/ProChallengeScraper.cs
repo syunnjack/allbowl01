@@ -161,14 +161,19 @@ namespace allbowl01
         public async Task RunAsync()
         {
             NewCount = 0;
-            TotalCount = Stores.Count;
+            var targetStores = Stores
+                .Where(s => !string.IsNullOrWhiteSpace(s.Url))
+                .GroupBy(s => $"{s.Chain}|{s.StoreName}|{s.Url}")
+                .Select(g => g.First())
+                .ToList();
+
+            TotalCount = targetStores.Count;
             int i = 0;
             var scraped = DateTime.Now;
 
-            foreach (var store in Stores)
+            foreach (var store in targetStores)
             {
                 i++;
-                if (string.IsNullOrEmpty(store.Url)) continue;
                 Notify($"[{i}/{TotalCount}] {store.StoreName} を取得中...", i, TotalCount);
                 try
                 {
@@ -180,15 +185,7 @@ namespace allbowl01
                         "東名ボール" => await ScrapeTomei(store, scraped),
                         "スターレーン" => await ScrapeStarLane(store, scraped),
                         "六甲ボウル" => await ScrapeRokko(store, scraped),
-                        // 追加分：これらを書かないと、下の共通ロジックへ飛ばされます
-                        //"スポルト" => await ScrapeSport(store, scraped),
-                        //"アイキョーボウル" => await ScrapeAikyo(store, scraped),
-                        //"サンコーボウル" => await ScrapeSanko(store, scraped),
-                        //"パークレーン" => await ScrapeParkLane(store, scraped),
-                        //"ダイトー" => await ScrapeDaito(store, scraped),
-                        //"イーボール" => await ScrapeEbowl(store, scraped),
-                        //"アルゴボウル" => await ScrapeAlgo(store, scraped),
-                        _ => new List<ProChallengeEvent>()
+                        _ => await ScrapeGeneric(store, scraped)
                         
                     };
                     foreach (var ev in events)
@@ -205,6 +202,30 @@ namespace allbowl01
                 await Task.Delay(600);
             }
             Notify($"✅ 完了！新規 {NewCount} 件を登録", TotalCount, TotalCount);
+        }
+
+        private async Task<List<ProChallengeEvent>> ScrapeGeneric(
+            StoreInfo store, DateTime scraped)
+        {
+            var events = new List<ProChallengeEvent>();
+            if (IsPdfUrl(store.Url)) return events;
+
+            var html = await FetchHtml(store.Url);
+            events.AddRange(ParseGenericEventPage(html, store, store.Url, scraped));
+
+            foreach (var link in ExtractCandidateLinks(html, store.Url).Take(12))
+            {
+                try
+                {
+                    if (IsPdfUrl(link)) continue;
+                    var detail = await FetchHtml(link);
+                    events.AddRange(ParseGenericEventPage(detail, store, link, scraped));
+                    await Task.Delay(250);
+                }
+                catch { }
+            }
+
+            return Deduplicate(events);
         }
         private async Task<List<ProChallengeEvent>> ScrapeKorona(
             StoreInfo store, DateTime scraped)
@@ -660,6 +681,211 @@ namespace allbowl01
             var text = System.Net.WebUtility.HtmlDecode(doc.DocumentNode.InnerText);
             return ParseByRegex(text, store, scraped);
         }
+
+        private static List<ProChallengeEvent> ParseGenericEventPage(
+            string html, StoreInfo store, string sourceUrl, DateTime scraped)
+        {
+            var text = ToPlainText(html);
+            if (!text.Contains("プロ")) return new List<ProChallengeEvent>();
+            if (!Regex.IsMatch(text, @"(チャレンジ|プロチャレ|大会|トーナメント|投げよう|スケジュール|予定|リーグ|マッチ|イベント)"))
+                return new List<ProChallengeEvent>();
+
+            var events = new List<ProChallengeEvent>();
+            var dateMatches = Regex.Matches(text,
+                @"(?:(20\d{2})\s*[年/\.-]\s*)?(\d{1,2})\s*[月/\.-]\s*(\d{1,2})\s*(?:日)?");
+
+            for (var i = 0; i < dateMatches.Count; i++)
+            {
+                var match = dateMatches[i];
+                var start = Math.Max(0, match.Index - 120);
+                var end = i + 1 < dateMatches.Count
+                    ? Math.Min(text.Length, dateMatches[i + 1].Index + 120)
+                    : Math.Min(text.Length, match.Index + 700);
+                var segment = text.Substring(start, end - start);
+
+                if (!TryReadEventDate(match, out var eventDate)) continue;
+                if (eventDate < DateTime.Today || eventDate > DateTime.Today.AddYears(2)) continue;
+                if (!Regex.IsMatch(segment, @"(チャレンジ|プロチャレ|大会|投げよう|マッチ|イベント|リーグ)")) continue;
+
+                var pros = ExtractProNames(segment).Take(4).ToList();
+                if (pros.Count == 0) continue;
+
+                var times = Regex.Matches(segment, @"(?<!\d)(\d{1,2}:\d{2})(?!\d)")
+                    .Cast<Match>()
+                    .Select(m => m.Groups[1].Value)
+                    .Where(IsLikelyTime)
+                    .Distinct()
+                    .Take(2)
+                    .ToList();
+
+                events.Add(new ProChallengeEvent
+                {
+                    ChainName = store.Chain,
+                    StoreName = store.StoreName,
+                    Prefecture = store.Prefecture,
+                    EventDate = eventDate,
+                    ProNames = string.Join("、", pros),
+                    TimeSlot1 = times.Count > 0 ? times[0] : "",
+                    TimeSlot2 = times.Count > 1 ? times[1] : "",
+                    SourceUrl = sourceUrl,
+                    ScrapedAt = scraped
+                });
+            }
+
+            return Deduplicate(events);
+        }
+
+        private static IEnumerable<string> ExtractCandidateLinks(string html, string pageUrl)
+        {
+            var doc = new HtmlDocument();
+            doc.LoadHtml(html);
+            var baseUri = new Uri(pageUrl);
+            var host = baseUri.Host;
+
+            return doc.DocumentNode
+                .SelectNodes("//a[@href]")?
+                .Select(a =>
+                {
+                    var href = a.GetAttributeValue("href", "");
+                    var label = System.Net.WebUtility.HtmlDecode(a.InnerText ?? "");
+                    return new { href, label };
+                })
+                .Where(x => !string.IsNullOrWhiteSpace(x.href))
+                .Where(x => !x.href.StartsWith("mailto:", StringComparison.OrdinalIgnoreCase))
+                .Where(x => !x.href.StartsWith("tel:", StringComparison.OrdinalIgnoreCase))
+                .Select(x =>
+                {
+                    try
+                    {
+                        var uri = new Uri(baseUri, x.href);
+                        return new
+                        {
+                            Url = uri.ToString(),
+                            uri.Host,
+                            Text = System.Net.WebUtility.UrlDecode(x.href + " " + x.label)
+                        };
+                    }
+                    catch
+                    {
+                        return null;
+                    }
+                })
+                .Where(x => x != null && x.Host == host)
+                .Where(x => Regex.IsMatch(x!.Text,
+                    @"(challenge|pro|event|schedule|tournament|game|news|information|チャレンジ|プロ|大会|予定|スケジュール|イベント|トーナメント)",
+                    RegexOptions.IgnoreCase))
+                .Where(x => !Regex.IsMatch(x!.Url,
+                    @"\.(jpg|jpeg|png|gif|webp|svg|css|js|zip)(\?|$)",
+                    RegexOptions.IgnoreCase))
+                .Where(x => !Regex.IsMatch(x!.Url,
+                    @"(result|staff|profile|ranking|record)",
+                    RegexOptions.IgnoreCase))
+                .Select(x => x!.Url)
+                .Distinct()
+                .ToList() ?? Enumerable.Empty<string>();
+        }
+
+        private static string ToPlainText(string html)
+        {
+            var doc = new HtmlDocument();
+            doc.LoadHtml(html);
+            var text = System.Net.WebUtility.HtmlDecode(doc.DocumentNode.InnerText);
+            return NormalizeJapaneseText(text);
+        }
+
+        private static string NormalizeJapaneseText(string value)
+        {
+            var normalized = value
+                .Replace("０", "0").Replace("１", "1").Replace("２", "2")
+                .Replace("３", "3").Replace("４", "4").Replace("５", "5")
+                .Replace("６", "6").Replace("７", "7").Replace("８", "8")
+                .Replace("９", "9").Replace("　", " ")
+                .Replace("：", ":");
+            return Regex.Replace(normalized, @"\s+", " ");
+        }
+
+        private static bool TryReadEventDate(Match match, out DateTime eventDate)
+        {
+            var year = match.Groups[1].Success
+                ? int.Parse(match.Groups[1].Value)
+                : DateTime.Today.Year;
+            var month = int.Parse(match.Groups[2].Value);
+            var day = int.Parse(match.Groups[3].Value);
+
+            eventDate = DateTime.MinValue;
+            if (month < 1 || month > 12 || day < 1 || day > 31) return false;
+
+            try
+            {
+                eventDate = new DateTime(year, month, day);
+                if (!match.Groups[1].Success && eventDate < DateTime.Today)
+                    eventDate = eventDate.AddYears(1);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private static IEnumerable<string> ExtractProNames(string value) =>
+            Regex.Matches(value, @"[一-龯ぁ-んァ-ヶー々〆〇髙﨑]{2,16}\s*プロ")
+                .Cast<Match>()
+                .Select(m => Regex.Replace(m.Value, @"\s+", ""))
+                .Where(IsLikelyGenericProName)
+                .Distinct();
+
+        private static bool IsLikelyGenericProName(string value)
+        {
+            if (value.Length < 4 || value.Length > 20) return false;
+            if (value.Replace("プロ", "").Length < 3) return false;
+            if (value.Contains("専属プロ") || value.Contains("女子プロ") || value.Contains("男子プロ")) return false;
+            if (value.Contains("プロショップ") || value.Contains("プロチャレ")) return false;
+            if (value.Contains("スケジュール") || value.Contains("お知らせ")) return false;
+            if (value.Contains("チャレンジ") || value.Contains("チャリティー")) return false;
+            if (value.Contains("スタッフ") || value.Contains("所属") || value.Contains("出場")) return false;
+            if (value.Contains("選手") || value.Contains("優勝") || value.Contains("月度")) return false;
+            if (value.Contains("公益") || value.Contains("社団") || value.Contains("日本プロ")) return false;
+            if (value.Contains("地区") || value.Contains("期生") || value.Contains("競技会")) return false;
+            if (value.Contains("ゲーム") || value.Contains("オンライン") || value.Contains("卓球")) return false;
+            if (value.Contains("県出身") || value.Contains("戦績") || value.Contains("開催")) return false;
+            if (value.Contains("できる") || value.Contains("知りたく")) return false;
+            if (value.StartsWith("の") || value.StartsWith("と")) return false;
+            if (IsPrefectureLabel(value)) return false;
+            return true;
+        }
+
+        private static bool IsPrefectureLabel(string value)
+        {
+            var baseName = value.Replace("プロ", "");
+            string[] prefectures =
+            {
+                "北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島",
+                "茨城", "栃木", "群馬", "埼玉", "千葉", "東京", "神奈川",
+                "新潟", "富山", "石川", "福井", "山梨", "長野", "岐阜",
+                "静岡", "愛知", "三重", "滋賀", "京都", "大阪", "兵庫",
+                "奈良", "和歌山", "鳥取", "島根", "岡山", "広島", "山口",
+                "徳島", "香川", "愛媛", "高知", "福岡", "佐賀", "長崎",
+                "熊本", "大分", "宮崎", "鹿児島", "沖縄"
+            };
+            return prefectures.Contains(baseName);
+        }
+
+        private static bool IsLikelyTime(string value) =>
+            TimeSpan.TryParse(value, out var time)
+            && time.Hours >= 6
+            && time.Hours <= 23;
+
+        private static bool IsPdfUrl(string value) =>
+            value.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase)
+            || value.Contains(".pdf?", StringComparison.OrdinalIgnoreCase);
+
+        private static List<ProChallengeEvent> Deduplicate(IEnumerable<ProChallengeEvent> events) =>
+            events
+                .GroupBy(e => $"{e.StoreName}|{e.EventDate:yyyy-MM-dd}|{e.ProNames}|{e.TimeSlot1}|{e.SourceUrl}")
+                .Select(g => g.First())
+                .OrderBy(e => e.EventDate)
+                .ToList();
 
         private async Task<string> FetchHtml(string url)
         {

@@ -1,5 +1,6 @@
 import events from "../data/events.json";
 import facets from "../data/facets.json";
+import { allPrefectureNames, prefectureProfiles } from "../data/prefectureProfiles";
 
 export type EventItem = {
   id: number;
@@ -26,6 +27,20 @@ export const siteFacets = facets as {
   venues: string[];
   pros: string[];
 };
+
+export { allPrefectureNames, prefectureProfiles };
+
+export function prefectureProfile(name: string) {
+  return prefectureProfiles.find((profile) => profile.name === name);
+}
+
+export function eventCountByPrefecture(name: string) {
+  return byPrefecture(name).length;
+}
+
+export function venueCountByPrefecture(name: string) {
+  return unique(byPrefecture(name).map((event) => event.venue)).length;
+}
 
 export function byPrefecture(name: string) {
   return allEvents.filter((event) => event.prefecture === name);

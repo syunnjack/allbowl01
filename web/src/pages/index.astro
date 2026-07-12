@@ -1,7 +1,7 @@
 ---
 import EventList from "../components/EventList.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { allEvents, pageSlug, siteFacets } from "../lib/events";
+import { allEvents, allPrefectureNames, eventCountByPrefecture, pageSlug, siteFacets } from "../lib/events";
 
 const latestEvents = allEvents.slice(0, 12);
 const title = "全国プロボウリング チャレンジマッチ情報 2026";
@@ -44,7 +44,7 @@ const structuredData = {
 
   <section class="grid" aria-label="掲載データ概要">
     <div class="stat"><strong>{siteFacets.eventCount}</strong>掲載イベント</div>
-    <div class="stat"><strong>{siteFacets.prefectures.length}</strong>都道府県</div>
+    <div class="stat"><strong>{allPrefectureNames.length}</strong>都道府県</div>
     <div class="stat"><strong>{siteFacets.venues.length}</strong>会場</div>
     <div class="stat"><strong>{siteFacets.pros.length}</strong>プロ名</div>
   </section>
@@ -57,10 +57,11 @@ const structuredData = {
   <section>
     <h2>都道府県から探す</h2>
     <ul class="taxonomy">
-      {siteFacets.prefectures.map((prefecture) => (
+      {allPrefectureNames.map((prefecture) => (
         <li><a href={`/prefectures/${pageSlug(prefecture)}/`}>{prefecture}</a></li>
       ))}
     </ul>
+    <p class="meta">掲載中: {allPrefectureNames.filter((name) => eventCountByPrefecture(name) > 0).length}都道府県。未掲載エリアは公式情報の収集を順次強化しています。</p>
   </section>
 
   <section>

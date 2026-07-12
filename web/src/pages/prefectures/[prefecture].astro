@@ -1,23 +1,59 @@
 ---
 import EventList from "../../components/EventList.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { byPrefecture, fromPageSlug, pageSlug, siteFacets } from "../../lib/events";
+import {
+  allPrefectureNames,
+  byPrefecture,
+  fromPageSlug,
+  pageSlug,
+  prefectureProfile,
+  unique
+} from "../../lib/events";
 
 export function getStaticPaths() {
-  return siteFacets.prefectures.map((prefecture) => ({
+  return allPrefectureNames.map((prefecture) => ({
     params: { prefecture }
   }));
 }
 
 const prefecture = fromPageSlug(Astro.params.prefecture ?? "");
 const events = byPrefecture(prefecture);
+const profile = prefectureProfile(prefecture);
+const venues = unique(events.map((event) => event.venue));
+const pros = unique(events.flatMap((event) => event.pros));
+const focusVenues = profile?.focusVenues ?? [];
 const title = `${prefecture}のプロボウリングチャレンジマッチ開催予定`;
-const description = `${prefecture}で開催予定のプロボウリングチャレンジマッチを、日付・会場・出演プロ名で確認できます。`;
+const description = `${prefecture}のプロボウリングチャレンジマッチ開催予定を、会場・出演プロ名・日付で確認できます。掲載前の地域も主要候補会場を整理しています。`;
 ---
 <BaseLayout title={title} description={description} canonicalPath={`/prefectures/${pageSlug(prefecture)}/`}>
   <section class="hero">
     <h1>{prefecture}のプロチャレンジ予定</h1>
-    <p class="lead">{prefecture}のボウリング場で開催されるプロボウラー参加イベントを掲載しています。</p>
+    <p class="lead">
+      {events.length > 0
+        ? `${prefecture}で開催予定のプロボウラー参加イベントを掲載しています。`
+        : `${prefecture}は現在、公式情報の収集を強化しています。プロチャレンジ開催候補になりやすい会場を先に整理しています。`}
+    </p>
   </section>
-  <EventList events={events} />
+
+  <section class="grid" aria-label={`${prefecture}の掲載状況`}>
+    <div class="stat"><strong>{events.length}</strong>掲載イベント</div>
+    <div class="stat"><strong>{venues.length}</strong>掲載会場</div>
+    <div class="stat"><strong>{pros.length}</strong>出演プロ</div>
+  </section>
+
+  {focusVenues.length > 0 && (
+    <section>
+      <h2>重点チェック会場</h2>
+      <ul class="taxonomy">
+        {focusVenues.map((venue) => (
+          <li><span class="taxonomy-label">{venue}</span></li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <section>
+    <h2>{events.length > 0 ? "開催予定" : "掲載準備中"}</h2>
+    <EventList events={events} />
+  </section>
 </BaseLayout>

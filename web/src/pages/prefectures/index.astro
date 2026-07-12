@@ -1,18 +1,45 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { pageSlug, siteFacets } from "../../lib/events";
+import {
+  allPrefectureNames,
+  eventCountByPrefecture,
+  pageSlug,
+  prefectureProfiles,
+  venueCountByPrefecture
+} from "../../lib/events";
 
 const title = "都道府県別 プロボウリングチャレンジマッチ";
-const description = "プロボウリングチャレンジマッチ開催予定を都道府県別に探せる一覧ページです。";
+const description = "全国47都道府県のプロボウリングチャレンジマッチ開催予定を、地域別・都道府県別に探せる一覧ページです。";
+const regions = [...new Set(prefectureProfiles.map((profile) => profile.region))];
 ---
 <BaseLayout title={title} description={description} canonicalPath="/prefectures/">
   <section class="hero">
-    <h1>都道府県別に探す</h1>
-    <p class="lead">参加しやすい地域のプロチャレンジ開催予定を確認できます。</p>
+    <h1>47都道府県から探す</h1>
+    <p class="lead">プロチャレンジが盛んな会場を中心に、全国の開催予定と収集強化エリアを都道府県別に整理しています。</p>
   </section>
-  <ul class="taxonomy">
-    {siteFacets.prefectures.map((prefecture) => (
-      <li><a href={`/prefectures/${pageSlug(prefecture)}/`}>{prefecture}</a></li>
-    ))}
-  </ul>
+
+  <section class="grid" aria-label="都道府県掲載状況">
+    <div class="stat"><strong>{allPrefectureNames.length}</strong>都道府県</div>
+    <div class="stat"><strong>{allPrefectureNames.filter((name) => eventCountByPrefecture(name) > 0).length}</strong>掲載中の都道府県</div>
+    <div class="stat"><strong>{allPrefectureNames.filter((name) => eventCountByPrefecture(name) === 0).length}</strong>収集強化中</div>
+  </section>
+
+  {regions.map((region) => (
+    <section>
+      <h2>{region}</h2>
+      <div class="prefecture-grid">
+        {prefectureProfiles.filter((profile) => profile.region === region).map((profile) => {
+          const eventCount = eventCountByPrefecture(profile.name);
+          const venueCount = venueCountByPrefecture(profile.name);
+          return (
+            <a class={`prefecture-card ${eventCount > 0 ? "is-active" : ""}`} href={`/prefectures/${pageSlug(profile.name)}/`}>
+              <span class="prefecture-name">{profile.name}</span>
+              <span class="meta">{eventCount > 0 ? `${eventCount}件 / ${venueCount}会場` : "収集強化中"}</span>
+              <span class="meta">{profile.focusVenues.slice(0, 2).join("、")}</span>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  ))}
 </BaseLayout>

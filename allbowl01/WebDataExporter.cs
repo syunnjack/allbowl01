@@ -82,15 +82,36 @@ namespace allbowl01
                 .ToArray());
         }
 
-        private static string NormalizeProName(string value) =>
-            value.Replace("　", " ").Trim();
+        private static string NormalizeProName(string value)
+        {
+            var normalized = value.Replace("　", " ").Trim();
+            string[] prefixes =
+            {
+                "カップ", "ちらから", "らから", "より", "には", "海の日企画", "月の"
+            };
+
+            foreach (var prefix in prefixes)
+            {
+                if (normalized.StartsWith(prefix))
+                    normalized = normalized[prefix.Length..];
+            }
+
+            if ((normalized.StartsWith("日") || normalized.StartsWith("年"))
+                && normalized.Replace("プロ", "").Length > 3)
+            {
+                normalized = normalized[1..];
+            }
+
+            return normalized.Trim();
+        }
 
         private static bool IsLikelyProName(string value)
         {
             if (string.IsNullOrWhiteSpace(value)) return false;
             if (!value.Contains("プロ")) return false;
             if (value.Length < 4 || value.Length > 28) return false;
-            if (value.Replace("プロ", "").Length < 3) return false;
+            var baseName = value.Replace("プロ", "");
+            if (baseName.Length < 3 || baseName.Length > 10) return false;
             if (value.Contains("紹介") || value.Contains("料金") || value.Contains("施設")) return false;
             if (value.Contains("PLAN") || value.Contains("PRICE") || value.Contains("NEWS")) return false;
             if (value.Contains("スケジュール") || value.Contains("お知らせ")) return false;
@@ -102,6 +123,7 @@ namespace allbowl01
             if (value.Contains("ゲーム") || value.Contains("オンライン") || value.Contains("卓球")) return false;
             if (value.Contains("県出身") || value.Contains("戦績") || value.Contains("開催")) return false;
             if (value.Contains("できる") || value.Contains("知りたく")) return false;
+            if (Regex.IsMatch(value, @"(詳しく|こちら|見る|その他|コンペ|案内|団体|大会|イベント|シフト|表彰|トータル|ピン|限定|抽選|希望|必ず|内容|進呈|投目|カウント|センター|毎週|令和|最初|新人|専属|杯)")) return false;
             if (value.StartsWith("の") || value.StartsWith("と")) return false;
             if (IsPrefectureLabel(value)) return false;
             if (value == "専属プロ") return false;

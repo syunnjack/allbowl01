@@ -185,6 +185,7 @@ namespace allbowl01
                         "東名ボール" => await ScrapeTomei(store, scraped),
                         "スターレーン" => await ScrapeStarLane(store, scraped),
                         "六甲ボウル" => await ScrapeRokko(store, scraped),
+                        "ラウンドワン" => await ScrapeRoundOne(store, scraped),
                         _ => await ScrapeGeneric(store, scraped)
                         
                     };
@@ -271,24 +272,24 @@ namespace allbowl01
         {
             var doc = new HtmlDocument();
             doc.LoadHtml(html);
-            var text = System.Net.WebUtility.HtmlDecode(doc.DocumentNode.InnerText);
+            var text = NormalizeJapaneseText(System.Net.WebUtility.HtmlDecode(doc.DocumentNode.InnerText));
 
             if (!Regex.IsMatch(text,
-                @"プロ.{0,12}(チャレンジ|Birthday|誕生|バースデー|対決)"))
+                @"(プロ.{0,20}(チャレンジ|Birthday|誕生|バースデー|対決)|チャレンジ.{0,20}プロ)"))
                 return null;
 
             var dm = Regex.Match(text,
-                @"(\d{4})\s*[年/]\s*(\d{1,2})\s*[月/]\s*(\d{1,2})");
-            if (!dm.Success) return null;
-            if (!DateTime.TryParse(
-                $"{dm.Groups[1].Value}-{dm.Groups[2].Value.Trim()}-{dm.Groups[3].Value.Trim()}",
-                out var dt)) return null;
+                @"(?:(20\d{2})\s*[年/]\s*)?(\d{1,2})\s*[月/]\s*(\d{1,2})\s*(?:日)?");
+            if (!dm.Success || !TryReadEventDate(dm, out var dt)) return null;
             if (dt < DateTime.Today || dt > DateTime.Today.AddYears(2)) return null;
 
-            var pro = Regex.Match(text,
-                @"([\p{L}\p{Lo}　・＆& \-]+プロ(?:[＆&\s]+[\p{L}\p{Lo}　・ \-]+プロ)?)")
-                .Value.Trim();
-            if (string.IsNullOrEmpty(pro)) return null;
+            var title = NormalizeJapaneseText(System.Net.WebUtility.HtmlDecode(
+                doc.DocumentNode.SelectSingleNode("//h1")?.InnerText ?? ""));
+            var start = Math.Max(0, dm.Index - 120);
+            var length = Math.Min(text.Length - start, 900);
+            var focusedText = $"{title} {text.Substring(start, length)}";
+            var pros = ExtractProNames(focusedText).Take(4).ToList();
+            if (pros.Count == 0) return null;
 
             var times = Regex.Matches(text, @"(\d{1,2}:\d{2})(?:スタート|開始|～)?")
                 .Cast<Match>().Select(m => m.Groups[1].Value)
@@ -300,12 +301,59 @@ namespace allbowl01
                 StoreName = store.StoreName,
                 Prefecture = store.Prefecture,
                 EventDate = dt,
-                ProNames = pro,
+                ProNames = string.Join("、", pros),
                 TimeSlot1 = times.Count > 0 ? times[0] : "",
                 TimeSlot2 = times.Count > 1 ? times[1] : "",
                 SourceUrl = url,
                 ScrapedAt = scraped
             };
+        }
+
+        private async Task<List<ProChallengeEvent>> ScrapeRoundOne(
+            StoreInfo store, DateTime scraped)
+        {
+            var html = await FetchHtml(store.Url);
+            var text = ToPlainText(html);
+            var events = new List<ProChallengeEvent>();
+            var rx = new Regex(
+                @"(?<pro>[一-龯ぁ-んァ-ヶー々〆〇髙﨑 ]{2,18}プロ)\s*[:：]\s*" +
+                @"(?:(?<year>20\d{2})年)?(?<month>\d{1,2})月(?<day>\d{1,2})日" +
+                @"[\s\S]{0,140}?開催時間\s*(?<times>(?:\d{1,2}:\d{2}\s*/?\s*){1,4})" +
+                @"[\s\S]{0,100}?配信店舗\s*(?<venue>[^\s。]+?店)");
+
+            foreach (Match match in rx.Matches(text))
+            {
+                if (!TryReadRoundOneDate(match, out var eventDate)) continue;
+                if (eventDate < DateTime.Today || eventDate > DateTime.Today.AddYears(2)) continue;
+
+                var venue = NormalizeRoundOneVenue(match.Groups["venue"].Value);
+                var prefecture = RoundOnePrefecture(venue);
+                var pro = Regex.Replace(match.Groups["pro"].Value, @"\s+", "");
+                if (!IsLikelyGenericProName(pro)) continue;
+
+                var times = Regex.Matches(match.Groups["times"].Value, @"\d{1,2}:\d{2}")
+                    .Cast<Match>()
+                    .Select(m => m.Value)
+                    .Where(IsLikelyTime)
+                    .Distinct()
+                    .Take(2)
+                    .ToList();
+
+                events.Add(new ProChallengeEvent
+                {
+                    ChainName = store.Chain,
+                    StoreName = string.IsNullOrWhiteSpace(venue) ? store.StoreName : venue,
+                    Prefecture = prefecture,
+                    EventDate = eventDate,
+                    ProNames = pro,
+                    TimeSlot1 = times.Count > 0 ? times[0] : "",
+                    TimeSlot2 = times.Count > 1 ? times[1] : "",
+                    SourceUrl = store.Url,
+                    ScrapedAt = scraped
+                });
+            }
+
+            return Deduplicate(events);
         }
 
         private async Task<List<ProChallengeEvent>> ScrapeNandK(
@@ -828,17 +876,69 @@ namespace allbowl01
             }
         }
 
-        private static IEnumerable<string> ExtractProNames(string value) =>
-            Regex.Matches(value, @"[一-龯ぁ-んァ-ヶー々〆〇髙﨑]{2,16}\s*プロ")
+        private static bool TryReadRoundOneDate(Match match, out DateTime eventDate)
+        {
+            var year = match.Groups["year"].Success
+                ? int.Parse(match.Groups["year"].Value)
+                : DateTime.Today.Year;
+            var month = int.Parse(match.Groups["month"].Value);
+            var day = int.Parse(match.Groups["day"].Value);
+
+            eventDate = DateTime.MinValue;
+            try
+            {
+                eventDate = new DateTime(year, month, day);
+                if (!match.Groups["year"].Success && eventDate < DateTime.Today)
+                    eventDate = eventDate.AddYears(1);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private static IEnumerable<string> ExtractProNames(string value)
+        {
+            var compact = Regex.Replace(
+                value,
+                @"(?<=[一-龯ぁ-んァ-ヶー々〆〇髙﨑])\s+(?=[一-龯ぁ-んァ-ヶー々〆〇髙﨑])",
+                "");
+
+            return Regex.Matches(compact, @"[一-龯ぁ-んァ-ヶー々〆〇髙﨑]{2,16}\s*プロ")
                 .Cast<Match>()
-                .Select(m => Regex.Replace(m.Value, @"\s+", ""))
+                .Select(m => NormalizeProCandidate(Regex.Replace(m.Value, @"\s+", "")))
                 .Where(IsLikelyGenericProName)
                 .Distinct();
+        }
+
+        private static string NormalizeProCandidate(string value)
+        {
+            string[] prefixes =
+            {
+                "カップ", "ちらから", "らから", "より", "には", "海の日企画", "月の"
+            };
+
+            foreach (var prefix in prefixes)
+            {
+                if (value.StartsWith(prefix))
+                    value = value[prefix.Length..];
+            }
+
+            if ((value.StartsWith("日") || value.StartsWith("年"))
+                && value.Replace("プロ", "").Length > 3)
+            {
+                value = value[1..];
+            }
+
+            return value;
+        }
 
         private static bool IsLikelyGenericProName(string value)
         {
+            var baseName = value.Replace("プロ", "");
             if (value.Length < 4 || value.Length > 20) return false;
-            if (value.Replace("プロ", "").Length < 3) return false;
+            if (baseName.Length < 3 || baseName.Length > 10) return false;
             if (value.Contains("専属プロ") || value.Contains("女子プロ") || value.Contains("男子プロ")) return false;
             if (value.Contains("プロショップ") || value.Contains("プロチャレ")) return false;
             if (value.Contains("スケジュール") || value.Contains("お知らせ")) return false;
@@ -850,6 +950,7 @@ namespace allbowl01
             if (value.Contains("ゲーム") || value.Contains("オンライン") || value.Contains("卓球")) return false;
             if (value.Contains("県出身") || value.Contains("戦績") || value.Contains("開催")) return false;
             if (value.Contains("できる") || value.Contains("知りたく")) return false;
+            if (Regex.IsMatch(value, @"(詳しく|こちら|見る|その他|コンペ|案内|団体|大会|イベント|シフト|表彰|トータル|ピン|限定|抽選|希望|必ず|内容|進呈|投目|カウント|センター|毎週|令和|最初|新人|専属|杯)")) return false;
             if (value.StartsWith("の") || value.StartsWith("と")) return false;
             if (IsPrefectureLabel(value)) return false;
             return true;
@@ -870,6 +971,23 @@ namespace allbowl01
             };
             return prefectures.Contains(baseName);
         }
+
+        private static string NormalizeRoundOneVenue(string value) =>
+            value.Trim()
+                .Replace("博多・半道橋店", "博多・半道橋店")
+                .Replace("中川1号線店", "中川1号線店");
+
+        private static string RoundOnePrefecture(string venue) =>
+            venue switch
+            {
+                "吉祥寺店" => "東京",
+                "南砂店" => "東京",
+                "府中本町駅前店" => "東京",
+                "堺中央環状店" => "大阪",
+                "博多・半道橋店" => "福岡",
+                "中川1号線店" => "愛知",
+                _ => ""
+            };
 
         private static bool IsLikelyTime(string value) =>
             TimeSpan.TryParse(value, out var time)

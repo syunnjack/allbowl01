@@ -56,7 +56,7 @@ export function fromPageSlug(value: string) {
 }
 
 export function eventSlug(event: EventItem) {
-  return `${event.id}-${pageSlug(`${event.date}-${event.venue}`)}`;
+  return `${event.id}-${event.date}-${event.venue}`;
 }
 
 export function findEventBySlug(slug: string) {

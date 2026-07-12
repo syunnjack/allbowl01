@@ -30,6 +30,29 @@ namespace allbowl01
                 return false;
             }
 
+            if (args[0] == "--scrape")
+            {
+                var db = new DatabaseManager(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "prochallenge.db"));
+                using var scraper = new ProChallengeScraper(db);
+                scraper.OnProgress += progress => Console.WriteLine(progress.Message);
+                scraper.RunAsync().GetAwaiter().GetResult();
+                return true;
+            }
+
+            if (args[0] == "--scrape-export")
+            {
+                var outputDir = args.Length > 1
+                    ? args[1]
+                    : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "..", "web", "src", "data");
+                var db = new DatabaseManager(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "prochallenge.db"));
+                using var scraper = new ProChallengeScraper(db);
+                scraper.OnProgress += progress => Console.WriteLine(progress.Message);
+                scraper.RunAsync().GetAwaiter().GetResult();
+                WebDataExporter.Export(db, outputDir);
+                Console.WriteLine($"Web data exported to: {Path.GetFullPath(outputDir)}");
+                return true;
+            }
+
             if (args[0] == "--export-web")
             {
                 var outputDir = args.Length > 1

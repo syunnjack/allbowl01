@@ -1,1 +1,1024 @@
-[]
+[
+  {
+    "id": 24,
+    "date": "2026-07-12",
+    "chain": "コロナ",
+    "venue": "豊川店",
+    "prefecture": "愛知",
+    "pros": [
+      "久保田彩花プロ"
+    ],
+    "proText": "久保田彩花プロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/tok/434",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 25,
+    "date": "2026-07-12",
+    "chain": "コロナ",
+    "venue": "半田店",
+    "prefecture": "愛知",
+    "pros": [
+      "室伏萌プロ"
+    ],
+    "proText": "室伏萌プロ",
+    "timeSlots": [
+      "13:00",
+      "17:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 41,
+    "date": "2026-07-15",
+    "chain": "グランドボウル",
+    "venue": "稲沢グランドボウル",
+    "prefecture": "愛知",
+    "pros": [],
+    "proText": "",
+    "timeSlots": [],
+    "sourceUrl": "https://www.grandbowl.jp/inazawa/news/35541/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 1,
+    "date": "2026-07-17",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "緒方美空プロ",
+      "緒方彩音プロ"
+    ],
+    "proText": "緒方美空プロ、緒方彩音プロ",
+    "timeSlots": [
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 2,
+    "date": "2026-07-19",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "太琳華プロ"
+    ],
+    "proText": "太琳華プロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 14,
+    "date": "2026-07-19",
+    "chain": "コロナ",
+    "venue": "中川店",
+    "prefecture": "愛知",
+    "pros": [
+      "小林哲也プロ",
+      "小林よしみプロ"
+    ],
+    "proText": "小林哲也プロ、小林よしみプロ",
+    "timeSlots": [
+      "17:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/nak/286",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 32,
+    "date": "2026-07-19",
+    "chain": "コロナ",
+    "venue": "大垣店",
+    "prefecture": "岐阜",
+    "pros": [
+      "緒方美空プロ",
+      "緒方彩音プロ"
+    ],
+    "proText": "緒方美空プロ、緒方彩音プロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/challenge/ogk/512",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 33,
+    "date": "2026-07-19",
+    "chain": "コロナ",
+    "venue": "大垣店",
+    "prefecture": "岐阜",
+    "pros": [
+      "太琳華プロ"
+    ],
+    "proText": "太琳華プロ",
+    "timeSlots": [
+      "17:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/challenge/ogk/512",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 47,
+    "date": "2026-07-19",
+    "chain": "グランドボウル",
+    "venue": "川崎グランドボウル",
+    "prefecture": "神奈川",
+    "pros": [
+      "三浦美里プロ"
+    ],
+    "proText": "三浦美里プロ",
+    "timeSlots": [
+      "14:00",
+      "19:00"
+    ],
+    "sourceUrl": "https://www.grandbowl.jp/kawasaki/news/20361/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 53,
+    "date": "2026-07-19",
+    "chain": "N&K",
+    "venue": "柿田川パークレーンズ",
+    "prefecture": "静岡",
+    "pros": [],
+    "proText": "",
+    "timeSlots": [],
+    "sourceUrl": "https://nandk.net/challenge-match/403685/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 58,
+    "date": "2026-07-19",
+    "chain": "N&K",
+    "venue": "ヤングファラオ",
+    "prefecture": "長野",
+    "pros": [],
+    "proText": "",
+    "timeSlots": [],
+    "sourceUrl": "https://nandk.net/challenge-match/403685/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 63,
+    "date": "2026-07-19",
+    "chain": "N&K",
+    "venue": "弘前ファミリーボウル",
+    "prefecture": "青森",
+    "pros": [],
+    "proText": "",
+    "timeSlots": [],
+    "sourceUrl": "https://nandk.net/challenge-match/403685/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 37,
+    "date": "2026-07-20",
+    "chain": "グランドボウル",
+    "venue": "稲沢グランドボウル",
+    "prefecture": "愛知",
+    "pros": [],
+    "proText": "",
+    "timeSlots": [
+      "14:00",
+      "19:00"
+    ],
+    "sourceUrl": "https://www.grandbowl.jp/inazawa/news/30123/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 42,
+    "date": "2026-07-20",
+    "chain": "グランドボウル",
+    "venue": "稲沢グランドボウル",
+    "prefecture": "愛知",
+    "pros": [
+      "横山実美プロ"
+    ],
+    "proText": "横山実美プロ",
+    "timeSlots": [],
+    "sourceUrl": "https://www.grandbowl.jp/inazawa/news/35392/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 48,
+    "date": "2026-07-20",
+    "chain": "グランドボウル",
+    "venue": "川崎グランドボウル",
+    "prefecture": "神奈川",
+    "pros": [
+      "小沼姫プロ"
+    ],
+    "proText": "小沼姫プロ",
+    "timeSlots": [
+      "13:00"
+    ],
+    "sourceUrl": "https://www.grandbowl.jp/kawasaki/news/20533/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 3,
+    "date": "2026-07-24",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "安里秀策プロ"
+    ],
+    "proText": "安里秀策プロ",
+    "timeSlots": [
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 15,
+    "date": "2026-07-25",
+    "chain": "コロナ",
+    "venue": "中川店",
+    "prefecture": "愛知",
+    "pros": [
+      "安里秀策プロ"
+    ],
+    "proText": "安里秀策プロ",
+    "timeSlots": [
+      "13:00",
+      "17:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/nak/286",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 51,
+    "date": "2026-07-25",
+    "chain": "N&K",
+    "venue": "柿田川パークレーンズ",
+    "prefecture": "静岡",
+    "pros": [
+      "平尾勉プロ"
+    ],
+    "proText": "平尾勉プロ",
+    "timeSlots": [],
+    "sourceUrl": "https://nandk.net/challenge-match/417882/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 56,
+    "date": "2026-07-25",
+    "chain": "N&K",
+    "venue": "ヤングファラオ",
+    "prefecture": "長野",
+    "pros": [
+      "平尾勉プロ"
+    ],
+    "proText": "平尾勉プロ",
+    "timeSlots": [],
+    "sourceUrl": "https://nandk.net/challenge-match/417882/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 61,
+    "date": "2026-07-25",
+    "chain": "N&K",
+    "venue": "弘前ファミリーボウル",
+    "prefecture": "青森",
+    "pros": [
+      "平尾勉プロ"
+    ],
+    "proText": "平尾勉プロ",
+    "timeSlots": [],
+    "sourceUrl": "https://nandk.net/challenge-match/417882/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 21,
+    "date": "2026-07-26",
+    "chain": "コロナ",
+    "venue": "安城店",
+    "prefecture": "愛知",
+    "pros": [
+      "永野すばるプロ"
+    ],
+    "proText": "永野すばるプロ",
+    "timeSlots": [
+      "17:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/anj/346",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 50,
+    "date": "2026-07-26",
+    "chain": "N&K",
+    "venue": "柿田川パークレーンズ",
+    "prefecture": "静岡",
+    "pros": [
+      "鶴井亜南プロ"
+    ],
+    "proText": "鶴井亜南プロ",
+    "timeSlots": [
+      "14:00",
+      "18:30"
+    ],
+    "sourceUrl": "https://nandk.net/challenge-match/418849/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 55,
+    "date": "2026-07-26",
+    "chain": "N&K",
+    "venue": "ヤングファラオ",
+    "prefecture": "長野",
+    "pros": [
+      "鶴井亜南プロ"
+    ],
+    "proText": "鶴井亜南プロ",
+    "timeSlots": [
+      "14:00",
+      "18:30"
+    ],
+    "sourceUrl": "https://nandk.net/challenge-match/418849/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 60,
+    "date": "2026-07-26",
+    "chain": "N&K",
+    "venue": "弘前ファミリーボウル",
+    "prefecture": "青森",
+    "pros": [
+      "鶴井亜南プロ"
+    ],
+    "proText": "鶴井亜南プロ",
+    "timeSlots": [
+      "14:00",
+      "18:30"
+    ],
+    "sourceUrl": "https://nandk.net/challenge-match/418849/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 26,
+    "date": "2026-07-27",
+    "chain": "コロナ",
+    "venue": "半田店",
+    "prefecture": "愛知",
+    "pros": [
+      "緒方美空プロ",
+      "緒方彩音プロ"
+    ],
+    "proText": "緒方美空プロ、緒方彩音プロ",
+    "timeSlots": [
+      "19:30"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 34,
+    "date": "2026-07-30",
+    "chain": "コロナ",
+    "venue": "大垣店",
+    "prefecture": "岐阜",
+    "pros": [
+      "安里秀策プロ"
+    ],
+    "proText": "安里秀策プロ",
+    "timeSlots": [
+      "18:30",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/challenge/ogk/512",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 4,
+    "date": "2026-08-01",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "安里秀策プロ"
+    ],
+    "proText": "安里秀策プロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 16,
+    "date": "2026-08-01",
+    "chain": "コロナ",
+    "venue": "中川店",
+    "prefecture": "愛知",
+    "pros": [
+      "藤村隆史プロ"
+    ],
+    "proText": "藤村隆史プロ",
+    "timeSlots": [
+      "16:00",
+      "19:30"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/nak/286",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 35,
+    "date": "2026-08-01",
+    "chain": "コロナ",
+    "venue": "大垣店",
+    "prefecture": "岐阜",
+    "pros": [
+      "石田万音プロ"
+    ],
+    "proText": "石田万音プロ",
+    "timeSlots": [
+      "17:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/challenge/ogk/512",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 27,
+    "date": "2026-08-02",
+    "chain": "コロナ",
+    "venue": "半田店",
+    "prefecture": "愛知",
+    "pros": [
+      "藤村隆史プロ"
+    ],
+    "proText": "藤村隆史プロ",
+    "timeSlots": [
+      "13:00",
+      "17:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 40,
+    "date": "2026-08-05",
+    "chain": "グランドボウル",
+    "venue": "稲沢グランドボウル",
+    "prefecture": "愛知",
+    "pros": [],
+    "proText": "",
+    "timeSlots": [],
+    "sourceUrl": "https://www.grandbowl.jp/inazawa/news/35755/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 5,
+    "date": "2026-08-15",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "名和秋プロ"
+    ],
+    "proText": "名和秋プロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 28,
+    "date": "2026-08-16",
+    "chain": "コロナ",
+    "venue": "半田店",
+    "prefecture": "愛知",
+    "pros": [
+      "安藤瞳プロ"
+    ],
+    "proText": "安藤瞳プロ",
+    "timeSlots": [
+      "13:00",
+      "17:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 49,
+    "date": "2026-08-16",
+    "chain": "グランドボウル",
+    "venue": "津グランドボウル",
+    "prefecture": "三重",
+    "pros": [],
+    "proText": "",
+    "timeSlots": [],
+    "sourceUrl": "https://www.grandbowl.jp/tsu/news/11301/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 6,
+    "date": "2026-08-22",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "越智真南プロ"
+    ],
+    "proText": "越智真南プロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 36,
+    "date": "2026-08-22",
+    "chain": "コロナ",
+    "venue": "大垣店",
+    "prefecture": "岐阜",
+    "pros": [
+      "小林哲也プロ"
+    ],
+    "proText": "小林哲也プロ",
+    "timeSlots": [
+      "17:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/challenge/ogk/512",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 22,
+    "date": "2026-08-23",
+    "chain": "コロナ",
+    "venue": "安城店",
+    "prefecture": "愛知",
+    "pros": [
+      "小林哲也プロ"
+    ],
+    "proText": "小林哲也プロ",
+    "timeSlots": [
+      "17:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/anj/346",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 39,
+    "date": "2026-08-23",
+    "chain": "グランドボウル",
+    "venue": "稲沢グランドボウル",
+    "prefecture": "愛知",
+    "pros": [
+      "松永裕美プロ"
+    ],
+    "proText": "松永裕美プロ",
+    "timeSlots": [],
+    "sourceUrl": "https://www.grandbowl.jp/inazawa/news/35779/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 29,
+    "date": "2026-08-30",
+    "chain": "コロナ",
+    "venue": "半田店",
+    "prefecture": "愛知",
+    "pros": [
+      "新舎菜々美プロ"
+    ],
+    "proText": "新舎菜々美プロ",
+    "timeSlots": [
+      "13:00",
+      "17:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 43,
+    "date": "2026-08-30",
+    "chain": "グランドボウル",
+    "venue": "稲沢グランドボウル",
+    "prefecture": "愛知",
+    "pros": [
+      "髙本聖菜プロ"
+    ],
+    "proText": "髙本聖菜プロ",
+    "timeSlots": [],
+    "sourceUrl": "https://www.grandbowl.jp/inazawa/news/35287/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 7,
+    "date": "2026-09-05",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "正田晃也プロ"
+    ],
+    "proText": "正田晃也プロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 30,
+    "date": "2026-09-06",
+    "chain": "コロナ",
+    "venue": "半田店",
+    "prefecture": "愛知",
+    "pros": [
+      "澤田春花プロ"
+    ],
+    "proText": "澤田春花プロ",
+    "timeSlots": [
+      "13:00",
+      "17:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 8,
+    "date": "2026-09-12",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "尾上萌楓プロ"
+    ],
+    "proText": "尾上萌楓プロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 17,
+    "date": "2026-09-12",
+    "chain": "コロナ",
+    "venue": "中川店",
+    "prefecture": "愛知",
+    "pros": [
+      "金子萌夏プロ"
+    ],
+    "proText": "金子萌夏プロ",
+    "timeSlots": [
+      "16:00",
+      "19:30"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/nak/286",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 23,
+    "date": "2026-09-12",
+    "chain": "コロナ",
+    "venue": "安城店",
+    "prefecture": "愛知",
+    "pros": [
+      "名和秋プロ",
+      "安里秀策プロ"
+    ],
+    "proText": "名和秋プロ、安里秀策プロ",
+    "timeSlots": [
+      "10:00",
+      "13:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/anj/346",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 31,
+    "date": "2026-09-13",
+    "chain": "コロナ",
+    "venue": "半田店",
+    "prefecture": "愛知",
+    "pros": [
+      "金子萌夏プロ"
+    ],
+    "proText": "金子萌夏プロ",
+    "timeSlots": [
+      "13:00",
+      "17:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 52,
+    "date": "2026-09-13",
+    "chain": "N&K",
+    "venue": "柿田川パークレーンズ",
+    "prefecture": "静岡",
+    "pros": [],
+    "proText": "",
+    "timeSlots": [
+      "14:00",
+      "19:00"
+    ],
+    "sourceUrl": "https://nandk.net/challenge-match/417670/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 57,
+    "date": "2026-09-13",
+    "chain": "N&K",
+    "venue": "ヤングファラオ",
+    "prefecture": "長野",
+    "pros": [],
+    "proText": "",
+    "timeSlots": [
+      "14:00",
+      "19:00"
+    ],
+    "sourceUrl": "https://nandk.net/challenge-match/417670/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 62,
+    "date": "2026-09-13",
+    "chain": "N&K",
+    "venue": "弘前ファミリーボウル",
+    "prefecture": "青森",
+    "pros": [],
+    "proText": "",
+    "timeSlots": [
+      "14:00",
+      "19:00"
+    ],
+    "sourceUrl": "https://nandk.net/challenge-match/417670/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 46,
+    "date": "2026-09-22",
+    "chain": "グランドボウル",
+    "venue": "稲沢グランドボウル",
+    "prefecture": "愛知",
+    "pros": [
+      "大仲純怜プロ"
+    ],
+    "proText": "大仲純怜プロ",
+    "timeSlots": [],
+    "sourceUrl": "https://www.grandbowl.jp/inazawa/news/34717/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 18,
+    "date": "2026-09-26",
+    "chain": "コロナ",
+    "venue": "中川店",
+    "prefecture": "愛知",
+    "pros": [
+      "小林哲也プロ"
+    ],
+    "proText": "小林哲也プロ",
+    "timeSlots": [
+      "16:00",
+      "19:30"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/nak/286",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 9,
+    "date": "2026-10-10",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "藤村隆史プロ"
+    ],
+    "proText": "藤村隆史プロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 19,
+    "date": "2026-10-18",
+    "chain": "コロナ",
+    "venue": "中川店",
+    "prefecture": "愛知",
+    "pros": [
+      "名和秋プロ"
+    ],
+    "proText": "名和秋プロ",
+    "timeSlots": [
+      "16:00",
+      "19:30"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/nak/286",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 10,
+    "date": "2026-10-24",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "渡辺けあきプロ"
+    ],
+    "proText": "渡辺けあきプロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 20,
+    "date": "2026-10-24",
+    "chain": "コロナ",
+    "venue": "中川店",
+    "prefecture": "愛知",
+    "pros": [
+      "三浦美里プロ"
+    ],
+    "proText": "三浦美里プロ",
+    "timeSlots": [
+      "16:00",
+      "19:30"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/nak/286",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 11,
+    "date": "2026-11-07",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "三浦美里プロ"
+    ],
+    "proText": "三浦美里プロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 12,
+    "date": "2026-11-21",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "緒方美空プロ",
+      "緒方彩音プロ"
+    ],
+    "proText": "緒方美空プロ、緒方彩音プロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 45,
+    "date": "2026-11-23",
+    "chain": "グランドボウル",
+    "venue": "稲沢グランドボウル",
+    "prefecture": "愛知",
+    "pros": [
+      "室伏萌プロ"
+    ],
+    "proText": "室伏萌プロ",
+    "timeSlots": [],
+    "sourceUrl": "https://www.grandbowl.jp/inazawa/news/35280/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 13,
+    "date": "2026-12-13",
+    "chain": "コロナ",
+    "venue": "小牧店",
+    "prefecture": "愛知",
+    "pros": [
+      "田中椋也プロ",
+      "川口茉紀プロ"
+    ],
+    "proText": "田中椋也プロ、川口茉紀プロ",
+    "timeSlots": [
+      "16:00",
+      "20:00"
+    ],
+    "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 44,
+    "date": "2026-12-26",
+    "chain": "グランドボウル",
+    "venue": "稲沢グランドボウル",
+    "prefecture": "愛知",
+    "pros": [
+      "太琳華プロ"
+    ],
+    "proText": "太琳華プロ",
+    "timeSlots": [],
+    "sourceUrl": "https://www.grandbowl.jp/inazawa/news/35283/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 38,
+    "date": "2027-02-06",
+    "chain": "グランドボウル",
+    "venue": "稲沢グランドボウル",
+    "prefecture": "愛知",
+    "pros": [
+      "三浦美里プロ"
+    ],
+    "proText": "三浦美里プロ",
+    "timeSlots": [],
+    "sourceUrl": "https://www.grandbowl.jp/inazawa/news/29412/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 54,
+    "date": "2027-07-11",
+    "chain": "N&K",
+    "venue": "柿田川パークレーンズ",
+    "prefecture": "静岡",
+    "pros": [
+      "澤田春花プロ"
+    ],
+    "proText": "澤田春花プロ",
+    "timeSlots": [
+      "13:30",
+      "15:30"
+    ],
+    "sourceUrl": "https://nandk.net/challenge-match/414979/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 59,
+    "date": "2027-07-11",
+    "chain": "N&K",
+    "venue": "ヤングファラオ",
+    "prefecture": "長野",
+    "pros": [
+      "澤田春花プロ"
+    ],
+    "proText": "澤田春花プロ",
+    "timeSlots": [
+      "13:30",
+      "15:30"
+    ],
+    "sourceUrl": "https://nandk.net/challenge-match/414979/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  },
+  {
+    "id": 64,
+    "date": "2027-07-11",
+    "chain": "N&K",
+    "venue": "弘前ファミリーボウル",
+    "prefecture": "青森",
+    "pros": [
+      "澤田春花プロ"
+    ],
+    "proText": "澤田春花プロ",
+    "timeSlots": [
+      "13:30",
+      "15:30"
+    ],
+    "sourceUrl": "https://nandk.net/challenge-match/414979/",
+    "scrapedAt": "2026-07-12 20:25:41"
+  }
+]

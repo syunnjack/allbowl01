@@ -5,7 +5,7 @@ import { byChain, fromPageSlug, pageSlug, siteFacets } from "../../lib/events";
 
 export function getStaticPaths() {
   return siteFacets.chains.map((chain) => ({
-    params: { chain: pageSlug(chain) }
+    params: { chain }
   }));
 }
 

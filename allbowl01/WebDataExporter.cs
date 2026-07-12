@@ -1,5 +1,6 @@
 using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace allbowl01
 {
@@ -10,20 +11,24 @@ namespace allbowl01
             Directory.CreateDirectory(outputDir);
 
             var events = db.GetEvents()
-                .Select(ev => new
+                .Select(ev =>
+                {
+                    var pros = SplitPros(ev.ProNames);
+                    return new
                 {
                     id = ev.Id,
                     date = ev.EventDate.ToString("yyyy-MM-dd"),
                     chain = ev.ChainName,
                     venue = ev.StoreName,
                     prefecture = ev.Prefecture,
-                    pros = SplitPros(ev.ProNames),
-                    proText = ev.ProNames,
+                    pros,
+                    proText = pros.Length > 0 ? string.Join("、", pros) : "",
                     timeSlots = new[] { ev.TimeSlot1, ev.TimeSlot2 }
                         .Where(t => !string.IsNullOrWhiteSpace(t))
                         .ToArray(),
                     sourceUrl = ev.SourceUrl,
                     scrapedAt = ev.ScrapedAt.ToString("yyyy-MM-dd HH:mm:ss")
+                };
                 })
                 .ToArray();
 
@@ -52,13 +57,43 @@ namespace allbowl01
                 JsonSerializer.Serialize(facets, options));
         }
 
-        private static string[] SplitPros(string proNames) =>
-            proNames
-                .Split(new[] { '/', '／', ',', '、', ' ' }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(p => p.Trim())
-                .Where(NotBlank)
+        private static string[] SplitPros(string proNames)
+        {
+            var matches = Regex.Matches(
+                NormalizeProName(proNames).Replace(" ", ""),
+                @"[一-龯ぁ-んァ-ヶー々〆〇髙﨑]+?プロ");
+
+            if (matches.Count > 0)
+            {
+                return matches
+                    .Select(m => NormalizeProName(m.Value))
+                    .Where(IsLikelyProName)
+                    .Distinct()
+                    .ToArray();
+            }
+
+            return proNames
+                .Split(new[] { '/', '／', ',', '、', '&', '＆' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(NormalizeProName)
+                .Where(IsLikelyProName)
                 .Distinct()
                 .ToArray();
+        }
+
+        private static string NormalizeProName(string value) =>
+            value.Replace("　", " ").Trim();
+
+        private static bool IsLikelyProName(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value)) return false;
+            if (!value.Contains("プロ")) return false;
+            if (value.Length < 4 || value.Length > 28) return false;
+            if (value.Contains("紹介") || value.Contains("料金") || value.Contains("施設")) return false;
+            if (value.Contains("PLAN") || value.Contains("PRICE") || value.Contains("NEWS")) return false;
+            if (value == "専属プロ") return false;
+            if (value == "年プロ" || value.Contains("スペシャルプロ")) return false;
+            return true;
+        }
 
         private static bool NotBlank(string value) => !string.IsNullOrWhiteSpace(value);
     }

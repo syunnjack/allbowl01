@@ -5,7 +5,7 @@ import { byPrefecture, fromPageSlug, pageSlug, siteFacets } from "../../lib/even
 
 export function getStaticPaths() {
   return siteFacets.prefectures.map((prefecture) => ({
-    params: { prefecture: pageSlug(prefecture) }
+    params: { prefecture }
   }));
 }
 

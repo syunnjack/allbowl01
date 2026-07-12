@@ -5,7 +5,7 @@ import { byVenue, fromPageSlug, pageSlug, siteFacets } from "../../lib/events";
 
 export function getStaticPaths() {
   return siteFacets.venues.map((venue) => ({
-    params: { venue: pageSlug(venue) }
+    params: { venue }
   }));
 }
 

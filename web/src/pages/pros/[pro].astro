@@ -5,7 +5,7 @@ import { byPro, fromPageSlug, pageSlug, siteFacets } from "../../lib/events";
 
 export function getStaticPaths() {
   return siteFacets.pros.map((pro) => ({
-    params: { pro: pageSlug(pro) }
+    params: { pro }
   }));
 }
 

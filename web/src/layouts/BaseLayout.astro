@@ -8,26 +8,52 @@ type Props = {
 const { title, description, canonicalPath = "/" } = Astro.props;
 const siteUrl = "https://bowling-event.jp";
 const canonical = new URL(canonicalPath, siteUrl).toString();
+const siteName = "Bowling Calendar";
+const japaneseSiteName = "全国プロチャレンジマッチ情報まとめ";
 const siteStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
-      name: "Bowling Calendar",
+      name: siteName,
+      alternateName: japaneseSiteName,
       url: `${siteUrl}/`,
       description: "全国のプロボウリングチャレンジ、プロアマ、公式大会予定を整理するスケジュールサイトです。"
     },
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
-      name: "Bowling Calendar",
-      alternateName: "全国プロボウリング チャレンジ/プロアマ情報",
+      name: siteName,
+      alternateName: japaneseSiteName,
       url: `${siteUrl}/`,
       inLanguage: "ja-JP",
+      description: "プロ名、都道府県、ボウリング場名から全国のプロボウリングイベント予定を探せる検索サイトです。",
       publisher: {
         "@id": `${siteUrl}/#organization`
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${siteUrl}/events/?q={search_term_string}`,
+        "query-input": "required name=search_term_string"
       }
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      inLanguage: "ja-JP",
+      isPartOf: {
+        "@id": `${siteUrl}/#website`
+      },
+      about: [
+        "プロボウリング",
+        "チャレンジマッチ",
+        "プロアマ",
+        "ボウリング場イベント"
+      ]
     }
   ]
 };
@@ -40,10 +66,15 @@ const siteStructuredData = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="author" content={siteName} />
+    <meta name="application-name" content={siteName} />
+    <meta name="theme-color" content="#d9163a" />
+    <meta name="format-detection" content="telephone=no" />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:site_name" content="全国プロチャレンジマッチ情報まとめ" />
+    <meta property="og:site_name" content={japaneseSiteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -191,6 +222,34 @@ const siteStructuredData = {
   .event {
     display: grid;
     gap: 4px;
+  }
+
+  .info-band {
+    margin: 28px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+  }
+
+  .info-band h2 {
+    margin-top: 0;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+
+  .info-grid h3 {
+    margin: 0 0 6px;
+    color: var(--primary);
+    font-size: 17px;
+  }
+
+  .info-grid p {
+    margin: 0;
+    color: var(--muted);
   }
 
   .event time {

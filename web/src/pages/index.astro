@@ -7,6 +7,7 @@ import { allEvents, allPrefectureNames, eventCountByPrefecture, pageSlug, siteFa
 const latestEvents = allEvents.slice(0, 12);
 const title = "全国プロボウリング チャレンジ/プロアマ情報 2026";
 const description = "全国のプロボウリングチャレンジマッチやプロアマ公式予定を、日付・都道府県・会場・出演プロ名で探せる検索ポータルです。";
+const activePrefectureCount = allPrefectureNames.filter((name) => eventCountByPrefecture(name) > 0).length;
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -28,6 +29,36 @@ const structuredData = {
         "@type": "Country",
         name: "日本"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bowling-event.jp/#faq",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Bowling Calendarでは何を探せますか？",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "全国のプロボウリングチャレンジマッチ、プロアマ、公式大会予定を、日付、都道府県、ボウリング場名、出演プロ名から探せます。"
+          }
+        },
+        {
+          "@type": "Question",
+          name: "イベント情報はどこで確認すべきですか？",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "参加前には必ず各ボウリング場、運営会社、JPBAなどの公式ページで最新の開催日時、料金、参加条件、空き状況を確認してください。"
+          }
+        },
+        {
+          "@type": "Question",
+          name: "全国47都道府県に対応していますか？",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "全国47都道府県ページを用意し、公式情報が確認できた地域からイベント掲載を強化しています。"
+          }
+        }
+      ]
     }
   ]
 };
@@ -52,6 +83,24 @@ const structuredData = {
 
   <EventSearch events={allEvents} heading="プロ名・都道府県・ボウリング場名で検索" />
 
+  <section class="info-band" aria-labelledby="site-guide-heading">
+    <h2 id="site-guide-heading">プロボウリングイベントを探すための全国データベース</h2>
+    <div class="info-grid">
+      <article>
+        <h3>探せる情報</h3>
+        <p>チャレンジマッチ、プロアマ、公式大会予定を、日付、都道府県、会場、出演プロ名で横断検索できます。</p>
+      </article>
+      <article>
+        <h3>掲載対象</h3>
+        <p>ボウリング場公式サイト、運営会社ページ、JPBA公式カレンダーなど、確認可能な公式情報を中心に整理しています。</p>
+      </article>
+      <article>
+        <h3>確認のお願い</h3>
+        <p>料金、開始時間、参加条件、空き状況は変わることがあります。参加前に公式リンクで最新情報を確認してください。</p>
+      </article>
+    </div>
+  </section>
+
   <section>
     <h2>近日開催のチャレンジ/プロアマ予定</h2>
     <EventList events={latestEvents} />
@@ -64,7 +113,7 @@ const structuredData = {
         <li><a href={`/prefectures/${pageSlug(prefecture)}/`}>{prefecture}</a></li>
       ))}
     </ul>
-    <p class="meta">掲載中: {allPrefectureNames.filter((name) => eventCountByPrefecture(name) > 0).length}都道府県。未掲載エリアは公式情報の収集を順次強化しています。</p>
+    <p class="meta">掲載中: {activePrefectureCount}都道府県。未掲載エリアは公式情報の収集を順次強化しています。</p>
   </section>
 
   <section>

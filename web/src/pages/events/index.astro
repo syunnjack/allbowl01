@@ -2,12 +2,40 @@
 import EventList from "../../components/EventList.astro";
 import EventSearch from "../../components/EventSearch.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { allEvents } from "../../lib/events";
+import { allEvents, eventSlug } from "../../lib/events";
 
 const title = "プロボウリングチャレンジマッチ開催予定一覧";
 const description = "全国のプロボウリングチャレンジマッチ開催予定を日付順に一覧できるページです。";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://bowling-event.jp/events/#webpage",
+  url: "https://bowling-event.jp/events/",
+  name: title,
+  description,
+  inLanguage: "ja-JP",
+  mainEntity: {
+    "@type": "ItemList",
+    name: "全国プロボウリングイベント開催予定",
+    numberOfItems: allEvents.length,
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    itemListElement: allEvents.slice(0, 100).map((event, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `https://bowling-event.jp/events/${eventSlug(event)}/`,
+      name: `${event.date} ${event.venue} ${event.proText || "プロボウリングイベント"}`
+    }))
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://bowling-event.jp/events/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
 ---
 <BaseLayout title={title} description={description} canonicalPath="/events/">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
   <section class="hero">
     <h1>イベント一覧</h1>
     <p class="lead">プロボウラー参加チャレンジマッチを日付順に掲載しています。</p>

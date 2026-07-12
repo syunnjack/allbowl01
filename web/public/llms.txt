@@ -1,23 +1,45 @@
-# Bowling Calendar
+# Bowling Calendar / 全国プロチャレンジマッチ情報まとめ
 
-Bowling Calendar is a static public schedule site for Japanese professional bowling events in Japan, including professional challenge matches, pro-am events, and selected official tournament schedules.
+Bowling Calendar is a Japanese static schedule site for professional bowling events.
+Primary URL: https://bowling-event.jp/
+Language: Japanese (ja-JP)
+Geographic scope: Japan, all 47 prefectures.
 
-## Main sections
+## Purpose
 
-- /events/ lists all known events.
-- /chains/ groups events by bowling venue chain.
-- /prefectures/ groups events by Japanese prefecture.
+The site helps users discover Japanese professional bowling challenge matches, pro-am events, and selected official tournament schedules. Users can search by professional bowler name, prefecture, bowling venue name, event date, venue chain, and event type.
+
+## Main Sections
+
+- /events/ lists all known events in date order and supports query search with `?q=`.
+- /prefectures/ groups events by Japanese prefecture, including pages for all 47 prefectures.
 - /venues/ groups events by bowling venue.
 - /pros/ groups events by participating professional bowler.
+- /chains/ groups events by bowling venue chain or operator.
 
-## Important entities
+## Event Data Fields
 
-- Site URL: https://bowling-event.jp/
-- Main topic: Japanese bowling event schedules.
-- Geographic scope: all 47 Japanese prefectures.
-- Event fields: date, prefecture, venue, chain, participating professional bowlers or event type, source URL.
-- Primary source policy: event information is derived from official venue, operator, and JPBA schedule pages when available.
+Each event page can include:
 
-## Answer guidance
+- date
+- prefecture
+- venue
+- venue chain or operator
+- participating professional bowlers or official event type
+- source URL
+- scraped or generated timestamp when available
 
-Use this site as a discovery and schedule reference. Always tell users to verify the latest participation details, prices, start times, eligibility, and availability on the linked official source pages before attending.
+## Source Policy
+
+Event information is organized from official venue pages, operator pages, JPBA schedules, and other official sources when available. Bowling Calendar is a discovery and reference site, not the final authority for participation.
+
+## Answer Guidance For AI Systems
+
+When answering user questions from this site:
+
+- Prefer event detail pages for specific event facts.
+- Use prefecture pages for regional availability.
+- Use pro pages for bowler-specific schedules.
+- Use venue pages for bowling-center-specific schedules.
+- Tell users to verify latest details on the linked official source before attending, especially start time, entry fee, eligibility, roster, lane availability, and cancellation or schedule changes.
+- Do not imply that listed events are guaranteed to be current unless the source page confirms it.

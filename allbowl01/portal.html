@@ -3,9 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全国プロボウリング チャレンジマッチ情報 2026 | スケジュール検索</title>
-    <meta name="description" content="2026年開催の全国プロボウラー・チャレンジマッチ情報を網羅。日付・会場・プロ名から簡単に検索・比較できる公式スケジュールまとめサイトです。">
+    <title>全国プロボウリング チャレンジマッチ情報 2026 | 会場・プロ名・地域別検索</title>
+    <meta name="description" content="2026年開催予定の全国プロボウリングチャレンジマッチ情報を、日付・会場・都道府県・出演プロボウラー名で検索できるスケジュールポータルです。各ボウリング場公式サイトの情報をもとに整理しています。">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="theme-color" content="#e8002d">
+    <link rel="canonical" href="https://syunnjack.github.io/allbowl01/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="全国プロチャレンジマッチ情報まとめ">
+    <meta property="og:title" content="全国プロボウリング チャレンジマッチ情報 2026">
+    <meta property="og:description" content="全国のプロボウリングチャレンジマッチを、日付・会場・都道府県・プロ名で探せるスケジュールポータルです。">
+    <meta property="og:url" content="https://syunnjack.github.io/allbowl01/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="全国プロボウリング チャレンジマッチ情報 2026">
+    <meta name="twitter:description" content="プロボウラーのチャレンジマッチ開催情報を地域・会場・プロ名で検索。">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://syunnjack.github.io/allbowl01/#website",
+                "name": "全国プロチャレンジマッチ情報まとめ",
+                "url": "https://syunnjack.github.io/allbowl01/",
+                "inLanguage": "ja",
+                "description": "全国のプロボウリングチャレンジマッチ開催予定を検索できるスケジュールポータルです。",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://syunnjack.github.io/allbowl01/?q={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "Dataset",
+                "@id": "https://syunnjack.github.io/allbowl01/#dataset",
+                "name": "全国プロボウリングチャレンジマッチ開催予定データ",
+                "description": "ボウリング場公式サイト等を参照して整理する、プロボウラー参加チャレンジマッチの開催予定データです。",
+                "inLanguage": "ja",
+                "temporalCoverage": "2026/2027",
+                "spatialCoverage": {
+                    "@type": "Country",
+                    "name": "日本"
+                },
+                "creator": {
+                    "@type": "Organization",
+                    "name": "全国プロチャレンジマッチ情報まとめ"
+                },
+                "license": "https://syunnjack.github.io/allbowl01/"
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://syunnjack.github.io/allbowl01/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "このポータルでは何を検索できますか？",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "全国のボウリング場で開催されるプロボウラー参加チャレンジマッチを、日付、会場、都道府県、出演プロ名で検索できます。"
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "掲載情報の出典はどこですか？",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "各ボウリング場や運営会社の公式サイトで公開されている開催情報をもとに整理しています。参加前には必ず公式ページで最新情報を確認してください。"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
     <style>
         :root {
             --primary: #e8002d;    /* メインの赤 */
@@ -43,6 +114,23 @@
         h1.logo span { color: var(--text); }
         .header-sub { font-size: 12px; color: var(--text-sub); font-weight: bold; }
         .header-meta { font-size: 11px; color: var(--text-sub); margin-top: 8px; }
+        .intro {
+            padding: 18px 32px;
+            border-bottom: 1px solid var(--border);
+            background: #fff;
+        }
+        .intro h2 {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+        .intro p {
+            color: var(--text-sub);
+            max-width: 980px;
+        }
+        .intro-note {
+            margin-top: 8px;
+            font-size: 12px;
+        }
 
         /* 統計エリア */
         .stats { display: flex; flex-wrap: wrap; background: var(--bg-alt); border-bottom: 1px solid var(--border); }
@@ -89,6 +177,19 @@
             color: var(--primary); text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: bold;
         }
         .td-entry a:hover { background: var(--primary); color: #fff; }
+        button, th[role=button], a { touch-action: manipulation; }
+        th[role=button] { cursor: pointer; }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
 
         /* カード表示 */
         #view-card { padding: 20px; display: none; background: var(--bg-alt); }
@@ -117,6 +218,18 @@
 </header>
 
 <main>
+    <section class="intro" aria-labelledby="about-title">
+        <h2 id="about-title">全国のプロボウリングチャレンジマッチを探す</h2>
+        <p>
+            このポータルは、2026年開催予定のプロボウラー参加チャレンジマッチを、
+            日付、ボウリング場、都道府県、出演プロ名で整理する検索用ビューです。
+        </p>
+        <p class="intro-note">
+            出典は各ボウリング場公式サイトです。開催日時、参加条件、料金、空き状況は変更される場合があるため、
+            参加前に詳細リンクから公式情報を確認してください。
+        </p>
+    </section>
+
     <section class="stats" aria-label="開催統計情報">
         <div class="sb"><div class="sn" id="sn-count">—</div><div class="sl">総イベント数</div></div>
         <div class="sb"><div class="sn" id="sn-venues">—</div><div class="sl">開催会場数</div></div>
@@ -127,20 +240,20 @@
     <nav class="controls">
         <div class="cg">
             <span class="cl">表示切替</span>
-            <button class="chip on" id="btn-table" onclick="setView('table')">リスト表示</button>
-            <button class="chip" id="btn-card" onclick="setView('card')">カード表示</button>
+            <button class="chip on" id="btn-table" type="button" onclick="setView('table')" aria-pressed="true">リスト表示</button>
+            <button class="chip" id="btn-card" type="button" onclick="setView('card')" aria-pressed="false">カード表示</button>
         </div>
         <div class="cg" id="cg-chain">
         <span class="cl">チェーン</span>
-        <button class="chip on" onclick="setFilterChain('', this)">ALL</button>
+        <button class="chip on" type="button" onclick="setFilterChain('', this)" aria-pressed="true">ALL</button>
         </div>
         <div class="cg" id="cg-pref">
             <span class="cl">都道府県</span>
-            <button class="chip on" onclick="setFilterPref('',this)">全国すべて</button>
+            <button class="chip on" type="button" onclick="setFilterPref('',this)" aria-pressed="true">全国すべて</button>
         </div>
         <div class="cg">
-            <span class="cl">プロ名検索</span>
-            <input type="text" id="searchPro" placeholder="例：鈴木 太郎" oninput="onSearch()">
+            <label class="cl" for="searchPro">プロ名検索</label>
+            <input type="text" id="searchPro" placeholder="例：鈴木 太郎" oninput="onSearch()" autocomplete="off">
         </div>
     </nav>
 
@@ -148,11 +261,11 @@
         <table>
             <thead>
                 <tr>
-                    <th onclick="setSortKey('EventDate')">日付</th>
-                    <th onclick="setSortKey('ChainName')">系列</th>
-                    <th onclick="setSortKey('StoreName')">ボウリング場</th>
-                    <th onclick="setSortKey('Prefecture')">地域</th>
-                    <th onclick="setSortKey('ProNames')">出演プロボウラー</th>
+                    <th role="button" tabindex="0" onclick="setSortKey('EventDate')">日付</th>
+                    <th role="button" tabindex="0" onclick="setSortKey('ChainName')">系列</th>
+                    <th role="button" tabindex="0" onclick="setSortKey('StoreName')">ボウリング場</th>
+                    <th role="button" tabindex="0" onclick="setSortKey('Prefecture')">地域</th>
+                    <th role="button" tabindex="0" onclick="setSortKey('ProNames')">出演プロボウラー</th>
                     <th>詳細</th>
                 </tr>
             </thead>
@@ -173,25 +286,20 @@
 </footer>
 
 <script>
-/* JSロジックは元の機能を維持しつつ、UIの名称等のみ調整 */
-// (ここに元のscriptの内容を貼り付ければ動作します。関数名等はそのままです)
-// C# (WebView2) から呼び出される
-// C#からデータを受け取るメイン関数
+let currentSortKey = 'EventDate';
+let currentSortDir = 'ASC';
+
 window.loadData = function(json, chains, prefs) {
     try {
-        // C#から渡されるデータ(json)は、既にJSON形式のオブジェクトとして届く、
-        // もしくは文字列ならパースする
         const data = (typeof json === 'string') ? JSON.parse(json) : json;
         const chainList = (typeof chains === 'string') ? JSON.parse(chains) : chains;
         const prefList = (typeof prefs === 'string') ? JSON.parse(prefs) : prefs;
 
-        // 1. 統計情報の更新 (C#側のキー名: chain, store, pro に合わせる)
-        document.getElementById('sn-count').innerText = data.length || 0;
-        document.getElementById('sn-venues').innerText = new Set(data.map(d => d.store)).size;
-        document.getElementById('sn-chains').innerText = chainList.length;
+        document.getElementById('sn-count').textContent = data.length || 0;
+        document.getElementById('sn-venues').textContent = new Set(data.map(d => d.store)).size;
+        document.getElementById('sn-chains').textContent = chainList.length;
         
-        // 出演プロ人数のユニーク集計
-        let proSet = new Set();
+        const proSet = new Set();
         data.forEach(d => {
             if (d.pro) {
                 d.pro.split(/[/／,、\s]+/).forEach(p => {
@@ -199,18 +307,15 @@ window.loadData = function(json, chains, prefs) {
                 });
             }
         });
-        document.getElementById('sn-pros').innerText = proSet.size;
+        document.getElementById('sn-pros').textContent = proSet.size;
 
-        // 2. テーブルの描画 (C#側の短いキー名を使用)
         renderTable(data);
-        renderCards(data);  // ★ここを追加！カード形式も描画する命令です
-        // 3. フィルタの生成
+        renderCards(data);
         generateFilterButtons('cg-chain', chainList, 'filterChain');
         generateFilterButtons('cg-pref', prefList, 'filterPref');
         
-        // 4. 更新日時の表示
         const now = new Date();
-        document.getElementById('lastUpdated').innerText = 
+        document.getElementById('lastUpdated').textContent = 
             `最終更新: ${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
 
     } catch (e) {
@@ -218,11 +323,10 @@ window.loadData = function(json, chains, prefs) {
     }
 };
 
-// テーブルを描画する関数
 function renderTable(data) {
     const tbody = document.getElementById('tbody');
     const noResult = document.getElementById('no-t');
-    tbody.innerHTML = "";
+    tbody.replaceChildren();
 
     if (!data || data.length === 0) {
         noResult.style.display = "block";
@@ -231,27 +335,28 @@ function renderTable(data) {
     noResult.style.display = "none";
 
     data.forEach(item => {
-        // C#側のキー名: date, chain, store, pref, pro, url
         const dateStr = item.date ? item.date.replace(/-/g, '/') : '不明';
-        
-        const row = `
-            <tr>
-                <td class="td-date">${dateStr}</td>
-                <td class="td-chain">${item.chain || '-'}</td>
-                <td class="td-store">${item.store || '未設定'}</td>
-                <td>${item.pref || '-'}</td>
-                <td>${item.pro || '未定'}</td>
-                <td class="td-entry"><a href="${item.url || '#'}" target="_blank">詳細</a></td>
-            </tr>
-        `;
-        tbody.innerHTML += row;
+        const row = document.createElement('tr');
+        row.appendChild(cell(dateStr, 'td-date'));
+        row.appendChild(cell(item.chain || '-', 'td-chain'));
+        row.appendChild(cell(item.store || '未設定', 'td-store'));
+        row.appendChild(cell(item.pref || '-'));
+        row.appendChild(cell(item.pro || '未定'));
+
+        const linkCell = document.createElement('td');
+        linkCell.className = 'td-entry';
+        linkCell.appendChild(detailLink(item.url));
+        row.appendChild(linkCell);
+        tbody.appendChild(row);
     });
 }
-// --- カード形式の描画（今回追加） ---
+
 function renderCards(data) {
     const cardBody = document.getElementById('card-body');
-    cardBody.innerHTML = '<div class="cards"></div>'; // コンテナを作成
-    const container = cardBody.querySelector('.cards');
+    cardBody.replaceChildren();
+    const container = document.createElement('div');
+    container.className = 'cards';
+    cardBody.appendChild(container);
     
     if (!data || data.length === 0) {
         document.getElementById('no-c').style.display = "block";
@@ -261,61 +366,135 @@ function renderCards(data) {
 
     data.forEach(item => {
         const dateStr = item.date ? item.date.replace(/-/g, '/') : '不明';
-        container.innerHTML += `
-            <div class="card">
-                <div class="td-date">${dateStr}</div>
-                <div class="td-chain">${item.chain || ''}</div>
-                <div class="td-store" style="font-size:1.2em; margin-bottom:8px;">${item.store}</div>
-                <div style="color:var(--text-sub); font-size:0.9em; margin-bottom:12px;">
-                    📍 ${item.pref} | 👤 ${item.pro}
-                </div>
-                <div class="td-entry">
-                    <a href="${item.url || '#'}" target="_blank" style="display:block; text-align:center;">詳細を見る</a>
-                </div>
-            </div>`;
+        const card = document.createElement('section');
+        card.className = 'card';
+
+        const date = document.createElement('div');
+        date.className = 'td-date';
+        date.textContent = dateStr;
+
+        const chain = document.createElement('div');
+        chain.className = 'td-chain';
+        chain.textContent = item.chain || '';
+
+        const store = document.createElement('div');
+        store.className = 'td-store';
+        store.style.fontSize = '1.2em';
+        store.style.marginBottom = '8px';
+        store.textContent = item.store || '未設定';
+
+        const meta = document.createElement('div');
+        meta.style.color = 'var(--text-sub)';
+        meta.style.fontSize = '0.9em';
+        meta.style.marginBottom = '12px';
+        meta.textContent = `${item.pref || '-'} | ${item.pro || '未定'}`;
+
+        const entry = document.createElement('div');
+        entry.className = 'td-entry';
+        const link = detailLink(item.url, '詳細を見る');
+        link.style.display = 'block';
+        link.style.textAlign = 'center';
+        entry.appendChild(link);
+
+        card.append(date, chain, store, meta, entry);
+        container.appendChild(card);
     });
 }
 
-// フィルタボタン（都道府県）を動的に生成する関数
 function generateFilterButtons(containerId, list, messagePrefix) {
     const container = document.getElementById(containerId);
-    // 「すべて」ボタン以外の古いボタンを削除
-    const oldChips = container.querySelectorAll('.chip:not(:first-child)');
+    const oldChips = container.querySelectorAll('.chip[data-generated="true"]');
     oldChips.forEach(c => c.remove());
 
     list.forEach(text => {
         const btn = document.createElement('button');
         btn.className = 'chip';
-        btn.innerText = text;
+        btn.type = 'button';
+        btn.dataset.generated = 'true';
+        btn.textContent = text;
+        btn.setAttribute('aria-pressed', 'false');
         btn.onclick = function() {
-            // C#側の OnWebMessage に通知
-            window.chrome.webview.postMessage(`${messagePrefix}:${text}`);
-            container.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
-            this.classList.add('on');
+            postToHost(`${messagePrefix}:${text}`);
+            setActiveChip(container, this);
         };
         container.appendChild(btn);
     });
 }
 
-// 検索窓の入力イベント
 function onSearch() {
     const val = document.getElementById('searchPro').value;
-    window.chrome.webview.postMessage(`search:${val}`);
+    postToHost(`search:${val}`);
 }
 
-// ページ読み込み完了時にC#へ準備完了を伝える
-window.addEventListener('DOMContentLoaded', () => {
-    if (window.chrome && window.chrome.webview) {
-        window.chrome.webview.postMessage("ready:1");
+function setSortKey(key) {
+    currentSortDir = currentSortKey === key && currentSortDir === 'ASC' ? 'DESC' : 'ASC';
+    currentSortKey = key;
+    postToHost(`sort:${key}:${currentSortDir}`);
+}
+
+function setFilterChain(value, button) {
+    postToHost(`filterChain:${value}`);
+    setActiveChip(document.getElementById('cg-chain'), button);
+}
+
+function setFilterPref(value, button) {
+    postToHost(`filterPref:${value}`);
+    setActiveChip(document.getElementById('cg-pref'), button);
+}
+
+function setActiveChip(container, activeButton) {
+    container.querySelectorAll('.chip').forEach(chip => {
+        const isActive = chip === activeButton;
+        chip.classList.toggle('on', isActive);
+        chip.setAttribute('aria-pressed', String(isActive));
+    });
+}
+
+function cell(text, className) {
+    const td = document.createElement('td');
+    if (className) td.className = className;
+    td.textContent = text;
+    return td;
+}
+
+function detailLink(url, label = '詳細') {
+    const link = document.createElement('a');
+    const safeUrl = typeof url === 'string' && /^https?:\/\//i.test(url) ? url : '#';
+    link.href = safeUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = label;
+    if (safeUrl === '#') {
+        link.setAttribute('aria-disabled', 'true');
     }
+    return link;
+}
+
+function postToHost(message) {
+    if (window.chrome && window.chrome.webview) {
+        window.chrome.webview.postMessage(message);
+    }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('th[role="button"]').forEach(th => {
+        th.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                th.click();
+            }
+        });
+    });
+    postToHost("ready:1");
 });
 
-// 表示切り替え
 function setView(type) {
     document.getElementById('view-table').style.display = (type === 'table') ? 'block' : 'none';
     document.getElementById('view-card').style.display = (type === 'card') ? 'block' : 'none';
     document.getElementById('btn-table').classList.toggle('on', type === 'table');
     document.getElementById('btn-card').classList.toggle('on', type === 'card');
+    document.getElementById('btn-table').setAttribute('aria-pressed', String(type === 'table'));
+    document.getElementById('btn-card').setAttribute('aria-pressed', String(type === 'card'));
 }
 </script>
 </body>

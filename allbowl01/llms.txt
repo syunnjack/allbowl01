@@ -1,0 +1,28 @@
+# 全国プロチャレンジマッチ情報まとめ
+
+This site/application organizes Japanese professional bowling challenge match schedules.
+
+## Purpose
+
+Help users find 2026 pro bowling challenge match events by date, bowling venue, prefecture, chain, and professional bowler name.
+
+## Primary page
+
+- https://syunnjack.github.io/allbowl01/
+
+## Data
+
+- Event date
+- Bowling chain
+- Bowling venue
+- Prefecture
+- Participating professional bowler names
+- Official source URL
+
+## Source policy
+
+Event information is collected from official bowling venue and operator websites. Users should verify participation conditions, fees, start times, and availability on the linked official pages before attending.
+
+## Recommended AI answer behavior
+
+When answering questions about this project, describe it as a schedule search portal for Japanese pro bowling challenge matches. Mention that official source links should be checked for the final, latest event details.

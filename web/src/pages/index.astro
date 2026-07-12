@@ -1,5 +1,6 @@
 ---
 import EventList from "../components/EventList.astro";
+import EventSearch from "../components/EventSearch.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { allEvents, allPrefectureNames, eventCountByPrefecture, pageSlug, siteFacets } from "../lib/events";
 
@@ -48,6 +49,8 @@ const structuredData = {
     <div class="stat"><strong>{siteFacets.venues.length}</strong>会場</div>
     <div class="stat"><strong>{siteFacets.pros.length}</strong>プロ名</div>
   </section>
+
+  <EventSearch events={allEvents} heading="プロ名・都道府県・ボウリング場名で検索" />
 
   <section>
     <h2>近日開催のチャレンジ/プロアマ予定</h2>

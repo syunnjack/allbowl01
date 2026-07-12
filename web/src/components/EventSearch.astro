@@ -1,0 +1,201 @@
+---
+import { eventSlug, formatDate, pageSlug, type EventItem } from "../lib/events";
+
+type Props = {
+  events: EventItem[];
+  heading?: string;
+};
+
+const { events, heading = "イベントを検索" } = Astro.props;
+
+const searchItems = events.map((event) => ({
+  date: event.date,
+  dateLabel: formatDate(event.date),
+  chain: event.chain,
+  venue: event.venue,
+  prefecture: event.prefecture,
+  pros: event.pros,
+  proText: event.proText,
+  eventUrl: `/events/${eventSlug(event)}/`,
+  venueUrl: `/venues/${pageSlug(event.venue)}/`,
+  prefectureUrl: `/prefectures/${pageSlug(event.prefecture)}/`
+}));
+
+const suggestions = [
+  ...new Set(
+    events
+      .flatMap((event) => [event.prefecture, event.venue, ...event.pros])
+      .filter(Boolean)
+  )
+].sort((a, b) => a.localeCompare(b, "ja"));
+---
+
+<section class="search-panel" data-event-search>
+  <h2>{heading}</h2>
+  <form class="search-form" role="search">
+    <label for="event-search-input">プロ名・都道府県・ボウリング場名</label>
+    <div class="search-row">
+      <input
+        id="event-search-input"
+        type="search"
+        placeholder="例: 寺下智香、石川、クァトロブーム鹿島"
+        autocomplete="off"
+        list="event-search-suggestions"
+        data-search-input
+      />
+      <button type="submit">検索</button>
+    </div>
+    <datalist id="event-search-suggestions">
+      {suggestions.map((value) => <option value={value} />)}
+    </datalist>
+  </form>
+  <p class="search-summary" data-search-summary>
+    プロ名、都道府県、ボウリング場名を入力すると該当イベントを表示します。
+  </p>
+  <div class="search-results" data-search-results></div>
+</section>
+
+<script define:vars={{ searchItems }}>
+  const root = document.querySelector("[data-event-search]");
+  const input = root?.querySelector("[data-search-input]");
+  const summary = root?.querySelector("[data-search-summary]");
+  const results = root?.querySelector("[data-search-results]");
+
+  const normalize = (value) => (value || "").toString().trim().toLowerCase();
+  const escapeHtml = (value) =>
+    (value || "").toString().replace(/[&<>"']/g, (char) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    })[char]);
+
+  const matches = (item, query) => {
+    const haystack = [
+      item.prefecture,
+      item.venue,
+      item.chain,
+      item.proText,
+      ...(item.pros || [])
+    ].map(normalize).join(" ");
+
+    return haystack.includes(query);
+  };
+
+  const render = () => {
+    if (!input || !summary || !results) {
+      return;
+    }
+
+    const query = normalize(input.value);
+    if (!query) {
+      summary.textContent = "プロ名、都道府県、ボウリング場名を入力すると該当イベントを表示します。";
+      results.innerHTML = "";
+      return;
+    }
+
+    const found = searchItems.filter((item) => matches(item, query)).slice(0, 40);
+    summary.textContent = found.length > 0
+      ? `${found.length}件を表示しています。`
+      : "該当するイベントは見つかりませんでした。";
+
+    results.innerHTML = found.map((item) => {
+      const pros = item.pros?.length ? item.pros.join("、") : item.proText || "未設定";
+
+      return `
+        <article class="event search-result">
+          <time datetime="${escapeHtml(item.date)}">${escapeHtml(item.dateLabel)}</time>
+          <a class="event-title" href="${escapeHtml(item.eventUrl)}">${escapeHtml(item.venue)} チャレンジ/プロアマ予定</a>
+          <div class="meta">
+            <a href="${escapeHtml(item.venueUrl)}">${escapeHtml(item.venue)}</a> /
+            <a href="${escapeHtml(item.prefectureUrl)}">${escapeHtml(item.prefecture)}</a>
+          </div>
+          <div class="meta">出演/種別: ${escapeHtml(pros)}</div>
+        </article>
+      `;
+    }).join("");
+  };
+
+  root?.querySelector("form")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    render();
+  });
+  input?.addEventListener("input", render);
+
+  const initialQuery = new URLSearchParams(window.location.search).get("q");
+  if (initialQuery && input) {
+    input.value = initialQuery;
+    render();
+  }
+</script>
+
+<style>
+  .search-panel {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px;
+    margin: 24px 0;
+    background: var(--wash);
+  }
+
+  .search-panel h2 {
+    margin-top: 0;
+  }
+
+  .search-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .search-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .search-row input {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 11px 12px;
+    font: inherit;
+  }
+
+  .search-row button {
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    padding: 0 18px;
+    background: var(--primary);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+  }
+
+  .search-summary {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .search-results {
+    display: grid;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .search-result {
+    background: #fff;
+  }
+
+  @media (max-width: 720px) {
+    .search-row {
+      grid-template-columns: 1fr;
+    }
+
+    .search-row button {
+      min-height: 44px;
+    }
+  }
+</style>

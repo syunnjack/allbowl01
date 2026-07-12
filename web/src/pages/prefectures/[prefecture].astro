@@ -31,7 +31,7 @@ const listedItems = events.length > 0
       "@type": "ListItem",
       position: index + 1,
       name: `${event.venue} ${event.proText || "プロボウリングイベント"}`,
-      url: `https://bowlingcalendar.jp/events/${eventSlug(event)}/`
+      url: `https://bowling-event.jp/events/${eventSlug(event)}/`
     }))
   : focusVenues.map((venue, index) => ({
       "@type": "ListItem",
@@ -43,8 +43,8 @@ const structuredData = {
   "@graph": [
     {
       "@type": "CollectionPage",
-      "@id": `https://bowlingcalendar.jp${canonicalPath}#webpage`,
-      url: `https://bowlingcalendar.jp${canonicalPath}`,
+      "@id": `https://bowling-event.jp${canonicalPath}#webpage`,
+      url: `https://bowling-event.jp${canonicalPath}`,
       name: title,
       description,
       inLanguage: "ja-JP",
@@ -66,19 +66,19 @@ const structuredData = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://bowlingcalendar.jp/"
+          item: "https://bowling-event.jp/"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "都道府県",
-          item: "https://bowlingcalendar.jp/prefectures/"
+          item: "https://bowling-event.jp/prefectures/"
         },
         {
           "@type": "ListItem",
           position: 3,
           name: prefecture,
-          item: `https://bowlingcalendar.jp${canonicalPath}`
+          item: `https://bowling-event.jp${canonicalPath}`
         }
       ]
     }

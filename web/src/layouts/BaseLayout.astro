@@ -6,7 +6,7 @@ type Props = {
 };
 
 const { title, description, canonicalPath = "/" } = Astro.props;
-const siteUrl = "https://bowlingcalendar.jp";
+const siteUrl = "https://bowling-event.jp";
 const canonical = new URL(canonicalPath, siteUrl).toString();
 const siteStructuredData = {
   "@context": "https://schema.org",

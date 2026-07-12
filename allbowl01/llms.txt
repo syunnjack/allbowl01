@@ -8,7 +8,7 @@ Help users find Japanese pro bowling events by date, bowling venue, prefecture, 
 
 ## Primary page
 
-- https://bowlingcalendar.jp/
+- https://bowling-event.jp/
 
 ## Data
 

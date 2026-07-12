@@ -22,7 +22,7 @@ const structuredData = {
   "@graph": [
     {
       "@type": "SportsEvent",
-      "@id": `https://bowlingcalendar.jp${canonicalPath}#event`,
+      "@id": `https://bowling-event.jp${canonicalPath}#event`,
       name: `${event.venue} チャレンジ/プロアマ予定`,
       description,
       sport: "Bowling",
@@ -30,7 +30,7 @@ const structuredData = {
       startDate: event.date,
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       eventStatus: "https://schema.org/EventScheduled",
-      url: `https://bowlingcalendar.jp${canonicalPath}`,
+      url: `https://bowling-event.jp${canonicalPath}`,
       sameAs: event.sourceUrl || undefined,
       location: {
         "@type": "SportsActivityLocation",
@@ -61,19 +61,19 @@ const structuredData = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://bowlingcalendar.jp/"
+          item: "https://bowling-event.jp/"
         },
         {
           "@type": "ListItem",
           position: 2,
           name: event.prefecture || "都道府県",
-          item: `https://bowlingcalendar.jp/prefectures/${pageSlug(event.prefecture)}/`
+          item: `https://bowling-event.jp/prefectures/${pageSlug(event.prefecture)}/`
         },
         {
           "@type": "ListItem",
           position: 3,
           name: event.venue,
-          item: `https://bowlingcalendar.jp${canonicalPath}`
+          item: `https://bowling-event.jp${canonicalPath}`
         }
       ]
     }

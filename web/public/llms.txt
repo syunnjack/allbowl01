@@ -12,7 +12,7 @@ Bowling Calendar is a static public schedule site for Japanese professional bowl
 
 ## Important entities
 
-- Site URL: https://bowlingcalendar.jp/
+- Site URL: https://bowling-event.jp/
 - Main topic: Japanese bowling event schedules.
 - Geographic scope: all 47 Japanese prefectures.
 - Event fields: date, prefecture, venue, chain, participating professional bowlers or event type, source URL.

@@ -1,0 +1,41 @@
+name: Build Windows app
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - "allbowl01/**"
+      - "allbowl01.sln"
+      - ".github/workflows/build-app.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore allbowl01.sln
+
+      - name: Build
+        run: dotnet build allbowl01.sln --configuration Release --no-restore
+
+      - name: Publish
+        run: dotnet publish allbowl01/allbowl01.csproj --configuration Release --runtime win-x64 --self-contained false --no-build --output artifacts/allbowl01-win-x64
+
+      - name: Upload app artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: allbowl01-win-x64
+          path: artifacts/allbowl01-win-x64

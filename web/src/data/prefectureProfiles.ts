@@ -21,7 +21,7 @@ export const prefectureProfiles: PrefectureProfile[] = [
   { name: "神奈川", region: "関東", focusVenues: ["川崎グランドボウル", "相模原パークレーンズ", "スポルト八景"] },
   { name: "新潟", region: "甲信越・北陸", focusVenues: ["グランドボウル黒埼", "ラウンドワン新潟店"] },
   { name: "富山", region: "甲信越・北陸", focusVenues: ["富山地鉄ゴールデンボウル", "ノースランドボウル呉羽"] },
-  { name: "石川", region: "甲信越・北陸", focusVenues: ["コロナキャットボウル金沢店", "コロナキャットボウル小松店"] },
+  { name: "石川", region: "甲信越・北陸", focusVenues: ["クァトロブーム鹿島", "コロナキャットボウル金沢店", "コロナキャットボウル小松店"] },
   { name: "福井", region: "甲信越・北陸", focusVenues: ["コロナキャットボウル福井店", "コロナキャットボウル福井春江店"] },
   { name: "山梨", region: "甲信越・北陸", focusVenues: ["ダイトースターレーン", "都留ファミリーボウル"] },
   { name: "長野", region: "甲信越・北陸", focusVenues: ["ヤングファラオ", "アピナボウル長野篠ノ井店"] },
@@ -50,8 +50,8 @@ export const prefectureProfiles: PrefectureProfile[] = [
   { name: "熊本", region: "九州・沖縄", focusVenues: ["スポラ九品寺", "パスカワールド宇土店"] },
   { name: "大分", region: "九州・沖縄", focusVenues: ["タワーボウル萩原", "OBSボウル"] },
   { name: "宮崎", region: "九州・沖縄", focusVenues: ["宮崎エースレーン", "ラウンドワン宮崎店"] },
-  { name: "鹿児島", region: "九州・沖縄", focusVenues: ["サンライトゾーン", "T-MAX BOWL"] },
-  { name: "沖縄", region: "九州・沖縄", focusVenues: ["サラダボウル", "スカイレーン"] }
+  { name: "鹿児島", region: "九州・沖縄", focusVenues: ["T-MAX BOWL", "サンライトゾーン"] },
+  { name: "沖縄", region: "九州・沖縄", focusVenues: ["サラダボウル", "ラウンドワンスタジアム沖縄・宜野湾店", "スカイレーン"] }
 ];
 
 export const allPrefectureNames = prefectureProfiles.map((profile) => profile.name);

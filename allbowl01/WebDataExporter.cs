@@ -127,6 +127,7 @@ namespace allbowl01
             if (baseName.Length < 3 || baseName.Length > 10) return false;
             if (value.Contains("紹介") || value.Contains("料金") || value.Contains("施設")) return false;
             if (value.Contains("PLAN") || value.Contains("PRICE") || value.Contains("NEWS")) return false;
+            if (value.Contains("サラダカップ")) return false;
             if (value.Contains("スケジュール") || value.Contains("お知らせ")) return false;
             if (value.Contains("チャレンジ") || value.Contains("チャリティー")) return false;
             if (value.Contains("スタッフ") || value.Contains("所属") || value.Contains("出場")) return false;

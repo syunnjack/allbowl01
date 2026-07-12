@@ -108,6 +108,8 @@ namespace allbowl01
             new("キスケボウル", "キスケボウル", "愛媛", "https://kisuke.com/kit/information/"),
             new("アルゴボウル", "アルゴボウル", "兵庫", "http://www.algo7.jp/news/sp/1235.html"),
             new("神戸六甲ボウル", "神戸六甲ボウル", "兵庫", "https://www.rokkobowl.co.jp/"),
+            new("サラダボウル", "サラダボウル", "沖縄", "https://www.saladbowl.co.jp/event/"),
+            new("T-MAX BOWL", "T-MAX BOWL", "鹿児島", "https://www.t-maxbowl.com/event-calendar"),
 
             new("イーグルボウル", "イーグルボウル", "愛知", "https://eaglebowl.jp/event/"),
             new("サンボウル", "サンボウル", "愛知", "https://www.sunbowl300.sakura.ne.jp/"),
@@ -511,7 +513,7 @@ namespace allbowl01
             if (Regex.IsMatch(value, @"(山梨|狐ヶ崎)")) return "山梨";
             if (Regex.IsMatch(value, @"(長野|ヤングファラオ)")) return "長野";
             if (Regex.IsMatch(value, @"(富山|地鉄)")) return "富山";
-            if (Regex.IsMatch(value, @"(金沢|石川)")) return "石川";
+            if (Regex.IsMatch(value, @"(金沢|石川|クァトロブーム鹿島)")) return "石川";
             if (Regex.IsMatch(value, @"(山形|東根|モデルノ)")) return "山形";
             if (Regex.IsMatch(value, @"(仙台|宮城)")) return "宮城";
             if (Regex.IsMatch(value, @"(札幌|苫小牧|北海道|千歳|室蘭|帯広)")) return "北海道";
@@ -1103,6 +1105,7 @@ namespace allbowl01
             if (baseName.Length < 3 || baseName.Length > 10) return false;
             if (value.Contains("専属プロ") || value.Contains("女子プロ") || value.Contains("男子プロ")) return false;
             if (value.Contains("プロショップ") || value.Contains("プロチャレ")) return false;
+            if (value.Contains("サラダカップ")) return false;
             if (value.Contains("スケジュール") || value.Contains("お知らせ")) return false;
             if (value.Contains("チャレンジ") || value.Contains("チャリティー")) return false;
             if (value.Contains("スタッフ") || value.Contains("所属") || value.Contains("出場")) return false;

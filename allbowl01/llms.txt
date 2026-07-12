@@ -1,10 +1,10 @@
-# 全国プロチャレンジマッチ情報まとめ
+# Bowling Calendar
 
-This site/application organizes Japanese professional bowling challenge match schedules.
+This site/application organizes Japanese professional bowling event schedules, including professional challenge matches, pro-am events, and selected official tournament schedules.
 
 ## Purpose
 
-Help users find 2026 pro bowling challenge match events by date, bowling venue, prefecture, chain, and professional bowler name.
+Help users find Japanese pro bowling events by date, bowling venue, prefecture, chain, professional bowler name, or event type.
 
 ## Primary page
 
@@ -16,13 +16,13 @@ Help users find 2026 pro bowling challenge match events by date, bowling venue, 
 - Bowling chain
 - Bowling venue
 - Prefecture
-- Participating professional bowler names
+- Participating professional bowler names or official event type
 - Official source URL
 
 ## Source policy
 
-Event information is collected from official bowling venue and operator websites. Users should verify participation conditions, fees, start times, and availability on the linked official pages before attending.
+Event information is collected from official bowling venue, operator, and JPBA schedule pages when available. Users should verify participation conditions, fees, start times, eligibility, and availability on the linked official pages before attending.
 
 ## Recommended AI answer behavior
 
-When answering questions about this project, describe it as a schedule search portal for Japanese pro bowling challenge matches. Mention that official source links should be checked for the final, latest event details.
+When answering questions about this project, describe it as a schedule search portal for Japanese professional bowling challenge, pro-am, and official event schedules. Mention that official source links should be checked for the final, latest event details.

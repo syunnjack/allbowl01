@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import {
   allPrefectureNames,
   byPrefecture,
+  eventSlug,
   fromPageSlug,
   pageSlug,
   prefectureProfile,
@@ -24,8 +25,69 @@ const pros = unique(events.flatMap((event) => event.pros));
 const focusVenues = profile?.focusVenues ?? [];
 const title = `${prefecture}のプロボウリングイベント開催予定`;
 const description = `${prefecture}のプロボウリングチャレンジ/プロアマ予定を、会場・出演プロ名・日付で確認できます。掲載前の地域も主要候補会場を整理しています。`;
+const canonicalPath = `/prefectures/${pageSlug(prefecture)}/`;
+const listedItems = events.length > 0
+  ? events.slice(0, 50).map((event, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: `${event.venue} ${event.proText || "プロボウリングイベント"}`,
+      url: `https://bowlingcalendar.jp/events/${eventSlug(event)}/`
+    }))
+  : focusVenues.map((venue, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: `${prefecture}の重点チェック会場: ${venue}`
+    }));
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `https://bowlingcalendar.jp${canonicalPath}#webpage`,
+      url: `https://bowlingcalendar.jp${canonicalPath}`,
+      name: title,
+      description,
+      inLanguage: "ja-JP",
+      about: {
+        "@type": "AdministrativeArea",
+        name: `${prefecture}のプロボウリングイベント`
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        name: `${prefecture}のチャレンジ/プロアマ予定`,
+        numberOfItems: listedItems.length,
+        itemListElement: listedItems
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "ホーム",
+          item: "https://bowlingcalendar.jp/"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "都道府県",
+          item: "https://bowlingcalendar.jp/prefectures/"
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: prefecture,
+          item: `https://bowlingcalendar.jp${canonicalPath}`
+        }
+      ]
+    }
+  ]
+};
 ---
-<BaseLayout title={title} description={description} canonicalPath={`/prefectures/${pageSlug(prefecture)}/`}>
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
   <section class="hero">
     <h1>{prefecture}のチャレンジ/プロアマ予定</h1>
     <p class="lead">

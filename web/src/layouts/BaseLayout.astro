@@ -8,6 +8,29 @@ type Props = {
 const { title, description, canonicalPath = "/" } = Astro.props;
 const siteUrl = "https://bowlingcalendar.jp";
 const canonical = new URL(canonicalPath, siteUrl).toString();
+const siteStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "Bowling Calendar",
+      url: `${siteUrl}/`,
+      description: "全国のプロボウリングチャレンジ、プロアマ、公式大会予定を整理するスケジュールサイトです。"
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "Bowling Calendar",
+      alternateName: "全国プロボウリング チャレンジ/プロアマ情報",
+      url: `${siteUrl}/`,
+      inLanguage: "ja-JP",
+      publisher: {
+        "@id": `${siteUrl}/#organization`
+      }
+    }
+  ]
+};
 ---
 <!doctype html>
 <html lang="ja">
@@ -27,6 +50,7 @@ const canonical = new URL(canonicalPath, siteUrl).toString();
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <script type="application/ld+json" set:html={JSON.stringify(siteStructuredData)} />
     <slot name="head" />
   </head>
   <body>

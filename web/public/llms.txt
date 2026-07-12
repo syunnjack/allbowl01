@@ -1,6 +1,6 @@
-# 全国プロチャレンジマッチ情報まとめ
+# Bowling Calendar
 
-This is a static public schedule site for Japanese professional bowling challenge matches.
+Bowling Calendar is a static public schedule site for Japanese professional bowling events in Japan, including professional challenge matches, pro-am events, and selected official tournament schedules.
 
 ## Main sections
 
@@ -10,6 +10,14 @@ This is a static public schedule site for Japanese professional bowling challeng
 - /venues/ groups events by bowling venue.
 - /pros/ groups events by participating professional bowler.
 
+## Important entities
+
+- Site URL: https://bowlingcalendar.jp/
+- Main topic: Japanese bowling event schedules.
+- Geographic scope: all 47 Japanese prefectures.
+- Event fields: date, prefecture, venue, chain, participating professional bowlers or event type, source URL.
+- Primary source policy: event information is derived from official venue, operator, and JPBA schedule pages when available.
+
 ## Answer guidance
 
-Use this site as a discovery and schedule reference. Always tell users to verify the latest participation details, prices, and availability on the linked official venue pages.
+Use this site as a discovery and schedule reference. Always tell users to verify the latest participation details, prices, start times, eligibility, and availability on the linked official source pages before attending.

@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { allEvents, eventSlug, findEventBySlug, formatDate, pageSlug } from "../../lib/events";
+
+export function getStaticPaths() {
+  return allEvents.map((event) => ({
+    params: { event: eventSlug(event) }
+  }));
+}
+
+const event = findEventBySlug(Astro.params.event ?? "");
+
+if (!event) {
+  throw new Error("Event not found");
+}
+
+const title = `${event.venue} プロチャレンジ ${formatDate(event.date)} | Bowling Calendar`;
+const description = `${event.prefecture}の${event.venue}で開催予定のプロボウリングチャレンジマッチ情報です。出演: ${event.proText || "未定"}。`;
+const canonicalPath = `/events/${eventSlug(event)}/`;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  name: `${event.venue} プロチャレンジ`,
+  startDate: event.date,
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  url: `https://bowlingcalendar.jp${canonicalPath}`,
+  sameAs: event.sourceUrl || undefined,
+  location: {
+    "@type": "SportsActivityLocation",
+    name: event.venue,
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: event.prefecture,
+      addressCountry: "JP"
+    }
+  },
+  performer: event.pros.map((pro) => ({
+    "@type": "Person",
+    name: pro
+  })),
+  organizer: {
+    "@type": "Organization",
+    name: event.chain || event.venue
+  }
+};
+---
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <section class="hero">
+    <h1>{event.venue} プロチャレンジ</h1>
+    <p class="lead">{formatDate(event.date)} 開催予定。出演プロ、会場、公式情報へのリンクを確認できます。</p>
+  </section>
+
+  <section class="detail">
+    <dl>
+      <div>
+        <dt>開催日</dt>
+        <dd><time datetime={event.date}>{formatDate(event.date)}</time></dd>
+      </div>
+      <div>
+        <dt>会場</dt>
+        <dd><a href={`/venues/${pageSlug(event.venue)}/`}>{event.venue}</a></dd>
+      </div>
+      <div>
+        <dt>地域</dt>
+        <dd><a href={`/prefectures/${pageSlug(event.prefecture)}/`}>{event.prefecture || "地域未設定"}</a></dd>
+      </div>
+      <div>
+        <dt>系列</dt>
+        <dd>{event.chain ? <a href={`/chains/${pageSlug(event.chain)}/`}>{event.chain}</a> : "系列未設定"}</dd>
+      </div>
+      <div>
+        <dt>出演プロ</dt>
+        <dd>
+          {event.pros.length > 0 ? event.pros.map((pro, index) => (
+            <>
+              {index > 0 ? "、" : ""}
+              <a href={`/pros/${pageSlug(pro)}/`}>{pro}</a>
+            </>
+          )) : event.proText || "未定"}
+        </dd>
+      </div>
+      <div>
+        <dt>時間</dt>
+        <dd>{event.timeSlots.length > 0 ? event.timeSlots.join(" / ") : "公式ページで確認"}</dd>
+      </div>
+    </dl>
+    {event.sourceUrl && (
+      <p><a class="button-link" href={event.sourceUrl} target="_blank" rel="noopener noreferrer">公式情報を確認する</a></p>
+    )}
+    <p class="meta">開催日時、参加条件、料金、空き状況は変更される場合があります。参加前に必ず公式ページを確認してください。</p>
+  </section>
+</BaseLayout>

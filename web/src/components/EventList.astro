@@ -1,5 +1,5 @@
 ---
-import { formatDate, pageSlug, type EventItem } from "../lib/events";
+import { eventSlug, formatDate, pageSlug, type EventItem } from "../lib/events";
 
 type Props = {
   events: EventItem[];
@@ -14,11 +14,11 @@ const { events } = Astro.props;
     events.map((event) => (
       <article class="event">
         <time datetime={event.date}>{formatDate(event.date)}</time>
-        <a class="event-title" href={event.sourceUrl} target="_blank" rel="noopener noreferrer">
+        <a class="event-title" href={`/events/${eventSlug(event)}/`}>
           {event.venue} プロチャレンジ
         </a>
         <div class="meta">
-          {event.chain || "系列未設定"} / <a href={`/prefectures/${pageSlug(event.prefecture)}/`}>{event.prefecture || "地域未設定"}</a>
+          {event.chain ? <a href={`/chains/${pageSlug(event.chain)}/`}>{event.chain}</a> : "系列未設定"} / <a href={`/prefectures/${pageSlug(event.prefecture)}/`}>{event.prefecture || "地域未設定"}</a>
         </div>
         <div class="meta">
           出演: {event.pros.length > 0 ? event.pros.map((pro, index) => (

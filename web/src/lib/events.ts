@@ -35,6 +35,10 @@ export function byVenue(name: string) {
   return allEvents.filter((event) => event.venue === name);
 }
 
+export function byChain(name: string) {
+  return allEvents.filter((event) => event.chain === name);
+}
+
 export function byPro(name: string) {
   return allEvents.filter((event) => event.pros.includes(name) || event.proText.includes(name));
 }
@@ -49,6 +53,15 @@ export function pageSlug(value: string) {
 
 export function fromPageSlug(value: string) {
   return decodeURIComponent(value);
+}
+
+export function eventSlug(event: EventItem) {
+  return `${event.id}-${pageSlug(`${event.date}-${event.venue}`)}`;
+}
+
+export function findEventBySlug(slug: string) {
+  const id = Number(slug.split("-", 1)[0]);
+  return allEvents.find((event) => event.id === id);
 }
 
 export function formatDate(value: string) {

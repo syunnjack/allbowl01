@@ -5,6 +5,7 @@ This is a static public schedule site for Japanese professional bowling challeng
 ## Main sections
 
 - /events/ lists all known events.
+- /chains/ groups events by bowling venue chain.
 - /prefectures/ groups events by Japanese prefecture.
 - /venues/ groups events by bowling venue.
 - /pros/ groups events by participating professional bowler.

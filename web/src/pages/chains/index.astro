@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { pageSlug, siteFacets } from "../../lib/events";
+
+const title = "チェーン別 プロボウリングチャレンジマッチ";
+const description = "プロボウリングチャレンジマッチ開催予定をボウリング場チェーン別に探せる一覧ページです。";
+---
+<BaseLayout title={title} description={description} canonicalPath="/chains/">
+  <section class="hero">
+    <h1>チェーン別に探す</h1>
+    <p class="lead">ボウリング場チェーンごとのプロチャレンジ開催予定を確認できます。</p>
+  </section>
+  <ul class="taxonomy">
+    {siteFacets.chains.map((chain) => (
+      <li><a href={`/chains/${pageSlug(chain)}/`}>{chain}</a></li>
+    ))}
+  </ul>
+</BaseLayout>

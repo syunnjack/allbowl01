@@ -1,0 +1,23 @@
+---
+import EventList from "../../components/EventList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { byChain, fromPageSlug, pageSlug, siteFacets } from "../../lib/events";
+
+export function getStaticPaths() {
+  return siteFacets.chains.map((chain) => ({
+    params: { chain: pageSlug(chain) }
+  }));
+}
+
+const chain = fromPageSlug(Astro.params.chain ?? "");
+const events = byChain(chain);
+const title = `${chain}のプロボウリングチャレンジマッチ開催予定`;
+const description = `${chain}系列で開催予定のプロボウリングチャレンジマッチを、日付・会場・出演プロ名で確認できます。`;
+---
+<BaseLayout title={title} description={description} canonicalPath={`/chains/${pageSlug(chain)}/`}>
+  <section class="hero">
+    <h1>{chain}のプロチャレンジ予定</h1>
+    <p class="lead">{chain}系列のボウリング場で開催されるプロボウラー参加イベントを掲載しています。</p>
+  </section>
+  <EventList events={events} />
+</BaseLayout>

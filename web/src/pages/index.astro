@@ -64,6 +64,15 @@ const structuredData = {
   </section>
 
   <section>
+    <h2>チェーンから探す</h2>
+    <ul class="taxonomy">
+      {siteFacets.chains.map((chain) => (
+        <li><a href={`/chains/${pageSlug(chain)}/`}>{chain}</a></li>
+      ))}
+    </ul>
+  </section>
+
+  <section>
     <h2>出演プロから探す</h2>
     <ul class="taxonomy">
       {siteFacets.pros.slice(0, 40).map((pro) => (

@@ -43,11 +43,12 @@ SEO / AIO / LLMO を本格的に強化する場合は、データ収集と公開
 このリポジトリでは `web/` に Astro の静的サイトを追加しています。生成対象ページは次の通りです。
 
 - `/events/`
+- `/chains/grandbowl/`
 - `/prefectures/aichi/`
 - `/venues/inazawa-grandbowl/`
 - `/pros/example-pro/`
 
-現在の実装では、都道府県、会場、出演プロ別のクロール可能なHTMLページを生成します。
+現在の実装では、イベント詳細、チェーン、都道府県、会場、出演プロ別のクロール可能なHTMLページを生成します。
 
 ## Web公開データの書き出し
 
@@ -61,6 +62,14 @@ dotnet run --project allbowl01 -- --export-web web/src/data
 
 - `web/src/data/events.json`
 - `web/src/data/facets.json`
+
+公開更新の基本フロー:
+
+1. WinFormsアプリでスクレイピングを実行する
+2. `dotnet run --project allbowl01 -- --export-web web/src/data` を実行する
+3. `cd web && npm run build` で静的サイトを確認する
+4. `web/src/data/events.json` と `web/src/data/facets.json` をコミットする
+5. `master` に push して GitHub Pages のデプロイを待つ
 
 ## Astroサイトの開発
 
@@ -76,6 +85,16 @@ npm run build
 ## 独自ドメインについて
 
 公開ドメインは `bowlingcalendar.jp` を想定しています。GitHub Pages で公開する場合は、Pages の Custom domain に `bowlingcalendar.jp` を設定し、お名前.com 側のDNSをGitHub Pagesへ向けてください。
+
+推奨DNS:
+
+- `A @ 185.199.108.153`
+- `A @ 185.199.109.153`
+- `A @ 185.199.110.153`
+- `A @ 185.199.111.153`
+- `CNAME www syunnjack.github.io`
+
+DNS反映後、GitHub Pages の `Enforce HTTPS` を有効化してください。
 
 ## 注意
 

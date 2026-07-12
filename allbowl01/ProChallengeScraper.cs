@@ -123,6 +123,7 @@ namespace allbowl01
             new("アルゴボウル", "アルゴボウル", "兵庫", "http://www.algo7.jp/news/sp/1235.html"),
 
             new("ラウンドワン", "ラウンドワン", "オンライン", "https://www.round1.co.jp/service/r1live/challenge/"),
+            new("JPBA公式", "JPBA公式カレンダー", "全国", "https://www.jpba1.jp/schedule/index.html"),
             new("平和島スターボウル", "平和島スターボウル", "", ""),
             // スターレーン
             new("スターレーン","盛岡スターレーン",   "岩手","https://www.starlanes.co.jp/morioka/"),
@@ -186,6 +187,7 @@ namespace allbowl01
                         "スターレーン" => await ScrapeStarLane(store, scraped),
                         "六甲ボウル" => await ScrapeRokko(store, scraped),
                         "ラウンドワン" => await ScrapeRoundOne(store, scraped),
+                        "JPBA公式" => await ScrapeJpbaCalendar(store, scraped),
                         _ => await ScrapeGeneric(store, scraped)
                         
                     };
@@ -354,6 +356,166 @@ namespace allbowl01
             }
 
             return Deduplicate(events);
+        }
+
+        private async Task<List<ProChallengeEvent>> ScrapeJpbaCalendar(
+            StoreInfo store, DateTime scraped)
+        {
+            string[] calendarIds =
+            {
+                "qoenbih82dta3vfml4chv93qtk@group.calendar.google.com",
+                "1thq2c9bb0v0qstuv33jgrql78@group.calendar.google.com",
+                "l93dssrgr93gktrauep3ae8f50@group.calendar.google.com",
+                "hhp8fqksv3he7tq0tm67pnasi8@group.calendar.google.com"
+            };
+
+            var events = new List<ProChallengeEvent>();
+            foreach (var calendarId in calendarIds)
+            {
+                var url =
+                    $"https://calendar.google.com/calendar/ical/{Uri.EscapeDataString(calendarId)}/public/basic.ics";
+                var ics = await FetchHtml(url);
+                events.AddRange(ParseJpbaIcs(ics, store, scraped));
+                await Task.Delay(300);
+            }
+
+            return Deduplicate(events);
+        }
+
+        private static IEnumerable<ProChallengeEvent> ParseJpbaIcs(
+            string ics, StoreInfo store, DateTime scraped)
+        {
+            var unfolded = Regex.Replace(ics.Replace("\r\n", "\n"), @"\n[ \t]", "");
+            foreach (Match match in Regex.Matches(unfolded, @"BEGIN:VEVENT(?<body>[\s\S]*?)END:VEVENT"))
+            {
+                var body = match.Groups["body"].Value;
+                var summary = ReadIcsValue(body, "SUMMARY");
+                var location = ReadIcsValue(body, "LOCATION");
+                if (string.IsNullOrWhiteSpace(summary) || !IsJpbaPublicEvent(summary)) continue;
+
+                var dateMatch = Regex.Match(body, @"DTSTART(?:;VALUE=DATE)?:([0-9]{8})");
+                if (!dateMatch.Success) continue;
+                if (!DateTime.TryParseExact(
+                    dateMatch.Groups[1].Value,
+                    "yyyyMMdd",
+                    null,
+                    System.Globalization.DateTimeStyles.None,
+                    out var eventDate)) continue;
+                if (eventDate < DateTime.Today || eventDate > DateTime.Today.AddYears(2)) continue;
+
+                var venue = NormalizeJpbaVenue(location);
+                var prefecture = InferPrefectureFromText($"{venue} {location} {summary}");
+                if (string.IsNullOrWhiteSpace(venue) || string.IsNullOrWhiteSpace(prefecture)) continue;
+
+                yield return new ProChallengeEvent
+                {
+                    ChainName = store.Chain,
+                    StoreName = venue,
+                    Prefecture = prefecture,
+                    EventDate = eventDate,
+                    ProNames = $"JPBA公式: {summary}",
+                    SourceUrl = store.Url,
+                    ScrapedAt = scraped
+                };
+            }
+        }
+
+        private static string ReadIcsValue(string body, string key)
+        {
+            var match = Regex.Match(body, $@"^{key}(?:;[^:]*)?:(.*)$", RegexOptions.Multiline);
+            return match.Success ? UnescapeIcs(match.Groups[1].Value.Trim()) : "";
+        }
+
+        private static string UnescapeIcs(string value) =>
+            value.Replace("\\n", " ")
+                .Replace("\\N", " ")
+                .Replace("\\,", ",")
+                .Replace("\\;", ";")
+                .Replace("\\\\", "\\")
+                .Trim();
+
+        private static bool IsJpbaPublicEvent(string summary)
+        {
+            if (Regex.IsMatch(summary, @"(開催中止|実施中止|プロテスト|インストラクター|講習|研修|資格|コーチ|専門講習)"))
+                return false;
+            return Regex.IsMatch(summary,
+                @"(プロアマ|プロボウリング|GCB|GRAND CHAMPIONSHIP|シーズントライアル|オープン|トーナメント|チャレンジ|カップ|CUP|JPBA)");
+        }
+
+        private static string NormalizeJpbaVenue(string location)
+        {
+            var value = location.Trim();
+            if (string.IsNullOrWhiteSpace(value)) return "";
+            value = Regex.Split(value, @"[,，]")[0];
+            value = Regex.Replace(value, @"\s*\(.*?\)\s*", "");
+            value = value.Replace("ＭＫ", "MK")
+                .Replace("ラウンドワンスタジアム ", "ラウンドワンスタジアム")
+                .Replace("ラウンドワン ", "ラウンドワン")
+                .Replace("MKボウル上MK", "MKボウル上賀茂")
+                .Trim();
+            return value;
+        }
+
+        private static string InferPrefectureFromText(string value)
+        {
+            var addressPrefecture = Regex.Match(value,
+                @"(北海道|青森県|岩手県|宮城県|秋田県|山形県|福島県|茨城県|栃木県|群馬県|埼玉県|千葉県|東京都|神奈川県|新潟県|富山県|石川県|福井県|山梨県|長野県|岐阜県|静岡県|愛知県|三重県|滋賀県|京都府|大阪府|兵庫県|奈良県|和歌山県|鳥取県|島根県|岡山県|広島県|山口県|徳島県|香川県|愛媛県|高知県|福岡県|佐賀県|長崎県|熊本県|大分県|宮崎県|鹿児島県|沖縄県)");
+            if (addressPrefecture.Success)
+            {
+                return addressPrefecture.Value
+                    .Replace("県", "")
+                    .Replace("府", "")
+                    .Replace("都", "");
+            }
+
+            if (Regex.IsMatch(value, @"(栗東|愛知川|浜大津)")) return "滋賀";
+
+            string[] prefectures =
+            {
+                "北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島",
+                "茨城", "栃木", "群馬", "埼玉", "千葉", "東京", "神奈川",
+                "新潟", "富山", "石川", "福井", "山梨", "長野", "岐阜",
+                "静岡", "愛知", "三重", "滋賀", "京都", "大阪", "兵庫",
+                "奈良", "和歌山", "鳥取", "島根", "岡山", "広島", "山口",
+                "徳島", "香川", "愛媛", "高知", "福岡", "佐賀", "長崎",
+                "熊本", "大分", "宮崎", "鹿児島", "沖縄"
+            };
+
+            foreach (var prefecture in prefectures)
+            {
+                if (value.Contains(prefecture)) return prefecture;
+            }
+
+            if (Regex.IsMatch(value, @"(堺|松原|門真|B-lax|牧野松園|サンスクエア|ボウルアロー)")) return "大阪";
+            if (Regex.IsMatch(value, @"(MKボウル|上賀茂|山科|福知山|サンケイボウル)")) return "京都";
+            if (Regex.IsMatch(value, @"(神戸|三田|青山スポーツガーデン)")) return "兵庫";
+            if (Regex.IsMatch(value, @"(高松|善通寺|屋島)")) return "香川";
+            if (Regex.IsMatch(value, @"(太宰府|博多|小嶺|折尾|飯塚|福岡)")) return "福岡";
+            if (Regex.IsMatch(value, @"(佐賀|タケオ)")) return "佐賀";
+            if (Regex.IsMatch(value, @"(宮崎)")) return "宮崎";
+            if (Regex.IsMatch(value, @"(那覇|沖縄|サラダボウル|サザンヒル|エナジック)")) return "沖縄";
+            if (Regex.IsMatch(value, @"(岡山|瀬戸内|津山|コーシン)")) return "岡山";
+            if (Regex.IsMatch(value, @"(広島|ミスズ|賀茂ボール|広電)")) return "広島";
+            if (Regex.IsMatch(value, @"(松山|愛媛)")) return "愛媛";
+            if (Regex.IsMatch(value, @"(高知|かつらしま)")) return "高知";
+            if (Regex.IsMatch(value, @"(成田|印西|千葉|富津|本八幡|北小金|アサヒ)")) return "千葉";
+            if (Regex.IsMatch(value, @"(東大和|品川|東京|立川|新小岩|世田谷|北区|港区)")) return "東京";
+            if (Regex.IsMatch(value, @"(川崎|伊勢原|厚木|ハマボール|スポルト八景|神奈川)")) return "神奈川";
+            if (Regex.IsMatch(value, @"(新狭山|上尾|草加|春日部|越谷|北本|埼玉|UNICUS|南古谷)")) return "埼玉";
+            if (Regex.IsMatch(value, @"(宇都宮|足利|栃木)")) return "栃木";
+            if (Regex.IsMatch(value, @"(太田|前橋|群馬)")) return "群馬";
+            if (Regex.IsMatch(value, @"(土浦|つくば|取手|牛久|勝田|茨城)")) return "茨城";
+            if (Regex.IsMatch(value, @"(稲沢|名古屋|半田|中川|東名|幸田|藤枝|サンボウル)")) return value.Contains("藤枝") ? "静岡" : "愛知";
+            if (Regex.IsMatch(value, @"(多治見|羽島|岐阜)")) return "岐阜";
+            if (Regex.IsMatch(value, @"(津|桑名|伊賀|三重)")) return "三重";
+            if (Regex.IsMatch(value, @"(山梨|狐ヶ崎)")) return "山梨";
+            if (Regex.IsMatch(value, @"(長野|ヤングファラオ)")) return "長野";
+            if (Regex.IsMatch(value, @"(富山|地鉄)")) return "富山";
+            if (Regex.IsMatch(value, @"(金沢|石川)")) return "石川";
+            if (Regex.IsMatch(value, @"(山形|東根|モデルノ)")) return "山形";
+            if (Regex.IsMatch(value, @"(仙台|宮城)")) return "宮城";
+            if (Regex.IsMatch(value, @"(札幌|苫小牧|北海道|千歳|室蘭|帯広)")) return "北海道";
+            return "";
         }
 
         private async Task<List<ProChallengeEvent>> ScrapeNandK(

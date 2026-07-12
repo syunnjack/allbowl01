@@ -14,13 +14,13 @@ if (!event) {
   throw new Error("Event not found");
 }
 
-const title = `${event.venue} プロチャレンジ ${formatDate(event.date)} | Bowling Calendar`;
-const description = `${event.prefecture}の${event.venue}で開催予定のプロボウリングチャレンジマッチ情報です。出演: ${event.proText || "未定"}。`;
+const title = `${event.venue} チャレンジ/プロアマ予定 ${formatDate(event.date)} | Bowling Calendar`;
+const description = `${event.prefecture}の${event.venue}で開催予定のプロボウリングイベント情報です。出演/種別: ${event.proText || "未定"}。`;
 const canonicalPath = `/events/${eventSlug(event)}/`;
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "SportsEvent",
-  name: `${event.venue} プロチャレンジ`,
+  name: `${event.venue} チャレンジ/プロアマ予定`,
   startDate: event.date,
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
@@ -49,8 +49,8 @@ const structuredData = {
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
   <section class="hero">
-    <h1>{event.venue} プロチャレンジ</h1>
-    <p class="lead">{formatDate(event.date)} 開催予定。出演プロ、会場、公式情報へのリンクを確認できます。</p>
+    <h1>{event.venue} チャレンジ/プロアマ予定</h1>
+    <p class="lead">{formatDate(event.date)} 開催予定。出演プロ、種別、会場、公式情報へのリンクを確認できます。</p>
   </section>
 
   <section class="detail">
@@ -72,7 +72,7 @@ const structuredData = {
         <dd>{event.chain ? <a href={`/chains/${pageSlug(event.chain)}/`}>{event.chain}</a> : "系列未設定"}</dd>
       </div>
       <div>
-        <dt>出演プロ</dt>
+        <dt>出演/種別</dt>
         <dd>
           {event.pros.length > 0 ? event.pros.map((pro, index) => (
             <>

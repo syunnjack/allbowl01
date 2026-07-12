@@ -13,7 +13,10 @@ namespace allbowl01
             var events = db.GetEvents()
                 .Select(ev =>
                 {
-                    var pros = SplitPros(ev.ProNames);
+                    var rawText = NormalizeEventText(ev.ProNames);
+                    var isOfficialEvent = IsOfficialEventText(rawText);
+                    var pros = isOfficialEvent ? Array.Empty<string>() : SplitPros(ev.ProNames);
+                    var proText = pros.Length > 0 ? string.Join("、", pros) : rawText;
                     return new
                 {
                     id = ev.Id,
@@ -22,7 +25,7 @@ namespace allbowl01
                     venue = ev.StoreName,
                     prefecture = ev.Prefecture,
                     pros,
-                    proText = pros.Length > 0 ? string.Join("、", pros) : "",
+                    proText,
                     timeSlots = new[] { ev.TimeSlot1, ev.TimeSlot2 }
                         .Where(t => !string.IsNullOrWhiteSpace(t))
                         .ToArray(),
@@ -30,7 +33,7 @@ namespace allbowl01
                     scrapedAt = ev.ScrapedAt.ToString("yyyy-MM-dd HH:mm:ss")
                 };
                 })
-                .Where(ev => ev.pros.Length > 0)
+                .Where(ev => ev.pros.Length > 0 || IsOfficialEventText(ev.proText))
                 .Where(ev => !IsLowConfidenceSource(ev.sourceUrl))
                 .ToArray();
 
@@ -104,6 +107,16 @@ namespace allbowl01
 
             return normalized.Trim();
         }
+
+        private static string NormalizeEventText(string value) =>
+            value.Replace("　", " ")
+                .Replace("JPBA公式:", "JPBA公式: ")
+                .Trim();
+
+        private static bool IsOfficialEventText(string value) =>
+            value.StartsWith("JPBA公式:", StringComparison.Ordinal)
+            && Regex.IsMatch(value,
+                @"(プロアマ|プロボウリング|GCB|GRAND CHAMPIONSHIP|シーズントライアル|オープン|トーナメント|チャレンジ|カップ|CUP|JPBA)");
 
         private static bool IsLikelyProName(string value)
         {

@@ -11,12 +11,12 @@ export function getStaticPaths() {
 
 const venue = fromPageSlug(Astro.params.venue ?? "");
 const events = byVenue(venue);
-const title = `${venue}のプロボウリングチャレンジマッチ開催予定`;
-const description = `${venue}で開催予定のプロボウリングチャレンジマッチを、日付・出演プロ名・公式リンク付きで確認できます。`;
+const title = `${venue}のプロボウリングイベント開催予定`;
+const description = `${venue}で開催予定のプロボウリングチャレンジ/プロアマ予定を、日付・出演プロ名・公式リンク付きで確認できます。`;
 ---
 <BaseLayout title={title} description={description} canonicalPath={`/venues/${pageSlug(venue)}/`}>
   <section class="hero">
-    <h1>{venue}のプロチャレンジ予定</h1>
+    <h1>{venue}のチャレンジ/プロアマ予定</h1>
     <p class="lead">{venue}で開催されるプロボウラー参加イベントを掲載しています。</p>
   </section>
   <EventList events={events} />

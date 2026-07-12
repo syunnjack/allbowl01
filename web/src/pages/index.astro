@@ -4,8 +4,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { allEvents, allPrefectureNames, eventCountByPrefecture, pageSlug, siteFacets } from "../lib/events";
 
 const latestEvents = allEvents.slice(0, 12);
-const title = "全国プロボウリング チャレンジマッチ情報 2026";
-const description = "全国のプロボウリングチャレンジマッチ開催予定を、日付・都道府県・会場・出演プロ名で探せる検索ポータルです。";
+const title = "全国プロボウリング チャレンジ/プロアマ情報 2026";
+const description = "全国のプロボウリングチャレンジマッチやプロアマ公式予定を、日付・都道府県・会場・出演プロ名で探せる検索ポータルです。";
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -20,8 +20,8 @@ const structuredData = {
     {
       "@type": "Dataset",
       "@id": "https://bowlingcalendar.jp/#dataset",
-      name: "全国プロボウリングチャレンジマッチ開催予定データ",
-      description: "各ボウリング場公式サイト等を参照して整理するプロボウラー参加チャレンジマッチの開催予定データです。",
+      name: "全国プロボウリングチャレンジ/プロアマ開催予定データ",
+      description: "各ボウリング場公式サイト、JPBA公式カレンダー等を参照して整理するプロボウラー参加イベントの開催予定データです。",
       temporalCoverage: "2026/2027",
       spatialCoverage: {
         "@type": "Country",
@@ -35,9 +35,9 @@ const structuredData = {
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
   <section class="hero">
-    <h1>全国プロボウリング チャレンジマッチ情報 2026</h1>
+    <h1>全国プロボウリング チャレンジ/プロアマ情報 2026</h1>
     <p class="lead">
-      全国のボウリング場で開催されるプロボウラー参加チャレンジマッチを、
+      全国のボウリング場で開催されるプロボウラー参加チャレンジマッチやプロアマ公式予定を、
       日付、都道府県、会場、出演プロ名で探せる公開スケジュールです。
     </p>
   </section>
@@ -50,7 +50,7 @@ const structuredData = {
   </section>
 
   <section>
-    <h2>近日開催のチャレンジマッチ</h2>
+    <h2>近日開催のチャレンジ/プロアマ予定</h2>
     <EventList events={latestEvents} />
   </section>
 

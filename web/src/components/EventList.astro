@@ -15,13 +15,13 @@ const { events } = Astro.props;
       <article class="event">
         <time datetime={event.date}>{formatDate(event.date)}</time>
         <a class="event-title" href={`/events/${eventSlug(event)}/`}>
-          {event.venue} プロチャレンジ
+          {event.venue} チャレンジ/プロアマ予定
         </a>
         <div class="meta">
           {event.chain ? <a href={`/chains/${pageSlug(event.chain)}/`}>{event.chain}</a> : "系列未設定"} / <a href={`/prefectures/${pageSlug(event.prefecture)}/`}>{event.prefecture || "地域未設定"}</a>
         </div>
         <div class="meta">
-          出演: {event.pros.length > 0 ? event.pros.map((pro, index) => (
+          出演/種別: {event.pros.length > 0 ? event.pros.map((pro, index) => (
             <>
               {index > 0 ? "、" : ""}
               <a href={`/pros/${pageSlug(pro)}/`}>{pro}</a>

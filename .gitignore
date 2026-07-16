@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+*.log
+debug.html
+scrape_out.json
+_tmp_*
+_debug_*
+_curl_body.json

@@ -1,0 +1,108 @@
+/* Mankan Top Page — hero & CTA layout (Cocoon child theme) */
+
+.page-template-page-mankan-top #content-in,
+.page-template-page-mankan-top .entry-content {
+	padding: 0;
+	max-width: none;
+}
+
+.page-template-page-mankan-top .article-header,
+.page-template-page-mankan-top .date-tags,
+.page-template-page-mankan-top .footer-meta {
+	display: none;
+}
+
+.mankan-top {
+	margin: 0;
+	padding: 0;
+}
+
+.mankan-hero {
+	display: grid;
+	place-items: center;
+	min-height: clamp(420px, 70vh, 720px);
+	padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2rem);
+	background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 45%, #0c4a6e 100%);
+	color: #f8fafc;
+}
+
+.mankan-hero__inner {
+	display: grid;
+	gap: clamp(1.25rem, 3vw, 2rem);
+	width: min(960px, 100%);
+	text-align: center;
+}
+
+.mankan-hero__heading {
+	margin: 0;
+	font-size: clamp(1.75rem, 4.5vw, 3rem);
+	font-weight: 800;
+	line-height: 1.25;
+	letter-spacing: 0.02em;
+}
+
+.mankan-hero__subheading {
+	margin: 0;
+	font-size: clamp(1rem, 2.2vw, 1.25rem);
+	font-weight: 500;
+	color: #cbd5e1;
+	letter-spacing: 0.04em;
+}
+
+.mankan-hero__cta-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: clamp(0.75rem, 2vw, 1.25rem);
+	width: min(640px, 100%);
+	margin: 0.5rem auto 0;
+}
+
+.mankan-cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3.25rem;
+	padding: 0.875rem 1.5rem;
+	border-radius: 999px;
+	font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+	font-weight: 700;
+	text-decoration: none;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.mankan-cta--primary {
+	background: #f59e0b;
+	color: #1e293b;
+	box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+}
+
+.mankan-cta--primary:hover,
+.mankan-cta--primary:focus-visible {
+	background: #fbbf24;
+	transform: translateY(-2px);
+	box-shadow: 0 12px 28px rgba(245, 158, 11, 0.45);
+	color: #0f172a;
+}
+
+.mankan-cta--secondary {
+	background: transparent;
+	color: #f8fafc;
+	border: 2px solid rgba(248, 250, 252, 0.85);
+}
+
+.mankan-cta--secondary:hover,
+.mankan-cta--secondary:focus-visible {
+	background: rgba(248, 250, 252, 0.12);
+	transform: translateY(-2px);
+	color: #ffffff;
+}
+
+@media (max-width: 640px) {
+	.mankan-hero__cta-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.mankan-cta {
+		width: 100%;
+	}
+}

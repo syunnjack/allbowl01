@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import ShareButtons from "../../components/ShareButtons.astro";
+import UserTips from "../../components/UserTips.astro";
 import { allEvents, eventSlug, findEventBySlug, formatDate, pageSlug } from "../../lib/events";
 
 export function getStaticPaths() {
@@ -17,6 +20,7 @@ if (!event) {
 const title = `${event.venue} チャレンジ/プロアマ予定 ${formatDate(event.date)} | Bowling Calendar`;
 const description = `${event.prefecture}の${event.venue}で開催予定のプロボウリングイベント情報です。出演/種別: ${event.proText || "未定"}。`;
 const canonicalPath = `/events/${eventSlug(event)}/`;
+const pageUrl = `https://bowling-event.jp${canonicalPath}`;
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -55,6 +59,10 @@ const structuredData = {
       }
     },
     {
+      "@type": "SpeakableSpecification",
+      cssSelector: [".hero h1", ".lead", ".detail dl"]
+    },
+    {
       "@type": "BreadcrumbList",
       itemListElement: [
         {
@@ -82,6 +90,12 @@ const structuredData = {
 ---
 <BaseLayout title={title} description={description} canonicalPath={canonicalPath}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <Breadcrumb items={[
+    { label: "ホーム", href: "/" },
+    { label: "イベント", href: "/events/" },
+    { label: event.venue }
+  ]} />
 
   <section class="hero">
     <h1>{event.venue} チャレンジ/プロアマ予定</h1>
@@ -127,4 +141,7 @@ const structuredData = {
     )}
     <p class="meta">開催日時、参加条件、料金、空き状況は変更される場合があります。参加前に必ず公式ページを確認してください。</p>
   </section>
+
+  <UserTips eventId={event.id} venue={event.venue} />
+  <ShareButtons title={`${event.venue} ${formatDate(event.date)}`} url={pageUrl} />
 </BaseLayout>

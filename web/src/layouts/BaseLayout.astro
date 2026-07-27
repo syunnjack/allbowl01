@@ -3,11 +3,14 @@ type Props = {
   title: string;
   description: string;
   canonicalPath?: string;
+  ogImage?: string;
+  noindex?: boolean;
 };
 
-const { title, description, canonicalPath = "/" } = Astro.props;
+const { title, description, canonicalPath = "/", ogImage = "/og-default.svg", noindex = false } = Astro.props;
 const siteUrl = "https://bowling-event.jp";
 const canonical = new URL(canonicalPath, siteUrl).toString();
+const ogImageUrl = new URL(ogImage, siteUrl).toString();
 const siteName = "Bowling Calendar";
 const japaneseSiteName = "全国プロチャレンジマッチ情報まとめ";
 const siteStructuredData = {
@@ -65,22 +68,28 @@ const siteStructuredData = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="robots" content={noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"} />
     <meta name="author" content={siteName} />
     <meta name="application-name" content={siteName} />
     <meta name="theme-color" content="#d9163a" />
     <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="プロボウリング,チャレンジマッチ,プロアマ,ボウリング,来店イベント,全国" />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
+    <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM full context" />
+    <link rel="alternate" type="text/plain" href="/ai.txt" title="AI crawler policy" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:site_name" content={japaneseSiteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={title} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
     <script type="application/ld+json" set:html={JSON.stringify(siteStructuredData)} />
     <slot name="head" />
   </head>
@@ -93,6 +102,9 @@ const siteStructuredData = {
         <a href="/prefectures/">都道府県</a>
         <a href="/venues/">会場</a>
         <a href="/pros/">プロ</a>
+        <a href="/guides/">ガイド</a>
+        <a href="/contribute/">情報提供</a>
+        <a href="/faq/">FAQ</a>
       </nav>
     </header>
     <main>

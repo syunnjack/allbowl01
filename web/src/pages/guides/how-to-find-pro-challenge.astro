@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+
+const title = "プロチャレンジマッチの探し方ガイド";
+const description = "プロボウリング来店イベントを効率よく見つける方法。都道府県・プロ名・チェーン別の検索手順を解説。";
+const canonicalPath = "/guides/how-to-find-pro-challenge/";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: title,
+  description,
+  step: [
+    { "@type": "HowToStep", name: "都道府県から探す", text: "お住まいの地域の都道府県ページで近日開催を確認" },
+    { "@type": "HowToStep", name: "プロ名で探す", text: "推しプロの出演予定ページで全国スケジュールを確認" },
+    { "@type": "HowToStep", name: "公式情報を確認", text: "イベント詳細ページの公式リンクで最新情報を確認" }
+  ]
+};
+---
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <Breadcrumb items={[
+    { label: "ホーム", href: "/" },
+    { label: "ガイド", href: "/guides/" },
+    { label: "探し方" }
+  ]} />
+
+  <section class="hero">
+    <h1>プロチャレンジマッチの探し方</h1>
+    <p class="lead">都道府県・プロ名・チェーン別に、来店イベントを見つける手順。</p>
+  </section>
+
+  <section class="info-grid">
+    <article>
+      <h2>1. 都道府県から探す</h2>
+      <p><a href="/prefectures/">都道府県一覧</a>から地域を選び、近日開催を確認します。</p>
+    </article>
+    <article>
+      <h2>2. プロ名で探す</h2>
+      <p><a href="/pros/">出演プロ一覧</a>から推しプロを選び、全国の出演予定を確認します。</p>
+    </article>
+    <article>
+      <h2>3. チェーン店から探す</h2>
+      <p><a href="/chains/">チェーン一覧</a>からラウンドワン、コロナ等の来店予定を確認します。</p>
+    </article>
+    <article>
+      <h2>4. キーワード検索</h2>
+      <p><a href="/events/">イベント一覧</a>で会場名やプロ名を検索できます。</p>
+    </article>
+  </section>
+
+  <section>
+    <h2>参加前チェックリスト</h2>
+    <ul>
+      <li>開催日時は公式ページで再確認</li>
+      <li>参加費・予約方法を確認</li>
+      <li>満席・中止情報を確認</li>
+      <li>参加後は <a href="/contribute/">情報提供ページ</a> でレポート投稿</li>
+    </ul>
+  </section>
+</BaseLayout>

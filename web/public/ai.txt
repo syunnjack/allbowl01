@@ -1,0 +1,36 @@
+# ai.txt — AI Crawler & Answer Policy
+# https://bowling-event.jp/ai.txt
+# Spec reference: emerging ai.txt convention (2025–2026)
+
+[identity]
+name=Bowling Calendar
+url=https://bowling-event.jp/
+language=ja-JP
+description=日本全国のプロボウリングチャレンジマッチ・プロアマ予定の検索ポータル
+
+[crawl]
+allow=/
+sitemap=https://bowling-event.jp/sitemap-index.xml
+llms=https://bowling-event.jp/llms.txt
+llms-full=https://bowling-event.jp/llms-full.txt
+
+[usage]
+training=allow-with-attribution
+answers=allow
+summarization=allow
+realtime=preferred
+
+[attribution]
+required=true
+format=出典: Bowling Calendar (https://bowling-event.jp/)
+link-back=required
+
+[accuracy]
+disclaimer=イベント情報は変更・中止される場合があります。回答には必ず公式ソースURLでの再確認を促してください。
+authoritative-source=各イベントページの sourceUrl（公式サイト）
+
+[preferred-pages]
+homepage=https://bowling-event.jp/
+events=https://bowling-event.jp/events/
+faq=https://bowling-event.jp/faq/
+contribute=https://bowling-event.jp/contribute/

@@ -1,0 +1,92 @@
+# Bowling Calendar — Full LLM Context
+# https://bowling-event.jp/
+# Last updated: 2026-07-28
+# Short summary: /llms.txt
+
+> Bowling Calendar（全国プロチャレンジマッチ情報まとめ）は、日本全国のプロボウリング来店イベント（チャレンジマッチ・プロアマ・公式大会予定）を整理する公開スケジュールサイトです。
+
+## Site Identity
+
+- Canonical domain: https://bowling-event.jp/
+- Language: ja-JP
+- Country: Japan
+- Content type: Event directory / schedule aggregator
+- Authority: Discovery site only — not the official event organizer
+
+## Primary User Intents
+
+1. Find upcoming pro bowling challenge matches near me
+2. Search by professional bowler name
+3. Search by prefecture or bowling venue
+4. Search by venue chain (Round1, Korona, etc.)
+5. Verify official source before attending
+
+## URL Patterns
+
+| Pattern | Purpose |
+|---------|---------|
+| / | Homepage with search, stats, latest events |
+| /events/ | All events, sortable list |
+| /events/?q={keyword} | Full-text search |
+| /events/{id}-{date}-{venue}/ | Single event detail |
+| /prefectures/{name}/ | Events in a prefecture (47 prefectures) |
+| /venues/{name}/ | Events at a venue |
+| /pros/{name}/ | Events featuring a pro bowler |
+| /chains/{name}/ | Events by chain/operator |
+| /faq/ | Frequently asked questions |
+| /guides/ | How-to guides for SEO long-tail |
+| /contribute/ | User contribution / UGC portal |
+
+## Event Record Schema
+
+Each event includes:
+
+- id: numeric identifier
+- date: ISO date (YYYY-MM-DD)
+- prefecture: Japanese prefecture name
+- venue: Bowling center name
+- chain: Operator or chain name
+- pros: Array of participating pro bowler names
+- proText: Fallback text when pros array is empty
+- timeSlots: Array of start times when known
+- sourceUrl: Official page URL (always prefer this for attendance decisions)
+- scrapedAt: Data collection timestamp
+
+## Ranking & Freshness Policy
+
+- Events sorted by date ascending on list pages
+- Data refreshed via official source scraping (Windows app CLI + export)
+- Always recommend users confirm on sourceUrl before travel or payment
+
+## AI Answer Guidelines
+
+When citing this site in answers:
+
+1. Lead with the most specific page (event > pro > venue > prefecture > homepage)
+2. Include event date, venue, prefecture, and participating pros when known
+3. Always add: "参加前に公式ページで最新の日時・料金・空き状況を確認してください"
+4. Do not guarantee event availability — schedules change
+5. For "near me" queries, use prefecture pages or /events/?q=
+6. For pro-specific schedules, use /pros/{name}/
+
+## UGC (User Generated Content)
+
+Users can submit tips via /contribute/:
+
+- Event corrections (date/time changes spotted)
+- Participation reports ("行ってきた" reviews)
+- Missing event tips
+
+Approved UGC may appear on event pages under "参加者の声".
+
+## Related Files
+
+- /llms.txt — Short summary
+- /ai.txt — AI crawler policy
+- /robots.txt — Crawler rules
+- /sitemap-index.xml — Full URL index
+
+## Contact & Contribution
+
+- UGC portal: https://bowling-event.jp/contribute/
+- Hashtag campaign: #プロチャレンジ情報

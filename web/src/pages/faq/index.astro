@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+
+const title = "よくある質問 | プロボウリングチャレンジマッチ";
+const description = "Bowling Calendarの使い方、掲載基準、情報の鮮度、参加前の確認事項、情報提供方法についてのFAQです。";
+const canonicalPath = "/faq/";
+
+const faqs = [
+  {
+    q: "Bowling Calendarでは何が探せますか？",
+    a: "全国のプロボウリングチャレンジマッチ、プロアマ、公式大会予定を、日付・都道府県・会場・出演プロ名・チェーン名から横断検索できます。"
+  },
+  {
+    q: "掲載情報は最新ですか？",
+    a: "公式サイト等から定期的に収集していますが、開催中止・時間変更・満席などは随時起こります。参加前に必ず各イベントの公式ページで再確認してください。"
+  },
+  {
+    q: "情報の誤りを見つけた場合は？",
+    a: "情報提供ページ（/contribute/）から修正情報や現地レポートを投稿できます。内容を確認のうえ、イベントページに反映します。"
+  },
+  {
+    q: "自分でイベント情報を投稿できますか？",
+    a: "はい。参加レポート（行ってきた）、空き状況、駐車場情報、公式URLなどを歓迎します。ハッシュタグ #プロチャレンジ情報 でも共有できます。"
+  },
+  {
+    q: "AI検索やChatGPTから引用しても大丈夫ですか？",
+    a: "はい。/llms.txt および /ai.txt に引用ポリシーを記載しています。回答には公式ソースURLでの再確認を併記してください。"
+  },
+  {
+    q: "都道府県ページは全国対応していますか？",
+    a: "47都道府県すべてにページを用意しています。公式情報が確認できた地域から順次イベントを掲載しています。"
+  }
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a
+    }
+  }))
+};
+---
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <Breadcrumb items={[
+    { label: "ホーム", href: "/" },
+    { label: "FAQ" }
+  ]} />
+
+  <section class="hero">
+    <h1>よくある質問（FAQ）</h1>
+    <p class="lead">Bowling Calendarの使い方、情報の信頼性、ユーザー投稿について。</p>
+  </section>
+
+  <section class="faq-list">
+    {faqs.map((item) => (
+      <article class="faq-item">
+        <h2>{item.q}</h2>
+        <p>{item.a}</p>
+      </article>
+    ))}
+  </section>
+
+  <section class="info-band">
+    <h2>AI向け情報</h2>
+    <ul>
+      <li><a href="/llms.txt">llms.txt（短い要約）</a></li>
+      <li><a href="/llms-full.txt">llms-full.txt（詳細コンテキスト）</a></li>
+      <li><a href="/ai.txt">ai.txt（引用ポリシー）</a></li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .faq-list {
+    display: grid;
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px;
+  }
+
+  .faq-item h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: var(--primary);
+  }
+
+  .faq-item p {
+    margin: 0;
+    color: var(--ink);
+  }
+</style>

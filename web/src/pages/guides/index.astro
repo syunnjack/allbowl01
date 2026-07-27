@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+
+const title = "ガイド一覧 | プロボウリングイベント";
+const description = "プロチャレンジマッチの探し方、参加のコツ、情報提供方法などのガイド記事一覧。";
+const canonicalPath = "/guides/";
+
+const guides = [
+  {
+    href: "/guides/how-to-find-pro-challenge/",
+    title: "プロチャレンジマッチの探し方",
+    summary: "都道府県・プロ名・チェーン別の検索手順"
+  }
+];
+---
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath}>
+  <Breadcrumb items={[
+    { label: "ホーム", href: "/" },
+    { label: "ガイド" }
+  ]} />
+
+  <section class="hero">
+    <h1>ガイド</h1>
+    <p class="lead">SEO・AIO向けのHow-to記事。イベント探しと参加の参考に。</p>
+  </section>
+
+  <ul class="taxonomy">
+    {guides.map((guide) => (
+      <li><a href={guide.href}>{guide.title}</a></li>
+    ))}
+  </ul>
+</BaseLayout>

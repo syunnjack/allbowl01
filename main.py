@@ -1,12 +1,27 @@
 import datetime
 import json
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Literal, Optional
 
 from fastapi import FastAPI
-from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field
 
-app = FastAPI(title="Darts Fan Offer API")
+app = FastAPI(title="Bowling Event API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://bowling-event.jp",
+        "http://127.0.0.1:4321",
+        "http://localhost:4321",
+    ],
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
+
+DATA_DIR = Path(__file__).with_name("data")
+UGC_TIPS_PATH = DATA_DIR / "ugc_tips.json"
 
 # ---------- データモデル ----------
 
@@ -40,6 +55,38 @@ class Offer(BaseModel):
     bundle: List[Item]
     total: int
     score: float
+
+
+class UgcTipCreate(BaseModel):
+    kind: Literal["visit", "correction", "tip"] = "tip"
+    eventId: Optional[int] = None
+    venue: str = Field(min_length=1, max_length=120)
+    nickname: str = Field(min_length=1, max_length=30)
+    body: str = Field(min_length=1, max_length=1000)
+
+
+class UgcTip(UgcTipCreate):
+    id: int
+    status: Literal["pending", "approved", "rejected"] = "pending"
+    createdAt: str
+
+
+# ---------- UGC storage ----------
+
+
+def load_ugc_tips() -> List[UgcTip]:
+    if not UGC_TIPS_PATH.exists():
+        return []
+    raw = json.loads(UGC_TIPS_PATH.read_text(encoding="utf-8"))
+    return [UgcTip(**entry) for entry in raw]
+
+
+def save_ugc_tips(tips: List[UgcTip]) -> None:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    UGC_TIPS_PATH.write_text(
+        json.dumps([tip.model_dump() for tip in tips], ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
 
 
 # ---------- データ読み込み ----------
@@ -146,6 +193,31 @@ def generate_offers(fan: Fan) -> List[Offer]:
 @app.post("/offers", response_model=List[Offer])
 def get_offers(fan: Fan):
     return generate_offers(fan)
+
+
+@app.get("/ugc/tips", response_model=List[UgcTip])
+def list_ugc_tips(status: Optional[str] = "approved", event_id: Optional[int] = None):
+    tips = load_ugc_tips()
+    if status:
+        tips = [tip for tip in tips if tip.status == status]
+    if event_id is not None:
+        tips = [tip for tip in tips if tip.eventId == event_id]
+    return tips
+
+
+@app.post("/ugc/tips", response_model=UgcTip)
+def create_ugc_tip(payload: UgcTipCreate):
+    tips = load_ugc_tips()
+    next_id = max((tip.id for tip in tips), default=0) + 1
+    tip = UgcTip(
+        id=next_id,
+        status="pending",
+        createdAt=datetime.date.today().isoformat(),
+        **payload.model_dump(),
+    )
+    tips.append(tip)
+    save_ugc_tips(tips)
+    return tip
 
 
 if __name__ == "__main__":

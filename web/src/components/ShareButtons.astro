@@ -1,0 +1,104 @@
+---
+type Props = {
+  title: string;
+  url: string;
+  hashtags?: string[];
+};
+
+const { title, url, hashtags = ["プロチャレンジ", "ボウリング"] } = Astro.props;
+const encodedUrl = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(`${title} | Bowling Calendar`);
+const xText = encodeURIComponent(`${title}\n${url}\n#${hashtags.join(" #")}`);
+const lineText = encodeURIComponent(`${title}\n${url}`);
+---
+<section class="share" aria-label="SNSで共有">
+  <h2 class="share__heading">この情報を共有</h2>
+  <div class="share__buttons">
+    <a
+      class="share__btn share__btn--x"
+      href={`https://twitter.com/intent/tweet?text=${xText}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      X で共有
+    </a>
+    <a
+      class="share__btn share__btn--line"
+      href={`https://social-plugins.line.me/lineit/share?url=${encodedUrl}&text=${lineText}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      LINE で送る
+    </a>
+    <button class="share__btn share__btn--copy" type="button" data-copy-url={url}>
+      URLをコピー
+    </button>
+  </div>
+  <p class="share__hint">#プロチャレンジ情報 で投稿すると、他のファンにも届きやすくなります。</p>
+</section>
+
+<script>
+  document.querySelectorAll("[data-copy-url]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const url = button.getAttribute("data-copy-url");
+      if (!url) return;
+      try {
+        await navigator.clipboard.writeText(url);
+        button.textContent = "コピーしました";
+      } catch {
+        button.textContent = "コピーできませんでした";
+      }
+    });
+  });
+</script>
+
+<style>
+  .share {
+    margin-top: 28px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px;
+    background: var(--wash);
+  }
+
+  .share__heading {
+    margin: 0 0 12px;
+    font-size: 18px;
+  }
+
+  .share__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .share__btn {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 16px;
+    background: #fff;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .share__btn--x {
+    border-color: #111827;
+    background: #111827;
+    color: #fff;
+  }
+
+  .share__btn--line {
+    border-color: #06c755;
+    background: #06c755;
+    color: #fff;
+  }
+
+  .share__hint {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>

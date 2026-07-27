@@ -1,4 +1,30 @@
 User-agent: *
 Allow: /
 
+# AI / LLM discovery
+# Short summary for language models
+# https://bowling-event.jp/llms.txt
+# Full context for language models
+# https://bowling-event.jp/llms-full.txt
+# AI crawler policy
+# https://bowling-event.jp/ai.txt
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://bowling-event.jp/sitemap-index.xml

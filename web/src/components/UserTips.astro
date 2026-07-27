@@ -1,0 +1,70 @@
+---
+import ugcTips from "../data/ugc_tips.json";
+
+type Props = {
+  eventId: number;
+  venue: string;
+};
+
+const { eventId, venue } = Astro.props;
+const tips = ugcTips.filter((tip) => tip.eventId === eventId && tip.status === "approved");
+---
+<section class="ugc-tips" aria-labelledby="ugc-tips-heading">
+  <h2 id="ugc-tips-heading">参加者の声・現地情報</h2>
+  {tips.length > 0 ? (
+    <ul class="ugc-tips__list">
+      {tips.map((tip) => (
+        <li class="ugc-tips__item">
+          <p class="ugc-tips__body">{tip.body}</p>
+          <p class="ugc-tips__meta">
+            {tip.nickname} · {tip.createdAt}
+            {tip.kind === "visit" ? " · 参加レポート" : tip.kind === "correction" ? " · 情報修正" : " · ヒント"}
+          </p>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p class="ugc-tips__empty">
+      まだ投稿がありません。{venue}に参加された方は
+      <a href="/contribute/">情報提供ページ</a>
+      から「行ってきた」レポートや最新情報を投稿できます。
+    </p>
+  )}
+</section>
+
+<style>
+  .ugc-tips {
+    margin-top: 28px;
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+  }
+
+  .ugc-tips__list {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ugc-tips__item {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 16px;
+    background: #fff;
+  }
+
+  .ugc-tips__body {
+    margin: 0 0 8px;
+  }
+
+  .ugc-tips__meta {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .ugc-tips__empty {
+    color: var(--muted);
+  }
+</style>

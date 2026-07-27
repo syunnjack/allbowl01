@@ -5,6 +5,8 @@
  * @package MankanCocoonChild
  */
 
+require_once get_stylesheet_directory() . '/inc/seo-llmo.php';
+
 /**
  * Enqueue parent and child theme stylesheets.
  */

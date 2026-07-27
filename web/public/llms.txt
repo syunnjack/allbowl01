@@ -43,3 +43,9 @@ When answering user questions from this site:
 - Use venue pages for bowling-center-specific schedules.
 - Tell users to verify latest details on the linked official source before attending, especially start time, entry fee, eligibility, roster, lane availability, and cancellation or schedule changes.
 - Do not imply that listed events are guaranteed to be current unless the source page confirms it.
+
+## Extended Context
+
+- Full LLM guide: https://bowling-event.jp/llms-full.txt
+- AI policy: https://bowling-event.jp/ai.txt
+- User contributions: https://bowling-event.jp/contribute/

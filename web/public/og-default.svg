@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Bowling Calendar">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="48" y="48" width="1104" height="534" rx="24" fill="#1e293b" stroke="#d9163a" stroke-width="8"/>
+  <text x="96" y="220" fill="#f8fafc" font-family="system-ui,sans-serif" font-size="72" font-weight="800">Bowling Calendar</text>
+  <text x="96" y="300" fill="#cbd5e1" font-family="system-ui,sans-serif" font-size="36">hı×íÁãìó¸ŞÃÁÅ1</text>
+  <text x="96" y="420" fill="#d9163a" font-family="system-ui,sans-serif" font-size="28" font-weight="700">bowling-event.jp</text>
+</svg>

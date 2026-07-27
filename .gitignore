@@ -345,3 +345,4 @@ scrape_out.json
 _tmp_*
 _debug_*
 _curl_body.json
+data/ugc_tips.json

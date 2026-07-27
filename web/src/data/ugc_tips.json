@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "eventId": 193,
+    "kind": "visit",
+    "nickname": "ボウラーK",
+    "body": "13時台は比較的空いていました。プロのサイン会は終了後に実施。事前予約は公式ページから可能でした。",
+    "status": "approved",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": 2,
+    "eventId": 24,
+    "kind": "tip",
+    "nickname": "愛知在住",
+    "body": "駐車場はイベント日は混みやすいので、公共手段または早めの来店がおすすめです。",
+    "status": "approved",
+    "createdAt": "2026-07-10"
+  }
+]

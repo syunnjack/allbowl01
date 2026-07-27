@@ -1,0 +1,152 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+
+const title = "情報提供・UGC投稿 | プロチャレンジ情報を共有";
+const description = "プロボウリングチャレンジマッチの参加レポート、現地情報、掲載修正を投稿。Bowling CalendarのUGCポータルです。";
+const canonicalPath = "/contribute/";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  description,
+  url: `https://bowling-event.jp${canonicalPath}`,
+  potentialAction: {
+    "@type": "CommunicateAction",
+    name: "イベント情報を投稿",
+    target: `https://bowling-event.jp${canonicalPath}#submit`
+  }
+};
+---
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <Breadcrumb items={[
+    { label: "ホーム", href: "/" },
+    { label: "情報提供" }
+  ]} />
+
+  <section class="hero">
+    <h1>情報提供・UGC投稿</h1>
+    <p class="lead">
+      参加レポート、空き状況、駐車場情報、公式URLの修正など、現地の最新情報を共有してください。
+      承認後、該当イベントページの「参加者の声」に掲載します。
+    </p>
+  </section>
+
+  <section class="grid" aria-label="投稿の種類">
+    <article class="stat">
+      <strong>行ってきた</strong>
+      参加レポート・混雑状況
+    </article>
+    <article class="stat">
+      <strong>情報修正</strong>
+      日時変更・中止情報
+    </article>
+    <article class="stat">
+      <strong>新規ヒント</strong>
+      未掲載イベントの情報
+    </article>
+  </section>
+
+  <section id="submit" class="detail">
+    <h2>投稿フォーム</h2>
+    <form id="ugc-form" class="ugc-form">
+      <label>
+        種類
+        <select name="kind" required>
+          <option value="visit">行ってきた（参加レポート）</option>
+          <option value="correction">情報修正</option>
+          <option value="tip">新規ヒント</option>
+        </select>
+      </label>
+      <label>
+        イベントID（イベントページURLの数字部分）
+        <input name="eventId" type="number" min="1" placeholder="例: 193" />
+      </label>
+      <label>
+        会場名
+        <input name="venue" type="text" required placeholder="例: 神戸六甲ボウル" />
+      </label>
+      <label>
+        ニックネーム
+        <input name="nickname" type="text" required maxlength="30" placeholder="例: ボウラーK" />
+      </label>
+      <label>
+        内容（1000文字以内）
+        <textarea name="body" required maxlength="1000" rows="6" placeholder="現地の様子、空き状況、公式ページURLなど"></textarea>
+      </label>
+      <button class="button-link" type="submit">投稿する</button>
+      <p id="ugc-status" class="meta" role="status"></p>
+    </form>
+  </section>
+
+  <section class="info-band">
+    <h2>SNSでも共有</h2>
+    <p>
+      X（Twitter）で <strong>#プロチャレンジ情報</strong> を付けて投稿すると、他のファンにも届きやすくなります。
+      イベントページの「共有ボタン」からワンクリック投稿もできます。
+    </p>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById("ugc-form");
+  const status = document.getElementById("ugc-status");
+  const apiBase = import.meta.env.PUBLIC_UGC_API_URL || "http://127.0.0.1:8000";
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!(form instanceof HTMLFormElement) || !status) return;
+
+    const data = new FormData(form);
+    const payload = {
+      kind: String(data.get("kind") || "tip"),
+      eventId: data.get("eventId") ? Number(data.get("eventId")) : null,
+      venue: String(data.get("venue") || ""),
+      nickname: String(data.get("nickname") || ""),
+      body: String(data.get("body") || "")
+    };
+
+    status.textContent = "送信中…";
+
+    try {
+      const response = await fetch(`${apiBase}/ugc/tips`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) throw new Error("submit failed");
+      form.reset();
+      status.textContent = "投稿を受け付けました。確認後、イベントページに反映されます。";
+    } catch {
+      status.textContent = "APIに接続できませんでした。Xで #プロチャレンジ情報 を付けて共有してください。";
+    }
+  });
+</script>
+
+<style>
+  .ugc-form {
+    display: grid;
+    gap: 14px;
+    max-width: 640px;
+  }
+
+  .ugc-form label {
+    display: grid;
+    gap: 6px;
+    font-weight: 700;
+  }
+
+  .ugc-form input,
+  .ugc-form select,
+  .ugc-form textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font: inherit;
+  }
+</style>

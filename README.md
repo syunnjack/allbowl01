@@ -6,7 +6,7 @@
 ## Production Domain
 
 ```text
-https://bowling-event.jp
+https://syunnjack.github.io/allbowl01
 ```
 
 GitHub Pages カスタムドメイン: `web/public/CNAME`
@@ -15,7 +15,7 @@ GitHub Pages カスタムドメイン: `web/public/CNAME`
 
 | パス | 用途 |
 |------|------|
-| `web/` | **Astro** 静的サイト（本番: bowling-event.jp） |
+| `web/` | **Astro** 静的サイト（本番: https://syunnjack.github.io/allbowl01/） |
 | `cocoon-child-mankan/` | **WordPress** Cocoon 子テーマ（Mankan トップ LP） |
 | `allbowl01/` | Windows アプリ（C# / スクレイピング・データ出力） |
 | `main.py` 他 | Python MVP API（ダーツレコメンド・六甲ボウルスクレイパー） |

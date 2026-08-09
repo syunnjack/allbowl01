@@ -1,0 +1,67 @@
+---
+// Rakuten affiliate ID and Amazon Associates tag reused from the same
+// accounts already wired into other sites in this portfolio.
+const RAKUTEN_AFFILIATE_ID = "13078974.c074128c.13078975.03b0a557";
+const AMAZON_ASSOCIATE_TAG = "syunndayo-22";
+
+function rakutenAffiliateUrl(targetUrl: string) {
+  return `https://hb.afl.rakuten.co.jp/hgc/${RAKUTEN_AFFILIATE_ID}/?pc=${encodeURIComponent(targetUrl)}&m=${encodeURIComponent(targetUrl)}`;
+}
+
+function rakutenSearchUrl(keyword: string) {
+  return rakutenAffiliateUrl(`https://search.rakuten.co.jp/search/mall/${encodeURIComponent(keyword)}/`);
+}
+
+function amazonSearchUrl(keyword: string) {
+  return `https://www.amazon.co.jp/s?k=${encodeURIComponent(keyword)}&tag=${AMAZON_ASSOCIATE_TAG}`;
+}
+
+const items = [
+  { label: "マイボール", keyword: "ボウリング マイボール" },
+  { label: "ボウリングシューズ", keyword: "ボウリングシューズ" },
+  { label: "リストサポーター", keyword: "ボウリング リストサポーター" },
+  { label: "グローブ", keyword: "ボウリング グローブ" },
+  { label: "ボウリングバッグ", keyword: "ボウリング バッグ" },
+  { label: "グリップパウダー", keyword: "ボウリング グリップパウダー" },
+  { label: "クレーンゲーム・プライズフィギュア", keyword: "クレーンゲーム プライズフィギュア" },
+  { label: "アニメ・ゲームフィギュア", keyword: "フィギュア アニメ" },
+  { label: "アミューズメントグッズ", keyword: "アミューズメント グッズ" },
+];
+---
+<section class="info-band" aria-label="広告">
+  <h2>ボウリング用品・アミューズメントグッズ</h2>
+  <p class="meta">
+    PR ― マイボール等の用具のほか、ラウンドワンなどの複合アミューズメント施設で人気の
+    クレーンゲームのプライズフィギュア・グッズも探せます。
+  </p>
+  <ul class="goods-list">
+    {items.map((item) => (
+      <li>
+        <span>{item.label}</span>
+        <a href={rakutenSearchUrl(item.keyword)} target="_blank" rel="noopener noreferrer sponsored">楽天市場で見る</a>
+        <a href={amazonSearchUrl(item.keyword)} target="_blank" rel="noopener noreferrer sponsored">Amazonで見る</a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .goods-list {
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.5rem 1rem;
+  }
+  .goods-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .goods-list span {
+    font-weight: 600;
+    min-width: 8em;
+  }
+</style>

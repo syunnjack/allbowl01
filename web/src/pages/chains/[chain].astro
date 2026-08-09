@@ -11,13 +11,45 @@ export function getStaticPaths() {
 
 const chain = fromPageSlug(Astro.params.chain ?? "");
 const events = byChain(chain);
-const title = `${chain}のプロボウリングチャレンジマッチ開催予定`;
-const description = `${chain}系列で開催予定のプロボウリングチャレンジマッチを、日付・会場・出演プロ名で確認できます。`;
+const isRound1 = chain === "ラウンドワン";
+const title = isRound1
+  ? "ラウンドワンのプロボウリングチャレンジ開催予定（店舗別に整理）"
+  : `${chain}のプロボウリングチャレンジマッチ開催予定`;
+const description = isRound1
+  ? "ラウンドワン各店で開催されるプロボウリングチャレンジマッチを、公式サイトでは見つけにくい情報も含めて店舗・日付・出演プロ名で整理しています。"
+  : `${chain}系列で開催予定のプロボウリングチャレンジマッチを、日付・会場・出演プロ名で確認できます。`;
 ---
 <BaseLayout title={title} description={description} canonicalPath={`/chains/${pageSlug(chain)}/`}>
   <section class="hero">
-    <h1>{chain}のプロチャレンジ予定</h1>
+    <h1>{isRound1 ? "ラウンドワンのプロチャレンジ予定" : `${chain}のプロチャレンジ予定`}</h1>
     <p class="lead">{chain}系列のボウリング場で開催されるプロボウラー参加イベントを掲載しています。</p>
   </section>
+
+  {isRound1 && (
+    <section class="info-band" aria-labelledby="round1-guide-heading">
+      <h2 id="round1-guide-heading">ラウンドワンのプロチャレンジは、実は見つけにくい</h2>
+      <div class="info-grid">
+        <article>
+          <h3>公式サイトでは店舗ページの奥に埋もれがち</h3>
+          <p>
+            ラウンドワンのプロチャレンジ情報は、公式サイトのボウリングサービスページの中でも
+            出演プロごとの個別ページに分散して掲載されており、目的の店舗・日程を見つけるのに
+            公式サイト内を何度も行き来する必要があります。当サイトでは店舗・日付・出演プロを
+            横断して一覧化しています。
+          </p>
+        </article>
+        <article>
+          <h3>ボウリング以外のアミューズメントも展開</h3>
+          <p>
+            ラウンドワンはボウリングだけでなく、ダーツ、カラオケ、ビリヤード、卓球、
+            スポッチャ（室内スポーツ）、バッティングセンター、ゲームセンターなどを併設する
+            複合エンターテインメント施設です。プロチャレンジ参加のついでに、他のアクティビティも
+            楽しめる店舗が多くあります。
+          </p>
+        </article>
+      </div>
+    </section>
+  )}
+
   <EventList events={events} />
 </BaseLayout>

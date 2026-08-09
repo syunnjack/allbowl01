@@ -1,4 +1,5 @@
 ---
+import AffiliateGoods from "../components/AffiliateGoods.astro";
 import EventList from "../components/EventList.astro";
 import EventSearch from "../components/EventSearch.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -117,6 +118,8 @@ const structuredData = {
     <h2>近日開催のチャレンジ/プロアマ予定</h2>
     <EventList events={latestEvents} />
   </section>
+
+  <AffiliateGoods />
 
   <section>
     <h2>都道府県から探す</h2>

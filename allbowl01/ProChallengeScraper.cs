@@ -147,7 +147,31 @@ namespace allbowl01
             // その他
             new("スポルト","スポルト八景",          "神奈川","https://www.sport-bowling.co.jp/schedule_hakkei"),
             new("ダイトー","ダイトースターレーン",   "山梨","https://www.daitho.co.jp/category/pro-challenge/"),
-            
+
+            // 全国展開: 未掲載21県分を追加（2026-08、各サイトのURL確認済み）
+            new("はまなすファミリーボウル", "はまなすファミリーボウル", "秋田", "http://www.hamanasufbowl.shop/大会・イベント/"),
+            new("ボウルモデルノ", "ボウルモデルノ", "山形", "https://www.b-moderno.com/event.html"),
+            new("ラウンドワン", "郡山店", "福島", "https://www.round1.co.jp/service/bowling/prochallenge_ohnaka.html"),
+            new("ラウンドワン", "福島店", "福島", "https://www.round1.co.jp/service/bowling/prochallenge_ohnaka.html"),
+            new("フジ取手ボウル", "フジ取手ボウル", "茨城", "https://fujitoridebowl.wixsite.com/website/house-tournament"),
+            new("POP BOWL", "POP BOWL 長岡", "新潟", "http://pop-nagaoka.galaxygroup.co.jp/category/1735488.html"),
+            new("富山地鉄ゴールデンボウル", "富山地鉄ゴールデンボウル", "富山", "https://www.chitetsu.co.jp/?page_id=599"),
+            new("エースレーン草津", "エースレーン草津", "滋賀", "https://act-amuse.com/bowling/kishida/"),
+            new("MKボウル", "MKボウル上賀茂", "京都", "https://mkciel.net/kamigamo/bowlingperfect.php"),
+            new("トドロキボウル", "トドロキボウル", "奈良", "http://todoroki.jp/tb/?tag=%E3%83%97%E3%83%AD%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8"),
+            new("ラウンドワン", "和歌山店", "和歌山", "https://www.round1.co.jp/service/bowling/prochallenge_miura.html"),
+            new("YSPボウル", "YSPボウル", "鳥取", "http://yspbowl.com/tournament/"),
+            // しんじ湖ボウル: 実在・稼働確認済みだが、大会情報は画像PDFのニュースレターのみで内容未確認
+            new("しんじ湖ボウル", "しんじ湖ボウル", "島根", "https://www.shinjiko-bowl.jp/news/"),
+            new("防府ゴールデンボール", "防府ゴールデンボール", "山口", "http://www.hofugoldenbowl.com/event/"),
+            new("ラウンドワン", "徳島・万代店", "徳島", "https://www.round1.co.jp/service/bowling/prochallenge_ohnaka.html"),
+            new("ラウンドワン", "高松店", "香川", "https://www.round1.co.jp/service/bowling/prochallenge_ohnaka.html"),
+            new("ラウンドワン", "高知店", "高知", "https://www.round1.co.jp/service/bowling/prochallenge_ohnaka.html"),
+            new("ボウルアーガス", "ボウルアーガス", "佐賀", "http://bowlagas.co.jp/"),
+            new("長崎ラッキーボウル", "長崎ラッキーボウル", "長崎", "http://www.luckybowl.jp/activity/bowling/bw_competition/"),
+            new("スポルト", "スポルト熊本", "熊本", "https://www.sport-bowling.co.jp/schedule_kumamoto"),
+            new("OBSボウル", "OBSボウル", "大分", "https://www.obs-bowl.com/info/tournament/"),
+            new("宮崎エースレーン", "宮崎エースレーン", "宮崎", "http://www.acelane.co.jp/sche.html"),
 
 
     };

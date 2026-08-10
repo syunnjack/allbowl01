@@ -1,73 +1,6 @@
 [
   {
     "id": 38,
-    "date": "2026-08-09",
-    "chain": "グランドボウル",
-    "venue": "稲沢グランドボウル",
-    "prefecture": "愛知",
-    "pros": [
-      "尾上萌楓プロ",
-      "舟本舞プロ",
-      "松永裕美プロ",
-      "堀井春花プロ"
-    ],
-    "proText": "尾上萌楓プロ、舟本舞プロ、松永裕美プロ、堀井春花プロ",
-    "timeSlots": [
-      "14:00",
-      "19:00"
-    ],
-    "sourceUrl": "https://www.grandbowl.jp/inazawa/news/30123/",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 53,
-    "date": "2026-08-09",
-    "chain": "グランドボウル",
-    "venue": "半田グランドボウル",
-    "prefecture": "愛知",
-    "pros": [
-      "三浦美里プロ"
-    ],
-    "proText": "三浦美里プロ",
-    "timeSlots": [],
-    "sourceUrl": "https://www.grandbowl.jp/handa/news/24576/",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 131,
-    "date": "2026-08-09",
-    "chain": "神戸六甲ボウル",
-    "venue": "神戸六甲ボウル",
-    "prefecture": "兵庫",
-    "pros": [
-      "寺下智香プロ"
-    ],
-    "proText": "寺下智香プロ",
-    "timeSlots": [
-      "12:30",
-      "15:00"
-    ],
-    "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 352,
-    "date": "2026-08-09",
-    "chain": "OBSボウル",
-    "venue": "OBSボウル",
-    "prefecture": "大分",
-    "pros": [
-      "木村広人プロ"
-    ],
-    "proText": "木村広人プロ",
-    "timeSlots": [
-      "13:30"
-    ],
-    "sourceUrl": "https://www.obs-bowl.com/info/obsbowl_schedule/",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 39,
     "date": "2026-08-11",
     "chain": "グランドボウル",
     "venue": "稲沢グランドボウル",
@@ -78,10 +11,10 @@
     "proText": "舟本舞プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/inazawa/news/36341/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 103,
+    "id": 102,
     "date": "2026-08-11",
     "chain": "スプリングレーン",
     "venue": "川口スプリングレーン",
@@ -92,10 +25,10 @@
     "proText": "星野宏明プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/k_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 104,
+    "id": 103,
     "date": "2026-08-11",
     "chain": "スプリングレーン",
     "venue": "川口スプリングレーン",
@@ -106,10 +39,10 @@
     "proText": "松田章プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/k_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 112,
+    "id": 111,
     "date": "2026-08-11",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -122,10 +55,10 @@
     "proText": "桑藤美樹プロ、後藤光々音プロ、大久保雄矢プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 194,
+    "id": 193,
     "date": "2026-08-11",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -138,22 +71,10 @@
     "proText": "金子萌夏プロ、幸木百合菜プロ、永野すばるプロ",
     "timeSlots": [],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 225,
-    "date": "2026-08-11",
-    "chain": "JPBA公式",
-    "venue": "新小岩サニーボウル",
-    "prefecture": "東京",
-    "pros": [],
-    "proText": "JPBA公式:  第2回 城東5人チームトーナメント",
-    "timeSlots": [],
-    "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 226,
+    "id": 223,
     "date": "2026-08-11",
     "chain": "JPBA公式",
     "venue": "厚木ツマダボウル",
@@ -162,10 +83,22 @@
     "proText": "JPBA公式:  第11回さがみオープンダブルス選手権大会",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 90,
+    "id": 224,
+    "date": "2026-08-11",
+    "chain": "JPBA公式",
+    "venue": "新小岩サニーボウル",
+    "prefecture": "東京",
+    "pros": [],
+    "proText": "JPBA公式:  第2回 城東5人チームトーナメント",
+    "timeSlots": [],
+    "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 89,
     "date": "2026-08-12",
     "chain": "N&K",
     "venue": "柿田川パークレーンズ",
@@ -176,10 +109,10 @@
     "proText": "藤永北斗プロ",
     "timeSlots": [],
     "sourceUrl": "https://nandk.net/challenge-match/424535/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 95,
+    "id": 94,
     "date": "2026-08-12",
     "chain": "N&K",
     "venue": "ヤングファラオ",
@@ -190,10 +123,10 @@
     "proText": "藤永北斗プロ",
     "timeSlots": [],
     "sourceUrl": "https://nandk.net/challenge-match/424535/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 100,
+    "id": 99,
     "date": "2026-08-12",
     "chain": "N&K",
     "venue": "弘前ファミリーボウル",
@@ -204,10 +137,10 @@
     "proText": "藤永北斗プロ",
     "timeSlots": [],
     "sourceUrl": "https://nandk.net/challenge-match/424535/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 105,
+    "id": 104,
     "date": "2026-08-12",
     "chain": "スプリングレーン",
     "venue": "川口スプリングレーン",
@@ -219,10 +152,10 @@
     "proText": "星野宏明プロ、松田章プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/k_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 113,
+    "id": 112,
     "date": "2026-08-12",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -236,10 +169,10 @@
     "proText": "桑藤美樹プロ、後藤光々音プロ、大久保雄矢プロ、熊田菜奈海プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 114,
+    "id": 113,
     "date": "2026-08-13",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -253,10 +186,10 @@
     "proText": "桑藤美樹プロ、後藤光々音プロ、大久保雄矢プロ、熊田菜奈海プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 133,
+    "id": 130,
     "date": "2026-08-13",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -272,10 +205,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 134,
+    "id": 131,
     "date": "2026-08-13",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -290,10 +223,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 135,
+    "id": 132,
     "date": "2026-08-13",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -308,10 +241,10 @@
       "10:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/9616",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 71,
+    "id": 70,
     "date": "2026-08-14",
     "chain": "グランドボウル",
     "venue": "名古屋グランドボウル",
@@ -326,10 +259,10 @@
       "19:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/nagoya/news/21466/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 115,
+    "id": 114,
     "date": "2026-08-14",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -343,10 +276,10 @@
     "proText": "後藤光々音プロ、大久保雄矢プロ、熊田菜奈海プロ、今井双葉プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 136,
+    "id": 133,
     "date": "2026-08-14",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -361,10 +294,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 137,
+    "id": 134,
     "date": "2026-08-14",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -379,7 +312,7 @@
       "10:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/9616",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 1,
@@ -396,10 +329,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 62,
+    "id": 61,
     "date": "2026-08-15",
     "chain": "グランドボウル",
     "venue": "名古屋グランドボウル",
@@ -410,10 +343,10 @@
     "proText": "姫路麗プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/nagoya/news/22556/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 106,
+    "id": 105,
     "date": "2026-08-15",
     "chain": "スプリングレーン",
     "venue": "川口スプリングレーン",
@@ -425,10 +358,10 @@
     "proText": "星野宏明プロ、松田章プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/k_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 116,
+    "id": 115,
     "date": "2026-08-15",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -442,10 +375,10 @@
     "proText": "大久保雄矢プロ、熊田菜奈海プロ、今井双葉プロ、佐々木プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 138,
+    "id": 135,
     "date": "2026-08-15",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -460,7 +393,7 @@
       "10:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/9616",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 17,
@@ -477,7 +410,7 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/tok/434",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 24,
@@ -494,10 +427,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 55,
+    "id": 54,
     "date": "2026-08-16",
     "chain": "グランドボウル",
     "venue": "鈴鹿グランドボウル",
@@ -508,10 +441,10 @@
     "proText": "坂倉にいなプロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/suzuka/news/10332/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 86,
+    "id": 85,
     "date": "2026-08-16",
     "chain": "グランドボウル",
     "venue": "津グランドボウル",
@@ -522,10 +455,10 @@
     "proText": "福丸哲平プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/tsu/news/11301/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 107,
+    "id": 106,
     "date": "2026-08-16",
     "chain": "スプリングレーン",
     "venue": "川口スプリングレーン",
@@ -537,10 +470,10 @@
     "proText": "星野宏明プロ、松田章プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/k_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 139,
+    "id": 136,
     "date": "2026-08-16",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -556,10 +489,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 140,
+    "id": 137,
     "date": "2026-08-16",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -574,10 +507,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 141,
+    "id": 138,
     "date": "2026-08-16",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -593,10 +526,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 142,
+    "id": 139,
     "date": "2026-08-16",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -611,10 +544,10 @@
       "14:00"
     ],
     "sourceUrl": "http://www.rokkobowl.co.jp/archives/category/event",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 143,
+    "id": 140,
     "date": "2026-08-16",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -629,10 +562,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/9709",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 144,
+    "id": 141,
     "date": "2026-08-16",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -648,10 +581,10 @@
       "23:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/9616",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 145,
+    "id": 142,
     "date": "2026-08-16",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -665,27 +598,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/9618",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 214,
-    "date": "2026-08-17",
-    "chain": "ラウンドワン",
-    "venue": "中川1号線店",
-    "prefecture": "愛知",
-    "pros": [
-      "安藤瞳プロ"
-    ],
-    "proText": "安藤瞳プロ",
-    "timeSlots": [
-      "15:00",
-      "18:00"
-    ],
-    "sourceUrl": "https://www.round1.co.jp/service/r1live/challenge/",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 147,
+    "id": 144,
     "date": "2026-08-18",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -700,10 +616,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/9709",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 215,
+    "id": 213,
     "date": "2026-08-18",
     "chain": "ラウンドワン",
     "venue": "博多・半道橋店",
@@ -717,10 +633,10 @@
       "18:00"
     ],
     "sourceUrl": "https://www.round1.co.jp/service/r1live/challenge/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 216,
+    "id": 214,
     "date": "2026-08-19",
     "chain": "ラウンドワン",
     "venue": "吉祥寺店",
@@ -734,10 +650,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.round1.co.jp/service/r1live/challenge/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 279,
+    "id": 277,
     "date": "2026-08-19",
     "chain": "富山地鉄ゴールデンボウル",
     "venue": "富山地鉄ゴールデンボウル",
@@ -752,10 +668,10 @@
       "13:30"
     ],
     "sourceUrl": "https://www.chitetsu.co.jp/?page_id=599#tab5Body",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 217,
+    "id": 215,
     "date": "2026-08-20",
     "chain": "ラウンドワン",
     "venue": "府中本町駅前店",
@@ -769,10 +685,10 @@
       "18:00"
     ],
     "sourceUrl": "https://www.round1.co.jp/service/r1live/challenge/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 117,
+    "id": 116,
     "date": "2026-08-21",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -786,10 +702,10 @@
     "proText": "今井双葉プロ、佐々木プロ、小久保実希プロ、小林あゆみプロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 218,
+    "id": 216,
     "date": "2026-08-21",
     "chain": "ラウンドワン",
     "venue": "吉祥寺店",
@@ -803,7 +719,7 @@
       "18:00"
     ],
     "sourceUrl": "https://www.round1.co.jp/service/r1live/challenge/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 2,
@@ -820,7 +736,7 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 33,
@@ -837,10 +753,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/ogk/512",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 91,
+    "id": 90,
     "date": "2026-08-22",
     "chain": "N&K",
     "venue": "柿田川パークレーンズ",
@@ -851,10 +767,10 @@
     "proText": "平尾勉プロ",
     "timeSlots": [],
     "sourceUrl": "https://nandk.net/challenge-match/424532/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 96,
+    "id": 95,
     "date": "2026-08-22",
     "chain": "N&K",
     "venue": "ヤングファラオ",
@@ -865,10 +781,10 @@
     "proText": "平尾勉プロ",
     "timeSlots": [],
     "sourceUrl": "https://nandk.net/challenge-match/424532/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 101,
+    "id": 100,
     "date": "2026-08-22",
     "chain": "N&K",
     "venue": "弘前ファミリーボウル",
@@ -879,10 +795,10 @@
     "proText": "平尾勉プロ",
     "timeSlots": [],
     "sourceUrl": "https://nandk.net/challenge-match/424532/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 118,
+    "id": 117,
     "date": "2026-08-22",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -896,10 +812,10 @@
     "proText": "今井双葉プロ、佐々木プロ、小久保実希プロ、小林あゆみプロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 227,
+    "id": 225,
     "date": "2026-08-22",
     "chain": "JPBA公式",
     "venue": "綜合レジャー サンコーボウル",
@@ -908,10 +824,10 @@
     "proText": "JPBA公式:  第26回北海道プロアマオープントーナメント",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 228,
+    "id": 226,
     "date": "2026-08-22",
     "chain": "JPBA公式",
     "venue": "アイキョーボウル",
@@ -920,10 +836,10 @@
     "proText": "JPBA公式:  大久保洪基・金田惠子メモリアルプロアマトーナメント2026",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 229,
+    "id": 227,
     "date": "2026-08-22",
     "chain": "JPBA公式",
     "venue": "ヤングファラオ",
@@ -932,7 +848,7 @@
     "proText": "JPBA公式:  第6回関東甲信越チャリティープロアマボウリングトーナメント",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 14,
@@ -949,10 +865,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/anj/346",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 41,
+    "id": 40,
     "date": "2026-08-23",
     "chain": "グランドボウル",
     "venue": "稲沢グランドボウル",
@@ -963,10 +879,10 @@
     "proText": "松永裕美プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/inazawa/news/35779/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 148,
+    "id": 145,
     "date": "2026-08-23",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -980,10 +896,10 @@
       "14:00"
     ],
     "sourceUrl": "http://www.rokkobowl.co.jp/archives/category/event",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 149,
+    "id": 146,
     "date": "2026-08-23",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -998,10 +914,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 281,
+    "id": 279,
     "date": "2026-08-23",
     "chain": "富山地鉄ゴールデンボウル",
     "venue": "富山地鉄ゴールデンボウル",
@@ -1017,10 +933,10 @@
       "12:45"
     ],
     "sourceUrl": "https://www.chitetsu.co.jp/?page_id=599#tab5Body",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 219,
+    "id": 217,
     "date": "2026-08-24",
     "chain": "ラウンドワン",
     "venue": "中川1号線店",
@@ -1034,10 +950,10 @@
       "18:00"
     ],
     "sourceUrl": "https://www.round1.co.jp/service/r1live/challenge/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 108,
+    "id": 107,
     "date": "2026-08-25",
     "chain": "スプリングレーン",
     "venue": "川口スプリングレーン",
@@ -1048,10 +964,10 @@
     "proText": "松田章プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/k_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 153,
+    "id": 150,
     "date": "2026-08-25",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -1065,10 +981,10 @@
       "10:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/9709",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 220,
+    "id": 218,
     "date": "2026-08-25",
     "chain": "ラウンドワン",
     "venue": "中川1号線店",
@@ -1082,10 +998,10 @@
       "18:00"
     ],
     "sourceUrl": "https://www.round1.co.jp/service/r1live/challenge/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 347,
+    "id": 348,
     "date": "2026-08-25",
     "chain": "スポルト",
     "venue": "スポルト熊本",
@@ -1099,7 +1015,7 @@
       "13:30"
     ],
     "sourceUrl": "https://www.sport-bowling.co.jp/schedule_kumamoto",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 353,
@@ -1116,10 +1032,10 @@
       "11:30"
     ],
     "sourceUrl": "https://www.obs-bowl.com/info/obsbowl_schedule/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 92,
+    "id": 91,
     "date": "2026-08-26",
     "chain": "N&K",
     "venue": "柿田川パークレーンズ",
@@ -1133,10 +1049,10 @@
       "19:00"
     ],
     "sourceUrl": "https://nandk.net/challenge-match/424530/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 97,
+    "id": 96,
     "date": "2026-08-26",
     "chain": "N&K",
     "venue": "ヤングファラオ",
@@ -1150,10 +1066,10 @@
       "19:00"
     ],
     "sourceUrl": "https://nandk.net/challenge-match/424530/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 102,
+    "id": 101,
     "date": "2026-08-26",
     "chain": "N&K",
     "venue": "弘前ファミリーボウル",
@@ -1167,10 +1083,10 @@
       "19:00"
     ],
     "sourceUrl": "https://nandk.net/challenge-match/424530/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 221,
+    "id": 219,
     "date": "2026-08-26",
     "chain": "ラウンドワン",
     "venue": "南砂店",
@@ -1184,10 +1100,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.round1.co.jp/service/r1live/challenge/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 348,
+    "id": 349,
     "date": "2026-08-26",
     "chain": "スポルト",
     "venue": "スポルト熊本",
@@ -1201,7 +1117,7 @@
       "16:00"
     ],
     "sourceUrl": "https://www.sport-bowling.co.jp/schedule_kumamoto",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 354,
@@ -1218,10 +1134,10 @@
       "13:30"
     ],
     "sourceUrl": "https://www.obs-bowl.com/info/obsbowl_schedule/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 222,
+    "id": 220,
     "date": "2026-08-27",
     "chain": "ラウンドワン",
     "venue": "府中本町駅前店",
@@ -1235,10 +1151,10 @@
       "18:00"
     ],
     "sourceUrl": "https://www.round1.co.jp/service/r1live/challenge/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 119,
+    "id": 118,
     "date": "2026-08-28",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -1252,10 +1168,10 @@
     "proText": "小久保実希プロ、小林あゆみプロ、小林よしみプロ、飯田菜々プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 154,
+    "id": 151,
     "date": "2026-08-28",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -1269,10 +1185,10 @@
       "18:30"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/9709",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 223,
+    "id": 221,
     "date": "2026-08-28",
     "chain": "ラウンドワン",
     "venue": "吉祥寺店",
@@ -1286,10 +1202,10 @@
       "18:00"
     ],
     "sourceUrl": "https://www.round1.co.jp/service/r1live/challenge/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 120,
+    "id": 119,
     "date": "2026-08-29",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -1303,10 +1219,10 @@
     "proText": "小林あゆみプロ、小林よしみプロ、飯田菜々プロ、熊田菜奈海プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 230,
+    "id": 228,
     "date": "2026-08-29",
     "chain": "JPBA公式",
     "venue": "コロナキャットボウル中川店",
@@ -1315,10 +1231,10 @@
     "proText": "JPBA公式:  コロナワールドカップ 2026プロボウリング男子新人戦",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 231,
+    "id": 229,
     "date": "2026-08-29",
     "chain": "JPBA公式",
     "venue": "トドロキボウル",
@@ -1327,10 +1243,10 @@
     "proText": "JPBA公式:  第12回 NARA OPEN トドロキカップ",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 283,
+    "id": 281,
     "date": "2026-08-29",
     "chain": "富山地鉄ゴールデンボウル",
     "venue": "富山地鉄ゴールデンボウル",
@@ -1344,10 +1260,10 @@
       "12:45"
     ],
     "sourceUrl": "https://www.chitetsu.co.jp/?page_id=599#tab5Body",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 349,
+    "id": 350,
     "date": "2026-08-29",
     "chain": "スポルト",
     "venue": "スポルト熊本",
@@ -1361,7 +1277,7 @@
       "16:00"
     ],
     "sourceUrl": "https://www.sport-bowling.co.jp/schedule_kumamoto",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 355,
@@ -1378,7 +1294,7 @@
       "13:30"
     ],
     "sourceUrl": "https://www.obs-bowl.com/info/obsbowl_schedule/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 25,
@@ -1395,10 +1311,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 42,
+    "id": 41,
     "date": "2026-08-30",
     "chain": "グランドボウル",
     "venue": "稲沢グランドボウル",
@@ -1409,10 +1325,10 @@
     "proText": "髙本聖菜プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/inazawa/news/35287/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 52,
+    "id": 51,
     "date": "2026-08-30",
     "chain": "グランドボウル",
     "venue": "半田グランドボウル",
@@ -1423,10 +1339,10 @@
     "proText": "熊田菜奈海プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/handa/news/24016/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 121,
+    "id": 120,
     "date": "2026-08-30",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -1440,10 +1356,10 @@
     "proText": "飯田菜々プロ、熊田菜奈海プロ、置秀一プロ、久保田彩花プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 191,
+    "id": 190,
     "date": "2026-08-30",
     "chain": "イーグルボウル",
     "venue": "イーグルボウル",
@@ -1457,10 +1373,10 @@
     "proText": "德久恵大プロ、宮澤拓哉プロ、川口茉紀プロ、寺下智香プロ",
     "timeSlots": [],
     "sourceUrl": "https://eaglebowl.jp/tournament/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 350,
+    "id": 351,
     "date": "2026-08-30",
     "chain": "スポルト",
     "venue": "スポルト熊本",
@@ -1474,10 +1390,10 @@
       "13:30"
     ],
     "sourceUrl": "https://www.sport-bowling.co.jp/schedule_kumamoto",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 224,
+    "id": 222,
     "date": "2026-08-31",
     "chain": "ラウンドワン",
     "venue": "南砂店",
@@ -1491,10 +1407,10 @@
       "18:00"
     ],
     "sourceUrl": "https://www.round1.co.jp/service/r1live/challenge/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 285,
+    "id": 283,
     "date": "2026-08-31",
     "chain": "エースレーン草津",
     "venue": "エースレーン草津",
@@ -1507,10 +1423,10 @@
     "proText": "チャンネル岸田有加プロ、しかしプロ、練習会のご参加やプロ",
     "timeSlots": [],
     "sourceUrl": "https://act-amuse.com/bowling/kishida/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 155,
+    "id": 152,
     "date": "2026-09-01",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -1523,7 +1439,7 @@
       "10:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 3,
@@ -1540,10 +1456,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 51,
+    "id": 50,
     "date": "2026-09-05",
     "chain": "グランドボウル",
     "venue": "半田グランドボウル",
@@ -1554,10 +1470,10 @@
     "proText": "中村心プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/handa/news/24580/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 195,
+    "id": 194,
     "date": "2026-09-05",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -1570,10 +1486,10 @@
     "proText": "金子萌夏プロ、幸木百合菜プロ、永野すばるプロ",
     "timeSlots": [],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 196,
+    "id": 195,
     "date": "2026-09-05",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -1587,7 +1503,7 @@
       "15:30"
     ],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 18,
@@ -1604,7 +1520,7 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/tok/434",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 26,
@@ -1621,10 +1537,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 156,
+    "id": 153,
     "date": "2026-09-06",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -1638,10 +1554,10 @@
       "19:30"
     ],
     "sourceUrl": "http://www.rokkobowl.co.jp/archives/category/event",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 192,
+    "id": 191,
     "date": "2026-09-06",
     "chain": "イーグルボウル",
     "venue": "イーグルボウル",
@@ -1655,10 +1571,10 @@
     "proText": "德久恵大プロ、宮澤拓哉プロ、川口茉紀プロ、寺下智香プロ",
     "timeSlots": [],
     "sourceUrl": "https://eaglebowl.jp/tournament/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 232,
+    "id": 230,
     "date": "2026-09-06",
     "chain": "JPBA公式",
     "venue": "ボウルかつらしま",
@@ -1667,22 +1583,10 @@
     "proText": "JPBA公式:  第3回高知よさこいオープン",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 233,
-    "date": "2026-09-06",
-    "chain": "JPBA公式",
-    "venue": "山形ファミリーボウル",
-    "prefecture": "山形",
-    "pros": [],
-    "proText": "JPBA公式:  2026山形オープンファミリーカップ プロアマトーナメント",
-    "timeSlots": [],
-    "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 234,
+    "id": 231,
     "date": "2026-09-06",
     "chain": "JPBA公式",
     "venue": "菊陽ボウル",
@@ -1691,10 +1595,22 @@
     "proText": "JPBA公式:  サンコー技研カップ ABS ファミリープロアマトーナメント",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 158,
+    "id": 232,
+    "date": "2026-09-06",
+    "chain": "JPBA公式",
+    "venue": "山形ファミリーボウル",
+    "prefecture": "山形",
+    "pros": [],
+    "proText": "JPBA公式:  2026山形オープンファミリーカップ プロアマトーナメント",
+    "timeSlots": [],
+    "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 155,
     "date": "2026-09-08",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -1709,7 +1625,7 @@
       "10:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 4,
@@ -1726,7 +1642,7 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 10,
@@ -1743,7 +1659,7 @@
       "19:30"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/nak/286",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 15,
@@ -1761,10 +1677,10 @@
       "13:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/anj/346",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 56,
+    "id": 55,
     "date": "2026-09-12",
     "chain": "グランドボウル",
     "venue": "川崎グランドボウル",
@@ -1781,10 +1697,10 @@
       "19:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/kawasaki/news/20833/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 57,
+    "id": 56,
     "date": "2026-09-12",
     "chain": "グランドボウル",
     "venue": "川崎グランドボウル",
@@ -1799,7 +1715,7 @@
       "19:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/kawasaki/news/20783/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 19,
@@ -1816,7 +1732,7 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/tok/434",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 27,
@@ -1833,10 +1749,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 50,
+    "id": 49,
     "date": "2026-09-13",
     "chain": "グランドボウル",
     "venue": "半田グランドボウル",
@@ -1847,10 +1763,10 @@
     "proText": "堀井春花プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/handa/news/24593/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 81,
+    "id": 80,
     "date": "2026-09-13",
     "chain": "グランドボウル",
     "venue": "袋井グランドボウル",
@@ -1863,10 +1779,10 @@
       "19:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/fukuroi/news/14626/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 235,
+    "id": 233,
     "date": "2026-09-13",
     "chain": "JPBA公式",
     "venue": "栗東ボウリングジム",
@@ -1875,10 +1791,10 @@
     "proText": "JPBA公式:  RBGダブルスオープン2026",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 88,
+    "id": 87,
     "date": "2026-09-14",
     "chain": "N&K",
     "venue": "柿田川パークレーンズ",
@@ -1889,10 +1805,10 @@
     "proText": "鶴井亜南プロ",
     "timeSlots": [],
     "sourceUrl": "https://nandk.net/challenge-match/424653/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 93,
+    "id": 92,
     "date": "2026-09-14",
     "chain": "N&K",
     "venue": "ヤングファラオ",
@@ -1903,10 +1819,10 @@
     "proText": "鶴井亜南プロ",
     "timeSlots": [],
     "sourceUrl": "https://nandk.net/challenge-match/424653/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 98,
+    "id": 97,
     "date": "2026-09-14",
     "chain": "N&K",
     "venue": "弘前ファミリーボウル",
@@ -1917,10 +1833,10 @@
     "proText": "鶴井亜南プロ",
     "timeSlots": [],
     "sourceUrl": "https://nandk.net/challenge-match/424653/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 236,
+    "id": 234,
     "date": "2026-09-15",
     "chain": "JPBA公式",
     "venue": "ラウンドワンスタジアム堺中央環状店",
@@ -1929,10 +1845,10 @@
     "proText": "JPBA公式:  ROUND1 GCB 2026 JPBA予選ラウンド L会場",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 237,
+    "id": 235,
     "date": "2026-09-17",
     "chain": "JPBA公式",
     "venue": "MKボウル上賀茂",
@@ -1941,10 +1857,10 @@
     "proText": "JPBA公式:  第19回MKチャリティカップ",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 78,
+    "id": 77,
     "date": "2026-09-19",
     "chain": "グランドボウル",
     "venue": "東大和グランドボウル",
@@ -1961,7 +1877,7 @@
       "20:30"
     ],
     "sourceUrl": "https://www.grandbowl.jp/higashiyamato/news/6232/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 28,
@@ -1979,10 +1895,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 49,
+    "id": 48,
     "date": "2026-09-20",
     "chain": "グランドボウル",
     "venue": "半田グランドボウル",
@@ -1993,10 +1909,10 @@
     "proText": "藤林華音プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/handa/news/24588/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 69,
+    "id": 68,
     "date": "2026-09-20",
     "chain": "グランドボウル",
     "venue": "名古屋グランドボウル",
@@ -2011,10 +1927,10 @@
       "19:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/nagoya/news/21479/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 74,
+    "id": 73,
     "date": "2026-09-21",
     "chain": "グランドボウル",
     "venue": "東大和グランドボウル",
@@ -2025,10 +1941,10 @@
     "proText": "小泉奈津美プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/higashiyamato/news/14199/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 159,
+    "id": 156,
     "date": "2026-09-21",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -2043,10 +1959,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 45,
+    "id": 44,
     "date": "2026-09-22",
     "chain": "グランドボウル",
     "venue": "稲沢グランドボウル",
@@ -2057,10 +1973,10 @@
     "proText": "大仲純怜プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/inazawa/news/34717/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 73,
+    "id": 72,
     "date": "2026-09-22",
     "chain": "グランドボウル",
     "venue": "名古屋グランドボウル",
@@ -2075,10 +1991,10 @@
       "19:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/nagoya/news/21509/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 58,
+    "id": 57,
     "date": "2026-09-23",
     "chain": "グランドボウル",
     "venue": "川崎グランドボウル",
@@ -2092,10 +2008,10 @@
       "13:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/kawasaki/news/20786/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 72,
+    "id": 71,
     "date": "2026-09-23",
     "chain": "グランドボウル",
     "venue": "名古屋グランドボウル",
@@ -2110,10 +2026,10 @@
       "15:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/nagoya/news/21513/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 89,
+    "id": 88,
     "date": "2026-09-23",
     "chain": "N&K",
     "venue": "柿田川パークレーンズ",
@@ -2124,10 +2040,10 @@
     "proText": "鶴井亜南プロ",
     "timeSlots": [],
     "sourceUrl": "https://nandk.net/challenge-match/403685/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 94,
+    "id": 93,
     "date": "2026-09-23",
     "chain": "N&K",
     "venue": "ヤングファラオ",
@@ -2138,10 +2054,10 @@
     "proText": "鶴井亜南プロ",
     "timeSlots": [],
     "sourceUrl": "https://nandk.net/challenge-match/403685/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 99,
+    "id": 98,
     "date": "2026-09-23",
     "chain": "N&K",
     "venue": "弘前ファミリーボウル",
@@ -2152,10 +2068,10 @@
     "proText": "鶴井亜南プロ",
     "timeSlots": [],
     "sourceUrl": "https://nandk.net/challenge-match/403685/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 238,
+    "id": 236,
     "date": "2026-09-24",
     "chain": "JPBA公式",
     "venue": "軽井沢プリンスボウル",
@@ -2164,7 +2080,7 @@
     "proText": "JPBA公式:  ジャパンレディースボウリングクラブ50周年記念 第17回JLBC選手権｢軽井沢プリンスCUP｣",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 11,
@@ -2181,10 +2097,10 @@
       "19:30"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/nak/286",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 59,
+    "id": 58,
     "date": "2026-09-26",
     "chain": "グランドボウル",
     "venue": "川崎グランドボウル",
@@ -2199,10 +2115,10 @@
       "19:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/kawasaki/news/20788/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 239,
+    "id": 237,
     "date": "2026-09-26",
     "chain": "JPBA公式",
     "venue": "山梨県場協会加盟4センター",
@@ -2211,7 +2127,7 @@
     "proText": "JPBA公式:  2026山梨レディースプロボウリングトーナメント 兼男女アマチュア選手権",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 29,
@@ -2228,10 +2144,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 240,
+    "id": 238,
     "date": "2026-09-27",
     "chain": "JPBA公式",
     "venue": "コーシンボウル",
@@ -2240,10 +2156,10 @@
     "proText": "JPBA公式:  第13回コーシンプロアマフェスティバル",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 241,
+    "id": 239,
     "date": "2026-09-29",
     "chain": "JPBA公式",
     "venue": "宇都宮第二トーヨーボウル",
@@ -2252,10 +2168,10 @@
     "proText": "JPBA公式:  メリーランドカップ シーズントライアル2026 オータムシリーズ",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 242,
+    "id": 240,
     "date": "2026-10-02",
     "chain": "JPBA公式",
     "venue": "品川プリンスホテルボウリングセンター",
@@ -2264,10 +2180,10 @@
     "proText": "JPBA公式:  ちゃおちゃおボウリング大会～2026ちゃおちゃおハウストーナメント～",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 193,
+    "id": 192,
     "date": "2026-10-03",
     "chain": "イーグルボウル",
     "venue": "イーグルボウル",
@@ -2281,7 +2197,7 @@
     "proText": "德久恵大プロ、宮澤拓哉プロ、川口茉紀プロ、寺下智香プロ",
     "timeSlots": [],
     "sourceUrl": "https://eaglebowl.jp/tournament/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 30,
@@ -2298,10 +2214,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 243,
+    "id": 241,
     "date": "2026-10-08",
     "chain": "JPBA公式",
     "venue": "ラウンドワンスタジアム堺中央環状店",
@@ -2310,7 +2226,7 @@
     "proText": "JPBA公式:  ROUND1 GRAND CHAMPIONSHIP BOWLING 2026 JPBA決勝大会",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 5,
@@ -2327,10 +2243,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 47,
+    "id": 46,
     "date": "2026-10-10",
     "chain": "グランドボウル",
     "venue": "半田グランドボウル",
@@ -2341,7 +2257,7 @@
     "proText": "緒方美空プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/handa/news/24675/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 16,
@@ -2359,7 +2275,7 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/anj/346",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 20,
@@ -2376,7 +2292,7 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/tok/434",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 34,
@@ -2394,22 +2310,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/ogk/512",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 244,
-    "date": "2026-10-12",
-    "chain": "JPBA公式",
-    "venue": "サウンドボウル牛久店",
-    "prefecture": "茨城",
-    "pros": [],
-    "proText": "JPBA公式:  第3回SBプロアマトーナメント",
-    "timeSlots": [],
-    "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 245,
+    "id": 242,
     "date": "2026-10-12",
     "chain": "JPBA公式",
     "venue": "東京ポートボウル",
@@ -2418,10 +2322,22 @@
     "proText": "JPBA公式:  レジェンドシニアオープントーナメント",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 246,
+    "id": 243,
+    "date": "2026-10-12",
+    "chain": "JPBA公式",
+    "venue": "サウンドボウル牛久店",
+    "prefecture": "茨城",
+    "pros": [],
+    "proText": "JPBA公式:  第3回SBプロアマトーナメント",
+    "timeSlots": [],
+    "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 244,
     "date": "2026-10-16",
     "chain": "JPBA公式",
     "venue": "メリーランドタケオボウル",
@@ -2430,7 +2346,7 @@
     "proText": "JPBA公式:  メリーランドカップ シーズントライアル2026 オータムシリーズ",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 31,
@@ -2447,10 +2363,10 @@
       "18:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 247,
+    "id": 245,
     "date": "2026-10-17",
     "chain": "JPBA公式",
     "venue": "ボウルモデルノ",
@@ -2459,7 +2375,7 @@
     "proText": "JPBA公式:  第12回さくらんぼ東根オープン プロ･アマトーナメント",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 12,
@@ -2476,7 +2392,7 @@
       "19:30"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/nak/286",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 35,
@@ -2493,10 +2409,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/ogk/512",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 46,
+    "id": 45,
     "date": "2026-10-18",
     "chain": "グランドボウル",
     "venue": "半田グランドボウル",
@@ -2507,10 +2423,10 @@
     "proText": "渡辺莉央プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/handa/news/24678/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 248,
+    "id": 246,
     "date": "2026-10-21",
     "chain": "JPBA公式",
     "venue": "ハマボール",
@@ -2519,10 +2435,10 @@
     "proText": "JPBA公式:  メリーランドカップ シーズントライアル2026 オータムシリーズ",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 249,
+    "id": 247,
     "date": "2026-10-23",
     "chain": "JPBA公式",
     "venue": "ときわ平ボウリングセンター",
@@ -2531,7 +2447,7 @@
     "proText": "JPBA公式:  さわやかカップ2026第33回千葉オープン",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 6,
@@ -2548,7 +2464,7 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 13,
@@ -2565,10 +2481,10 @@
       "19:30"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/nak/286",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 60,
+    "id": 59,
     "date": "2026-10-24",
     "chain": "グランドボウル",
     "venue": "川崎グランドボウル",
@@ -2582,7 +2498,7 @@
       "19:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/kawasaki/news/20580/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 21,
@@ -2599,10 +2515,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/tok/434",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 82,
+    "id": 81,
     "date": "2026-10-25",
     "chain": "グランドボウル",
     "venue": "浜岡グランドボウル",
@@ -2616,10 +2532,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/hamaoka/news/4225/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 250,
+    "id": 248,
     "date": "2026-10-31",
     "chain": "JPBA公式",
     "venue": "稲沢グランドボウル",
@@ -2628,7 +2544,7 @@
     "proText": "JPBA公式:  第48回STORMジャパンオープンボウリング選手権",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 7,
@@ -2645,10 +2561,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 77,
+    "id": 76,
     "date": "2026-11-07",
     "chain": "グランドボウル",
     "venue": "東大和グランドボウル",
@@ -2661,10 +2577,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/higashiyamato/news/6559/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 251,
+    "id": 249,
     "date": "2026-11-07",
     "chain": "JPBA公式",
     "venue": "諫早パークレーン",
@@ -2673,7 +2589,7 @@
     "proText": "JPBA公式:  第15回龍馬杯諌早オープンプロアマトーナメント",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 32,
@@ -2691,10 +2607,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/han/310",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 252,
+    "id": 250,
     "date": "2026-11-08",
     "chain": "JPBA公式",
     "venue": "サンボウル",
@@ -2703,10 +2619,10 @@
     "proText": "JPBA公式:  第3回たかCちゃωカップ",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 253,
+    "id": 251,
     "date": "2026-11-14",
     "chain": "JPBA公式",
     "venue": "ラウンドワンスタジアム堺中央環状店",
@@ -2715,7 +2631,7 @@
     "proText": "JPBA公式:  ROUND1 GRAND CHAMPIONSHIP BOWLING 2026 FINAL",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 22,
@@ -2732,10 +2648,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/tok/434",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 254,
+    "id": 252,
     "date": "2026-11-15",
     "chain": "JPBA公式",
     "venue": "WAVE34",
@@ -2744,10 +2660,10 @@
     "proText": "JPBA公式:  第3回ファイルド･リラックスCUP",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 255,
+    "id": 253,
     "date": "2026-11-18",
     "chain": "JPBA公式",
     "venue": "ドリームスタジアム太田",
@@ -2756,10 +2672,10 @@
     "proText": "JPBA公式:  ドリスタカップJPBAプレイヤーズドリームマッチ2026",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 287,
+    "id": 285,
     "date": "2026-11-20",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -2771,10 +2687,10 @@
     "proText": "谷川章子プロ、河津亨至プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?tag=%E3%83%97%E3%83%AD%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 288,
+    "id": 286,
     "date": "2026-11-20",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -2787,7 +2703,7 @@
       "9:30"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 8,
@@ -2805,7 +2721,7 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 23,
@@ -2823,10 +2739,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/tok/434",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 44,
+    "id": 43,
     "date": "2026-11-23",
     "chain": "グランドボウル",
     "venue": "稲沢グランドボウル",
@@ -2837,10 +2753,10 @@
     "proText": "室伏萌プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/inazawa/news/35280/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 160,
+    "id": 157,
     "date": "2026-11-23",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -2854,10 +2770,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 161,
+    "id": 158,
     "date": "2026-11-24",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -2868,10 +2784,10 @@
     "proText": "タケットプロ",
     "timeSlots": [],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 163,
+    "id": 160,
     "date": "2026-11-24",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -2885,10 +2801,10 @@
       "10:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 256,
+    "id": 254,
     "date": "2026-11-26",
     "chain": "JPBA公式",
     "venue": "サンスクエアボウル",
@@ -2897,7 +2813,7 @@
     "proText": "JPBA公式:  サンスクエアボウル グランドフィナーレ 女子プロボウリングトーナメント Presented by \uD842\uDFB7川高広税理士事務所",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 36,
@@ -2914,10 +2830,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/ogk/512",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 61,
+    "id": 60,
     "date": "2026-11-29",
     "chain": "グランドボウル",
     "venue": "川崎グランドボウル",
@@ -2931,10 +2847,10 @@
       "19:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/kawasaki/news/20583/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 87,
+    "id": 86,
     "date": "2026-12-01",
     "chain": "グランドボウル",
     "venue": "津グランドボウル",
@@ -2946,10 +2862,10 @@
     "proText": "スルギプロ、福丸哲平プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/tsu/news/9365/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 166,
+    "id": 163,
     "date": "2026-12-01",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -2963,10 +2879,10 @@
       "12:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 257,
+    "id": 255,
     "date": "2026-12-03",
     "chain": "JPBA公式",
     "venue": "メリーランド タケオボウル",
@@ -2975,10 +2891,10 @@
     "proText": "JPBA公式:  メリーランドカップ JPBAプレイヤーズSTチャンピオンズ2026",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 167,
+    "id": 164,
     "date": "2026-12-05",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -2991,10 +2907,10 @@
       "15:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 169,
+    "id": 166,
     "date": "2026-12-07",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -3007,10 +2923,10 @@
       "15:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 258,
+    "id": 256,
     "date": "2026-12-10",
     "chain": "JPBA公式",
     "venue": "新狭山グランドボウル",
@@ -3019,7 +2935,7 @@
     "proText": "JPBA公式:  ｢HANDA CUP｣･第58回全日本女子プロボウリング選手権大会",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 9,
@@ -3037,7 +2953,7 @@
       "20:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/basic/kom/191",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 37,
@@ -3054,10 +2970,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.korona.co.jp/bowling/challenge/ogk/512",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 259,
+    "id": 257,
     "date": "2026-12-13",
     "chain": "JPBA公式",
     "venue": "アイビーボウル北本",
@@ -3066,10 +2982,10 @@
     "proText": "JPBA公式:  S.KeN Cup プロアマオープン2026",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 289,
+    "id": 287,
     "date": "2026-12-14",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -3080,40 +2996,41 @@
     "proText": "河津亨至プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 291,
-    "date": "2026-12-14",
-    "chain": "トドロキボウル",
-    "venue": "トドロキボウル",
-    "prefecture": "奈良",
-    "pros": [
-      "ブログ河津プロ"
-    ],
-    "proText": "ブログ河津プロ",
-    "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=191",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 292,
+    "id": 289,
     "date": "2026-12-14",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
     "prefecture": "奈良",
     "pros": [
       "ブログ河津プロ",
-      "河津亨至プロ",
+      "櫻井まりこプロ",
       "中村美月プロ"
     ],
-    "proText": "ブログ河津プロ、河津亨至プロ、中村美月プロ",
+    "proText": "ブログ河津プロ、櫻井まりこプロ、中村美月プロ",
     "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=167",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "sourceUrl": "http://todoroki.jp/tb/?p=191",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 260,
+    "id": 290,
+    "date": "2026-12-14",
+    "chain": "トドロキボウル",
+    "venue": "トドロキボウル",
+    "prefecture": "奈良",
+    "pros": [
+      "ブログ河津プロ",
+      "河津亨至プロ"
+    ],
+    "proText": "ブログ河津プロ、河津亨至プロ",
+    "timeSlots": [],
+    "sourceUrl": "http://todoroki.jp/tb/?p=167",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 258,
     "date": "2026-12-17",
     "chain": "JPBA公式",
     "venue": "新狭山グランドボウル",
@@ -3122,10 +3039,10 @@
     "proText": "JPBA公式:  HANDA CUP 第60回全日本プロボウリング選手権大会",
     "timeSlots": [],
     "sourceUrl": "https://www.jpba1.jp/schedule/index.html",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 293,
+    "id": 291,
     "date": "2026-12-20",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -3136,10 +3053,10 @@
     "proText": "谷川章子プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 294,
+    "id": 292,
     "date": "2026-12-20",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -3150,10 +3067,10 @@
     "proText": "日髙田プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 295,
+    "id": 293,
     "date": "2026-12-20",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -3164,10 +3081,10 @@
     "proText": "ブログ川添奨太プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 296,
+    "id": 294,
     "date": "2026-12-20",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -3181,10 +3098,10 @@
       "19:00"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 297,
+    "id": 295,
     "date": "2026-12-20",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -3195,10 +3112,10 @@
     "proText": "にいち早くアップロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 299,
+    "id": 297,
     "date": "2026-12-20",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -3210,10 +3127,10 @@
     "proText": "谷川章子プロ、中村美月プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 300,
+    "id": 298,
     "date": "2026-12-20",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -3226,7 +3143,40 @@
       "20:00"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 299,
+    "date": "2026-12-24",
+    "chain": "トドロキボウル",
+    "venue": "トドロキボウル",
+    "prefecture": "奈良",
+    "pros": [
+      "谷川章子プロ",
+      "中村美月プロ"
+    ],
+    "proText": "谷川章子プロ、中村美月プロ",
+    "timeSlots": [
+      "20:00"
+    ],
+    "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 300,
+    "date": "2026-12-24",
+    "chain": "トドロキボウル",
+    "venue": "トドロキボウル",
+    "prefecture": "奈良",
+    "pros": [
+      "ステ子プロ"
+    ],
+    "proText": "ステ子プロ",
+    "timeSlots": [
+      "20:00"
+    ],
+    "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 301,
@@ -3236,14 +3186,12 @@
     "prefecture": "奈良",
     "pros": [
       "谷川章子プロ",
-      "中村美月プロ"
+      "川添奨太プロ"
     ],
-    "proText": "谷川章子プロ、中村美月プロ",
-    "timeSlots": [
-      "20:00"
-    ],
-    "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "proText": "谷川章子プロ、川添奨太プロ",
+    "timeSlots": [],
+    "sourceUrl": "http://todoroki.jp/tb/?p=519",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 302,
@@ -3252,14 +3200,13 @@
     "venue": "トドロキボウル",
     "prefecture": "奈良",
     "pros": [
-      "ステ子プロ"
+      "川添奨太プロ",
+      "谷川章子プロ"
     ],
-    "proText": "ステ子プロ",
-    "timeSlots": [
-      "20:00"
-    ],
-    "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "proText": "川添奨太プロ、谷川章子プロ",
+    "timeSlots": [],
+    "sourceUrl": "http://todoroki.jp/tb/?p=274",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 303,
@@ -3268,12 +3215,14 @@
     "venue": "トドロキボウル",
     "prefecture": "奈良",
     "pros": [
+      "櫻井まりこプロ",
+      "中村美月プロ",
       "川添奨太プロ"
     ],
-    "proText": "川添奨太プロ",
+    "proText": "櫻井まりこプロ、中村美月プロ、川添奨太プロ",
     "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=274",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "sourceUrl": "http://todoroki.jp/tb/?p=191",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 304,
@@ -3282,15 +3231,16 @@
     "venue": "トドロキボウル",
     "prefecture": "奈良",
     "pros": [
+      "川添奨太プロ",
       "日岸田プロ"
     ],
-    "proText": "日岸田プロ",
+    "proText": "川添奨太プロ、日岸田プロ",
     "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=191",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "sourceUrl": "http://todoroki.jp/tb/?p=167",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 43,
+    "id": 42,
     "date": "2026-12-26",
     "chain": "グランドボウル",
     "venue": "稲沢グランドボウル",
@@ -3301,10 +3251,10 @@
     "proText": "太琳華プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/inazawa/news/35283/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 63,
+    "id": 62,
     "date": "2026-12-27",
     "chain": "グランドボウル",
     "venue": "名古屋グランドボウル",
@@ -3319,10 +3269,10 @@
       "15:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/nagoya/news/22600/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 66,
+    "id": 65,
     "date": "2026-12-30",
     "chain": "グランドボウル",
     "venue": "名古屋グランドボウル",
@@ -3337,10 +3287,10 @@
       "19:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/nagoya/news/22586/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 198,
+    "id": 197,
     "date": "2026-12-31",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -3353,7 +3303,7 @@
       "9:00"
     ],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 305,
@@ -3370,7 +3320,7 @@
       "9:30"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 306,
@@ -3379,13 +3329,16 @@
     "venue": "トドロキボウル",
     "prefecture": "奈良",
     "pros": [
+      "は年末マラソン河津プロ",
       "中村美月プロ",
-      "川添奨太プロ"
+      "櫻井まりこプロ"
     ],
-    "proText": "中村美月プロ、川添奨太プロ",
-    "timeSlots": [],
+    "proText": "は年末マラソン河津プロ、中村美月プロ、櫻井まりこプロ",
+    "timeSlots": [
+      "19:00"
+    ],
     "sourceUrl": "http://todoroki.jp/tb/?p=799",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 307,
@@ -3394,31 +3347,16 @@
     "venue": "トドロキボウル",
     "prefecture": "奈良",
     "pros": [
-      "川添奨太プロ"
+      "川添奨太プロ",
+      "谷川章子プロ"
     ],
-    "proText": "川添奨太プロ",
+    "proText": "川添奨太プロ、谷川章子プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?p=274",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 308,
-    "date": "2026-12-31",
-    "chain": "トドロキボウル",
-    "venue": "トドロキボウル",
-    "prefecture": "奈良",
-    "pros": [
-      "中村美月プロ",
-      "谷川章子プロ",
-      "川添奨太プロ"
-    ],
-    "proText": "中村美月プロ、谷川章子プロ、川添奨太プロ",
-    "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=167",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 68,
+    "id": 67,
     "date": "2027-01-02",
     "chain": "グランドボウル",
     "venue": "名古屋グランドボウル",
@@ -3433,10 +3371,10 @@
       "19:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/nagoya/news/22548/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 70,
+    "id": 69,
     "date": "2027-01-03",
     "chain": "グランドボウル",
     "venue": "名古屋グランドボウル",
@@ -3451,7 +3389,21 @@
       "19:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/nagoya/news/22095/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 308,
+    "date": "2027-01-06",
+    "chain": "トドロキボウル",
+    "venue": "トドロキボウル",
+    "prefecture": "奈良",
+    "pros": [
+      "リーガー谷川章子プロ"
+    ],
+    "proText": "リーガー谷川章子プロ",
+    "timeSlots": [],
+    "sourceUrl": "http://todoroki.jp/tb/?p=244",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 309,
@@ -3464,25 +3416,11 @@
     ],
     "proText": "リーガー谷川章子プロ",
     "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=244",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 310,
-    "date": "2027-01-06",
-    "chain": "トドロキボウル",
-    "venue": "トドロキボウル",
-    "prefecture": "奈良",
-    "pros": [
-      "リーガー谷川章子プロ"
-    ],
-    "proText": "リーガー谷川章子プロ",
-    "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 80,
+    "id": 79,
     "date": "2027-01-11",
     "chain": "グランドボウル",
     "venue": "東大和グランドボウル",
@@ -3496,10 +3434,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/higashiyamato/news/4989/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 171,
+    "id": 168,
     "date": "2027-01-11",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -3512,7 +3450,21 @@
       "13:30"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 311,
+    "date": "2027-01-11",
+    "chain": "トドロキボウル",
+    "venue": "トドロキボウル",
+    "prefecture": "奈良",
+    "pros": [
+      "日阿部プロ"
+    ],
+    "proText": "日阿部プロ",
+    "timeSlots": [],
+    "sourceUrl": "http://todoroki.jp/tb/?p=2821",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 312,
@@ -3526,7 +3478,7 @@
     "proText": "ーガー谷川章子プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 314,
@@ -3541,7 +3493,7 @@
     "proText": "谷川章子プロ、中村美月プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 315,
@@ -3550,12 +3502,13 @@
     "venue": "トドロキボウル",
     "prefecture": "奈良",
     "pros": [
-      "谷川章子プロ"
+      "谷川章子プロ",
+      "川添奨太プロ"
     ],
-    "proText": "谷川章子プロ",
+    "proText": "谷川章子プロ、川添奨太プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?p=519",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 316,
@@ -3565,12 +3518,12 @@
     "prefecture": "奈良",
     "pros": [
       "川添奨太プロ",
-      "古田翔子プロ"
+      "谷川章子プロ"
     ],
-    "proText": "川添奨太プロ、古田翔子プロ",
+    "proText": "川添奨太プロ、谷川章子プロ",
     "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=294",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "sourceUrl": "http://todoroki.jp/tb/?p=274",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 317,
@@ -3584,7 +3537,7 @@
     "proText": "谷川章子プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?p=244",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 318,
@@ -3598,7 +3551,7 @@
     "proText": "リーガー谷川章子プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?p=244",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 319,
@@ -3608,31 +3561,15 @@
     "prefecture": "奈良",
     "pros": [
       "ーガー谷川章子プロ",
-      "櫻井まりこプロ"
+      "日岸田プロ"
     ],
-    "proText": "ーガー谷川章子プロ、櫻井まりこプロ",
+    "proText": "ーガー谷川章子プロ、日岸田プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?p=244",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 320,
-    "date": "2027-01-18",
-    "chain": "トドロキボウル",
-    "venue": "トドロキボウル",
-    "prefecture": "奈良",
-    "pros": [
-      "中村美月プロ",
-      "谷川章子プロ",
-      "川添奨太プロ"
-    ],
-    "proText": "中村美月プロ、谷川章子プロ、川添奨太プロ",
-    "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=167",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 172,
+    "id": 169,
     "date": "2027-01-20",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -3646,10 +3583,10 @@
       "17:30"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 286,
+    "id": 284,
     "date": "2027-01-21",
     "chain": "MKボウル",
     "venue": "MKボウル上賀茂",
@@ -3663,10 +3600,10 @@
       "12:30"
     ],
     "sourceUrl": "https://mkciel.net/kamigamo/bowlingschool.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 321,
+    "id": 320,
     "date": "2027-01-25",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -3678,10 +3615,10 @@
     "proText": "谷川章子プロ、中村美月プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 76,
+    "id": 75,
     "date": "2027-01-31",
     "chain": "グランドボウル",
     "venue": "東大和グランドボウル",
@@ -3695,10 +3632,10 @@
       "18:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/higashiyamato/news/6848/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 40,
+    "id": 39,
     "date": "2027-02-06",
     "chain": "グランドボウル",
     "venue": "稲沢グランドボウル",
@@ -3709,10 +3646,10 @@
     "proText": "三浦美里プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/inazawa/news/29412/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 65,
+    "id": 64,
     "date": "2027-02-14",
     "chain": "グランドボウル",
     "venue": "名古屋グランドボウル",
@@ -3727,24 +3664,25 @@
       "15:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/nagoya/news/22590/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 322,
+    "id": 321,
     "date": "2027-02-18",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
     "prefecture": "奈良",
     "pros": [
-      "谷川章子プロ"
+      "トドロキボウル川添プロ",
+      "中村美月プロ"
     ],
-    "proText": "谷川章子プロ",
+    "proText": "トドロキボウル川添プロ、中村美月プロ",
     "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=519",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "sourceUrl": "http://todoroki.jp/tb/?p=329",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 323,
+    "id": 322,
     "date": "2027-02-18",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -3754,11 +3692,11 @@
     ],
     "proText": "日岸田プロ",
     "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=191",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "sourceUrl": "http://todoroki.jp/tb/?p=294",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 324,
+    "id": 323,
     "date": "2027-02-18",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -3769,7 +3707,22 @@
     "proText": "時半から岸田プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?p=294",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 324,
+    "date": "2027-02-18",
+    "chain": "トドロキボウル",
+    "venue": "トドロキボウル",
+    "prefecture": "奈良",
+    "pros": [
+      "時半から岸田プロ",
+      "古田翔子プロ"
+    ],
+    "proText": "時半から岸田プロ、古田翔子プロ",
+    "timeSlots": [],
+    "sourceUrl": "http://todoroki.jp/tb/?p=294",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 325,
@@ -3778,18 +3731,32 @@
     "venue": "トドロキボウル",
     "prefecture": "奈良",
     "pros": [
-      "櫻井まりこプロ",
-      "川添奨太プロ",
-      "中村美月プロ",
-      "日岸田プロ"
+      "谷川章子プロ",
+      "日岸田プロ",
+      "古田翔子プロ"
     ],
-    "proText": "櫻井まりこプロ、川添奨太プロ、中村美月プロ、日岸田プロ",
+    "proText": "谷川章子プロ、日岸田プロ、古田翔子プロ",
     "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?p=244",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 173,
+    "id": 326,
+    "date": "2027-02-18",
+    "chain": "トドロキボウル",
+    "venue": "トドロキボウル",
+    "prefecture": "奈良",
+    "pros": [
+      "川添奨太プロ",
+      "日岸田プロ"
+    ],
+    "proText": "川添奨太プロ、日岸田プロ",
+    "timeSlots": [],
+    "sourceUrl": "http://todoroki.jp/tb/?p=167",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 170,
     "date": "2027-03-08",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -3802,10 +3769,10 @@
       "13:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 64,
+    "id": 63,
     "date": "2027-03-13",
     "chain": "グランドボウル",
     "venue": "名古屋グランドボウル",
@@ -3820,10 +3787,10 @@
       "15:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/nagoya/news/22594/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 79,
+    "id": 78,
     "date": "2027-03-20",
     "chain": "グランドボウル",
     "venue": "東大和グランドボウル",
@@ -3837,10 +3804,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/higashiyamato/news/5568/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 199,
+    "id": 198,
     "date": "2027-03-28",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -3855,10 +3822,10 @@
       "23:00"
     ],
     "sourceUrl": "https://parklanes.jp/tournament_detail.php?id=2669",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 83,
+    "id": 82,
     "date": "2027-03-29",
     "chain": "グランドボウル",
     "venue": "浜岡グランドボウル",
@@ -3869,10 +3836,10 @@
     "proText": "堀内綾プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/hamaoka/news/3857/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 200,
+    "id": 199,
     "date": "2027-04-01",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -3884,10 +3851,10 @@
     "proText": "久保田彩花プロ、内藤広人プロ",
     "timeSlots": [],
     "sourceUrl": "https://parklanes.jp/news.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 201,
+    "id": 200,
     "date": "2027-04-01",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -3901,7 +3868,7 @@
       "23:00"
     ],
     "sourceUrl": "https://parklanes.jp/news.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 327,
@@ -3920,7 +3887,7 @@
       "19:30"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?tag=%E3%83%97%E3%83%AD%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 328,
@@ -3938,7 +3905,7 @@
       "19:30"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 329,
@@ -3955,7 +3922,7 @@
       "19:30"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?p=329",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 330,
@@ -3974,7 +3941,7 @@
       "19:30"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?tag=%E3%83%97%E3%83%AD%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 331,
@@ -3993,7 +3960,7 @@
       "19:30"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?tag=%E3%83%97%E3%83%AD%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 332,
@@ -4011,7 +3978,7 @@
       "19:30"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 333,
@@ -4029,7 +3996,7 @@
       "19:30"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?page_id=49",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 334,
@@ -4046,7 +4013,7 @@
       "19:30"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?p=329",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 335,
@@ -4056,19 +4023,17 @@
     "prefecture": "奈良",
     "pros": [
       "川添奨太プロ",
-      "トドロキボウル川添プロ",
-      "櫻井まりこプロ",
-      "古田翔子プロ"
+      "トドロキボウル川添プロ"
     ],
-    "proText": "川添奨太プロ、トドロキボウル川添プロ、櫻井まりこプロ、古田翔子プロ",
+    "proText": "川添奨太プロ、トドロキボウル川添プロ",
     "timeSlots": [
       "19:30"
     ],
     "sourceUrl": "http://todoroki.jp/tb/?p=329",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 174,
+    "id": 171,
     "date": "2027-04-26",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4081,10 +4046,10 @@
       "17:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 202,
+    "id": 201,
     "date": "2027-05-11",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -4096,10 +4061,10 @@
     "proText": "川田菜摘プロ、久保田彩花プロ",
     "timeSlots": [],
     "sourceUrl": "https://parklanes.jp/tournament_detail.php?id=2669",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 203,
+    "id": 202,
     "date": "2027-05-11",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -4115,10 +4080,10 @@
       "9:00"
     ],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 204,
+    "id": 203,
     "date": "2027-05-11",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -4133,10 +4098,10 @@
       "15:30"
     ],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 205,
+    "id": 204,
     "date": "2027-05-11",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -4151,10 +4116,10 @@
       "15:30"
     ],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 206,
+    "id": 205,
     "date": "2027-05-11",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -4169,10 +4134,10 @@
       "9:00"
     ],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 175,
+    "id": 172,
     "date": "2027-05-18",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4183,10 +4148,10 @@
     "proText": "寺下智香プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 176,
+    "id": 173,
     "date": "2027-05-22",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4197,10 +4162,10 @@
     "proText": "寺下智香プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 207,
+    "id": 206,
     "date": "2027-06-22",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -4211,10 +4176,10 @@
     "proText": "久保田彩花プロ",
     "timeSlots": [],
     "sourceUrl": "https://parklanes.jp/news.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 85,
+    "id": 84,
     "date": "2027-06-23",
     "chain": "グランドボウル",
     "venue": "浜岡グランドボウル",
@@ -4227,10 +4192,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/hamaoka/news/2934/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 208,
+    "id": 207,
     "date": "2027-06-27",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -4246,10 +4211,10 @@
       "9:00"
     ],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 84,
+    "id": 83,
     "date": "2027-06-29",
     "chain": "グランドボウル",
     "venue": "浜岡グランドボウル",
@@ -4261,10 +4226,10 @@
     "proText": "玉城妙子プロ、西澤琴子プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/hamaoka/news/3071/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 343,
+    "id": 344,
     "date": "2027-07-02",
     "chain": "防府ゴールデンボール",
     "venue": "防府ゴールデンボール",
@@ -4275,10 +4240,10 @@
     "proText": "玉井慎一郎プロ",
     "timeSlots": [],
     "sourceUrl": "http://www.hofugoldenbowl.com/event",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 345,
+    "id": 346,
     "date": "2027-07-03",
     "chain": "防府ゴールデンボール",
     "venue": "防府ゴールデンボール",
@@ -4289,7 +4254,7 @@
     "proText": "慎一郎プロ",
     "timeSlots": [],
     "sourceUrl": "http://www.hofugoldenbowl.com/event",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 356,
@@ -4305,10 +4270,10 @@
       "13:30"
     ],
     "sourceUrl": "https://www.obs-bowl.com/info/tournament/#menu13",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 177,
+    "id": 174,
     "date": "2027-07-04",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4321,7 +4286,7 @@
       "16:30"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 361,
@@ -4338,10 +4303,10 @@
       "11:30"
     ],
     "sourceUrl": "https://www.obs-bowl.com/info/tournament/#menu13",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 178,
+    "id": 175,
     "date": "2027-07-12",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4352,10 +4317,55 @@
     "proText": "寺下智香プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 336,
+    "date": "2027-07-12",
+    "chain": "トドロキボウル",
+    "venue": "トドロキボウル",
+    "prefecture": "奈良",
+    "pros": [
+      "中村美月プロ",
+      "櫻井まりこプロ"
+    ],
+    "proText": "中村美月プロ、櫻井まりこプロ",
+    "timeSlots": [],
+    "sourceUrl": "http://todoroki.jp/tb/?p=799",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 337,
+    "date": "2027-07-12",
+    "chain": "トドロキボウル",
+    "venue": "トドロキボウル",
+    "prefecture": "奈良",
+    "pros": [
+      "古田翔子プロ",
+      "谷川章子プロ",
+      "川添奨太プロ"
+    ],
+    "proText": "古田翔子プロ、谷川章子プロ、川添奨太プロ",
+    "timeSlots": [],
+    "sourceUrl": "http://todoroki.jp/tb/?p=519",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 338,
+    "date": "2027-07-12",
+    "chain": "トドロキボウル",
+    "venue": "トドロキボウル",
+    "prefecture": "奈良",
+    "pros": [
+      "中村美月プロ"
+    ],
+    "proText": "中村美月プロ",
+    "timeSlots": [],
+    "sourceUrl": "http://todoroki.jp/tb/?p=329",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 339,
     "date": "2027-07-12",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -4365,56 +4375,41 @@
     ],
     "proText": "川添奨太プロ",
     "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=2848",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 337,
-    "date": "2027-07-12",
-    "chain": "トドロキボウル",
-    "venue": "トドロキボウル",
-    "prefecture": "奈良",
-    "pros": [
-      "谷川章子プロ"
-    ],
-    "proText": "谷川章子プロ",
-    "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=519",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 338,
-    "date": "2027-07-12",
-    "chain": "トドロキボウル",
-    "venue": "トドロキボウル",
-    "prefecture": "奈良",
-    "pros": [
-      "川添奨太プロ",
-      "古田翔子プロ"
-    ],
-    "proText": "川添奨太プロ、古田翔子プロ",
-    "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=294",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 339,
-    "date": "2027-07-12",
-    "chain": "トドロキボウル",
-    "venue": "トドロキボウル",
-    "prefecture": "奈良",
-    "pros": [
-      "川添奨太プロ",
-      "中村美月プロ",
-      "日岸田プロ"
-    ],
-    "proText": "川添奨太プロ、中村美月プロ、日岸田プロ",
-    "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=244",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "sourceUrl": "http://todoroki.jp/tb/?p=191",
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 340,
+    "date": "2027-07-12",
+    "chain": "トドロキボウル",
+    "venue": "トドロキボウル",
+    "prefecture": "奈良",
+    "pros": [
+      "古田翔子プロ",
+      "谷川章子プロ"
+    ],
+    "proText": "古田翔子プロ、谷川章子プロ",
+    "timeSlots": [],
+    "sourceUrl": "http://todoroki.jp/tb/?p=274",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 341,
+    "date": "2027-07-12",
+    "chain": "トドロキボウル",
+    "venue": "トドロキボウル",
+    "prefecture": "奈良",
+    "pros": [
+      "古田翔子プロ",
+      "川添奨太プロ"
+    ],
+    "proText": "古田翔子プロ、川添奨太プロ",
+    "timeSlots": [],
+    "sourceUrl": "http://todoroki.jp/tb/?p=244",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 343,
     "date": "2027-07-12",
     "chain": "トドロキボウル",
     "venue": "トドロキボウル",
@@ -4424,26 +4419,11 @@
     ],
     "proText": "日岸田プロ",
     "timeSlots": [],
-    "sourceUrl": "http://todoroki.jp/tb/?p=191",
-    "scrapedAt": "2026-08-09 20:11:09"
-  },
-  {
-    "id": 341,
-    "date": "2027-07-12",
-    "chain": "トドロキボウル",
-    "venue": "トドロキボウル",
-    "prefecture": "奈良",
-    "pros": [
-      "谷川章子プロ",
-      "川添奨太プロ"
-    ],
-    "proText": "谷川章子プロ、川添奨太プロ",
-    "timeSlots": [],
     "sourceUrl": "http://todoroki.jp/tb/?p=167",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 179,
+    "id": 176,
     "date": "2027-07-13",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4454,7 +4434,7 @@
     "proText": "寺下智香プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 366,
@@ -4471,10 +4451,10 @@
       "20:00"
     ],
     "sourceUrl": "https://www.obs-bowl.com/info/tournament/#menu13",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 209,
+    "id": 208,
     "date": "2027-07-17",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -4489,7 +4469,7 @@
       "15:30"
     ],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 371,
@@ -4506,7 +4486,7 @@
       "20:00"
     ],
     "sourceUrl": "https://www.obs-bowl.com/info/tournament/#menu13",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 376,
@@ -4523,7 +4503,7 @@
       "13:30"
     ],
     "sourceUrl": "https://www.obs-bowl.com/info/tournament/#menu13",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
     "id": 381,
@@ -4540,10 +4520,10 @@
       "13:30"
     ],
     "sourceUrl": "https://www.obs-bowl.com/info/tournament/#menu13",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 122,
+    "id": 121,
     "date": "2027-07-20",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -4556,10 +4536,10 @@
     "proText": "桑藤美樹プロ、後藤光々音プロ、大久保雄矢プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 123,
+    "id": 122,
     "date": "2027-07-20",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -4573,10 +4553,10 @@
     "proText": "桑藤美樹プロ、後藤光々音プロ、大久保雄矢プロ、熊田菜奈海プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 124,
+    "id": 123,
     "date": "2027-07-20",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -4590,10 +4570,10 @@
     "proText": "後藤光々音プロ、大久保雄矢プロ、熊田菜奈海プロ、今井双葉プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 125,
+    "id": 124,
     "date": "2027-07-20",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -4607,10 +4587,10 @@
     "proText": "大久保雄矢プロ、熊田菜奈海プロ、今井双葉プロ、佐々木プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 126,
+    "id": 125,
     "date": "2027-07-20",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -4624,10 +4604,10 @@
     "proText": "今井双葉プロ、佐々木プロ、小久保実希プロ、小林あゆみプロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 127,
+    "id": 126,
     "date": "2027-07-20",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -4641,10 +4621,10 @@
     "proText": "小久保実希プロ、小林あゆみプロ、小林よしみプロ、飯田菜々プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 128,
+    "id": 127,
     "date": "2027-07-20",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -4658,10 +4638,10 @@
     "proText": "小林あゆみプロ、小林よしみプロ、飯田菜々プロ、熊田菜奈海プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 129,
+    "id": 128,
     "date": "2027-07-20",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -4675,10 +4655,10 @@
     "proText": "飯田菜々プロ、熊田菜奈海プロ、置秀一プロ、久保田彩花プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 130,
+    "id": 129,
     "date": "2027-07-20",
     "chain": "スプリングレーン",
     "venue": "浦和スプリングレーン",
@@ -4690,10 +4670,10 @@
     "proText": "置秀一プロ、久保田彩花プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/u_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 75,
+    "id": 74,
     "date": "2027-07-21",
     "chain": "グランドボウル",
     "venue": "東大和グランドボウル",
@@ -4705,10 +4685,10 @@
     "proText": "野仲美咲プロ、積田蒼生プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/higashiyamato/news/12322/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 54,
+    "id": 53,
     "date": "2027-07-25",
     "chain": "グランドボウル",
     "venue": "半田グランドボウル",
@@ -4719,10 +4699,10 @@
     "proText": "金子萌夏プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.grandbowl.jp/handa/news/23715/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 109,
+    "id": 108,
     "date": "2027-07-25",
     "chain": "スプリングレーン",
     "venue": "川口スプリングレーン",
@@ -4734,10 +4714,10 @@
     "proText": "星野宏明プロ、松田章プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/k_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 110,
+    "id": 109,
     "date": "2027-07-25",
     "chain": "スプリングレーン",
     "venue": "川口スプリングレーン",
@@ -4748,10 +4728,10 @@
     "proText": "松田章プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/k_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 210,
+    "id": 209,
     "date": "2027-07-25",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -4766,10 +4746,10 @@
       "15:30"
     ],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 211,
+    "id": 210,
     "date": "2027-07-25",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -4783,10 +4763,10 @@
       "15:30"
     ],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 180,
+    "id": 177,
     "date": "2027-08-02",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4802,10 +4782,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 181,
+    "id": 178,
     "date": "2027-08-02",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4819,10 +4799,10 @@
       "10:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 182,
+    "id": 179,
     "date": "2027-08-02",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4838,10 +4818,10 @@
       "14:00"
     ],
     "sourceUrl": "http://www.rokkobowl.co.jp/archives/category/event",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 183,
+    "id": 180,
     "date": "2027-08-02",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4856,10 +4836,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/9709",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 185,
+    "id": 182,
     "date": "2027-08-05",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4875,10 +4855,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 186,
+    "id": 183,
     "date": "2027-08-05",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4894,10 +4874,10 @@
       "14:00"
     ],
     "sourceUrl": "http://www.rokkobowl.co.jp/archives/category/event",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 187,
+    "id": 184,
     "date": "2027-08-05",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4912,10 +4892,10 @@
       "14:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/9709",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 111,
+    "id": 110,
     "date": "2027-08-06",
     "chain": "スプリングレーン",
     "venue": "川口スプリングレーン",
@@ -4926,10 +4906,10 @@
     "proText": "松田章プロ",
     "timeSlots": [],
     "sourceUrl": "https://www.sp-bowl.com/k_game.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 212,
+    "id": 211,
     "date": "2027-08-07",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -4944,10 +4924,10 @@
       "15:30"
     ],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 48,
+    "id": 47,
     "date": "2027-08-08",
     "chain": "グランドボウル",
     "venue": "半田グランドボウル",
@@ -4964,10 +4944,10 @@
       "18:00"
     ],
     "sourceUrl": "https://www.grandbowl.jp/handa/news/21417/",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 189,
+    "id": 186,
     "date": "2027-08-08",
     "chain": "神戸六甲ボウル",
     "venue": "神戸六甲ボウル",
@@ -4981,10 +4961,10 @@
       "15:00"
     ],
     "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
   },
   {
-    "id": 213,
+    "id": 212,
     "date": "2027-08-08",
     "chain": "パークレーン",
     "venue": "相模原パークレーン",
@@ -5000,6 +4980,53 @@
       "15:30"
     ],
     "sourceUrl": "https://parklanes.jp/tournament.php",
-    "scrapedAt": "2026-08-09 20:11:09"
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 52,
+    "date": "2027-08-09",
+    "chain": "グランドボウル",
+    "venue": "半田グランドボウル",
+    "prefecture": "愛知",
+    "pros": [
+      "三浦美里プロ"
+    ],
+    "proText": "三浦美里プロ",
+    "timeSlots": [],
+    "sourceUrl": "https://www.grandbowl.jp/handa/news/24576/",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 188,
+    "date": "2027-08-09",
+    "chain": "神戸六甲ボウル",
+    "venue": "神戸六甲ボウル",
+    "prefecture": "兵庫",
+    "pros": [
+      "寺下智香プロ"
+    ],
+    "proText": "寺下智香プロ",
+    "timeSlots": [
+      "12:30",
+      "15:00"
+    ],
+    "sourceUrl": "https://www.rokkobowl.co.jp/archives/category/news",
+    "scrapedAt": "2026-08-10 20:15:38"
+  },
+  {
+    "id": 386,
+    "date": "2027-08-09",
+    "chain": "OBSボウル",
+    "venue": "OBSボウル",
+    "prefecture": "大分",
+    "pros": [
+      "木村広人プロ"
+    ],
+    "proText": "木村広人プロ",
+    "timeSlots": [
+      "13:30"
+    ],
+    "sourceUrl": "https://www.obs-bowl.com/info/obsbowl_schedule/",
+    "scrapedAt": "2026-08-10 20:15:38"
   }
 ]

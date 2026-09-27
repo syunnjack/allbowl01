@@ -11,6 +11,8 @@ const { title, description, canonicalPath = "/", ogImage = "/og-default.svg", no
 const siteUrl = "https://bowling-event.jp";
 const canonical = new URL(canonicalPath, siteUrl).toString();
 const ogImageUrl = new URL(ogImage, siteUrl).toString();
+// Measurement ID for the GA4 property "allbowl01 (http://bowling-event.jp/)" (549602058).
+const gaMeasurementId = "G-DXSZMPHV62";
 const siteName = "Bowling Calendar";
 const japaneseSiteName = "全国プロチャレンジマッチ情報まとめ";
 const siteStructuredData = {
@@ -91,6 +93,8 @@ const siteStructuredData = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
     <script type="application/ld+json" set:html={JSON.stringify(siteStructuredData)} />
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+    <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaMeasurementId}');`} />
     <slot name="head" />
   </head>
   <body>
